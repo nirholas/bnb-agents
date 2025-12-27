@@ -1,0 +1,143 @@
+<!--
+  ✨ built by nich
+  �� GitHub: github.com/nirholas
+  💫 Keep pushing boundaries 🚧
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- Prevent pinch-zoom on iOS while allowing accessibility zoom -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="description" content="Lyra Web3 Playground - Learn blockchain development with interactive examples. Compile and deploy Solidity smart contracts directly in your browser." />
+    <meta name="keywords" content="web3, blockchain, ethereum, solidity, smart contracts, nft, defi, dapp, learn web3, solidity tutorial" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="author" content="nirholas" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lyra.works/" />
+    <meta property="og:title" content="Lyra Web3 Playground - Learn Blockchain Development" />
+    <meta property="og:description" content="Interactive browser-based IDE for learning Solidity. Compile, deploy, and interact with smart contracts - no setup required." />
+    <meta property="og:image" content="https://lyra.works/og-image.svg" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://lyra.works/" />
+    <meta name="twitter:title" content="Lyra Web3 Playground" />
+    <meta name="twitter:description" content="Learn Web3 development with interactive examples. Compile and deploy Solidity in your browser." />
+    <meta name="twitter:image" content="https://lyra.works/og-image.svg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lyra.works/" />
+    
+    <!-- Structured Data for AI Agents & Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Lyra Web3 Playground",
+      "url": "https://lyra.works",
+      "description": "Interactive browser-based IDE for learning Solidity and blockchain development. Compile, deploy, and interact with smart contracts - no setup required.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "nirholas",
+        "url": "https://github.com/nirholas"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Lyra",
+        "url": "https://lyra.works"
+      },
+      "keywords": ["web3", "blockchain", "ethereum", "solidity", "smart contracts", "NFT", "DeFi", "dApp", "IDE", "playground"],
+      "featureList": [
+        "Browser-based Solidity compiler",
+        "Smart contract deployment to testnets",
+        "Interactive code examples",
+        "50+ tutorials",
+        "40+ contract templates",
+        "Multi-chain support",
+        "AI-powered code assistance"
+      ],
+      "accessibilityFeature": [
+        "highContrastDisplay",
+        "largePrint",
+        "alternativeText",
+        "keyboardNavigation",
+        "structuredNavigation"
+      ],
+      "accessibilityHazard": "none",
+      "accessibilitySummary": "WCAG 2.1 Level AA compliant. Full keyboard navigation, screen reader support, and visual feedback for deaf users."
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Lyra Web3 Playground",
+      "url": "https://lyra.works",
+      "description": "Learn blockchain development through interactive tutorials and hands-on coding exercises.",
+      "educationalCredentialAwarded": "None - Free learning platform",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web3 Tutorials",
+        "itemListElement": [
+          {
+            "@type": "Course",
+            "name": "Solidity Basics",
+            "description": "Learn the fundamentals of Solidity smart contract development"
+          },
+          {
+            "@type": "Course",
+            "name": "DeFi Development",
+            "description": "Build decentralized finance applications"
+          },
+          {
+            "@type": "Course",
+            "name": "NFT Development",
+            "description": "Create and deploy NFT smart contracts"
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Lyra Web3 Playground" />
+    
+    <title>Lyra Web3 Playground - Learn Blockchain Development</title>
+    
+    <!-- Pyodide for Python execution in browser -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    
+    <!-- GitHub Pages SPA redirect handler -->
+    <script>
+      (function() {
+        const redirect = new URLSearchParams(window.location.search).get('redirect');
+        if (redirect) {
+          window.history.replaceState(null, '', '/' + redirect);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
