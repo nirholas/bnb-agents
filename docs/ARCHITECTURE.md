@@ -76,8 +76,8 @@ Lyra Web3 Playground is built with a modern, scalable architecture designed for 
 │  • Ethereum Networks (Infura/Alchemy)                       │
 │  • Polygon Networks                                          │
 │  • IPFS (for NFT storage)                                   │
-│  • AI APIs (OpenAI, Anthropic) - Future                    │
-│  • Supabase (Auth, Database) - Future                      │
+│  • AI APIs (OpenAI, Anthropic)                             │
+│  • Supabase (Auth, Database, Storage)                      │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -112,24 +112,35 @@ App
 
 ### Accessibility Components
 
-The application includes built-in accessibility support. See [ACCESSIBILITY.md](./ACCESSIBILITY.md) for full documentation.
+The application includes a comprehensive, cutting-edge accessibility system. See [ACCESSIBILITY.md](./ACCESSIBILITY.md) for full documentation.
 
 ```
 src/components/Accessibility/
 ├── index.ts              # Exports
-├── SkipLink.tsx          # Skip to content link
-├── LiveAnnouncer.tsx     # Screen reader announcements
-├── VisualFeedback.tsx    # Toast notifications for deaf users
-└── useFeedback.ts        # Combined feedback hook
+├── AccessibilityButton.tsx   # Draggable floating button + quick menu
+├── AccessibilityPanel.tsx    # Full settings panel (6 tabs)
+├── SkipLinks.tsx             # Skip navigation links
+├── Announcer.tsx             # Screen reader announcements
+├── DwellClick.tsx            # Click-by-hovering for motor impairments
+├── ReadingGuide.tsx          # Line highlighter for reading
+├── ColorBlindFilters.tsx     # SVG filters for color blindness
+└── (legacy files)            # Original simple accessibility
+
+src/stores/accessibilityStore.ts  # 40+ settings with profiles
+src/styles/accessibility.css      # 580+ lines of a11y CSS
 ```
 
-**Key Features:**
-- WCAG 2.1 AA compliant
-- Screen reader support with ARIA live regions
-- Visual feedback for deaf users
-- Full keyboard navigation
-- High contrast mode support
-- Reduced motion support
+**Key Features (Beyond WCAG 2.1 AAA):**
+- **One-click profiles**: Low Vision, Blind, Deaf, Motor, Cognitive
+- **Dwell Click**: Click by hovering (no mouse button needed)
+- **Reading Guide**: Line highlighter follows cursor
+- **Color Blind Filters**: Protanopia, Deuteranopia, Tritanopia, etc.
+- **Text-to-Speech**: Read content aloud with adjustable rate/pitch
+- **Code-to-Natural-Language**: Translates code to plain English!
+- **OpenDyslexic Font**: Dyslexia-friendly typography
+- **Large Click Targets**: Up to 64px minimum touch areas
+- Full keyboard navigation with `Alt+A` quick access
+- Settings export/import for device portability
 
 ### Component Patterns
 
@@ -195,6 +206,53 @@ interface WalletState {
   balance: string | null;
   isConnected: boolean;
   provider: any | null;
+}
+```
+
+#### i18n Store
+- Manages internationalization (10 languages)
+- Persists language preference
+- Supports RTL (Arabic)
+
+```typescript
+interface I18nState {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: string) => string;  // Translation function
+}
+
+// Supported: en, es, zh, fr, de, ja, ko, pt, ru, ar
+```
+
+#### Accessibility Store
+- 40+ accessibility settings
+- One-click profiles
+- Text-to-speech with code translation
+- Persists all preferences
+
+```typescript
+interface AccessibilitySettings {
+  // Vision
+  highContrast: boolean;
+  textSize: number;  // 100-200%
+  colorBlindMode: 'none' | 'protanopia' | 'deuteranopia' | ...;
+  readingGuide: boolean;
+  dyslexicFont: boolean;
+  
+  // Motor
+  dwellClick: boolean;
+  dwellTime: number;  // ms
+  largeClickTargets: 'normal' | 'large' | 'extra-large';
+  
+  // Cognitive
+  simplifiedUI: boolean;
+  focusMode: boolean;
+  reducedMotion: boolean;
+  
+  // Audio
+  textToSpeech: boolean;
+  speechRate: number;
+  codeToNaturalLanguage: boolean;
 }
 ```
 

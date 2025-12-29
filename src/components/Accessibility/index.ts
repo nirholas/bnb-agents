@@ -55,3 +55,14 @@ export {
   ExecutionLog, 
   ConsoleOutput 
 } from './CodeOutputCaption';
+
+// New comprehensive accessibility system ✨
+export { useAccessibilityStore } from '@/stores/accessibilityStore';
+export type { AccessibilitySettings } from '@/stores/accessibilityStore';
+export { default as AccessibilityPanel } from './AccessibilityPanel';
+export { default as AccessibilityButton } from './AccessibilityButton';
+export { default as ColorBlindFilters } from './ColorBlindFilters';
+export { default as ReadingGuide } from './ReadingGuide';
+export { default as DwellClick } from './DwellClick';
+export { default as SkipLinks } from './SkipLinks';
+export { AnnouncerProvider, useAnnouncer, useAnnouncePageChange } from './Announcer';

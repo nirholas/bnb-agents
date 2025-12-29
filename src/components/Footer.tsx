@@ -7,8 +7,11 @@
 import { Link } from 'react-router-dom';
 import { Github, Twitter, Mail, Heart, Globe2 } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
+import useI18n from '@/stores/i18nStore';
 
 export default function Footer() {
+  const { t } = useI18n();
+  
   return (
     <footer className="bg-gray-900 text-gray-200 pt-12 pb-24 md:pb-8 mt-16" role="contentinfo">
       <div className="container mx-auto px-4">
@@ -21,7 +24,7 @@ export default function Footer() {
               <span className="font-bold text-lg md:text-xl">Lyra Web3 Playground</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Interactive Web3 learning with an in-browser playground, templates, and guided tutorials.
+              {t('hero.description')}
             </p>
             <div className="flex items-center space-x-3 mt-4 text-pink-400">
               <Heart className="w-4 h-4" aria-hidden="true" />
@@ -32,19 +35,19 @@ export default function Footer() {
           <nav aria-label="Product links">
             <h3 className="font-semibold mb-3 text-sm md:text-base">Product</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link to="/sandbox" className="hover:text-white py-1 inline-block">Interactive Sandbox</Link></li>
-              <li><Link to="/playground" className="hover:text-white py-1 inline-block">Templates</Link></li>
-              <li><Link to="/docs" className="hover:text-white py-1 inline-block">Docs</Link></li>
+              <li><Link to="/sandbox" className="hover:text-white py-1 inline-block">{t('nav.sandbox')}</Link></li>
+              <li><Link to="/playground" className="hover:text-white py-1 inline-block">{t('nav.playground')}</Link></li>
+              <li><Link to="/docs" className="hover:text-white py-1 inline-block">{t('nav.docs')}</Link></li>
             </ul>
           </nav>
 
           <nav aria-label="Company links">
             <h3 className="font-semibold mb-3 text-sm md:text-base">Company</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link to="/about" className="hover:text-white py-1 inline-block">About</Link></li>
+              <li><Link to="/about" className="hover:text-white py-1 inline-block">{t('nav.about')}</Link></li>
               <li><Link to="/projects" className="hover:text-white py-1 inline-block">Projects</Link></li>
               <li><Link to="/changelog" className="hover:text-white py-1 inline-block">Changelog</Link></li>
-              <li><Link to="/faq" className="hover:text-white py-1 inline-block">FAQ</Link></li>
+              <li><Link to="/faq" className="hover:text-white py-1 inline-block">{t('nav.faq')}</Link></li>
             </ul>
           </nav>
 
@@ -79,10 +82,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-4 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 text-center md:text-left">
-          <span>© {new Date().getFullYear()} Lyra Web3 Playground. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Lyra Web3 Playground. {t('footer.rights')}.</span>
           <nav aria-label="Legal links" className="space-x-6 mt-3 md:mt-0">
-            <Link to="/privacy" className="hover:text-white py-2 inline-block">Privacy</Link>
-            <Link to="/terms" className="hover:text-white py-2 inline-block">Terms</Link>
+            <Link to="/privacy" className="hover:text-white py-2 inline-block">{t('footer.privacy')}</Link>
+            <Link to="/terms" className="hover:text-white py-2 inline-block">{t('footer.terms')}</Link>
           </nav>
         </div>
       </div>

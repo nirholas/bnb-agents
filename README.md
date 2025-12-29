@@ -10,6 +10,9 @@
 [![Live Demo](https://img.shields.io/badge/demo-lyra.works-blue)](https://lyra.works)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18-61dafb)](https://react.dev/)
+[![Accessibility](https://img.shields.io/badge/a11y-WCAG%202.1%20AAA-purple)](docs/ACCESSIBILITY.md)
+[![i18n](https://img.shields.io/badge/i18n-10%20languages-orange)](docs/ARCHITECTURE.md)
+[![Vercel](https://img.shields.io/badge/Deployed-Vercel-black)](https://lyra.works)
 
 A browser-based interactive platform for learning blockchain development. Write, compile, and deploy Solidity smart contracts directly in your browser — no setup required.
 
@@ -73,15 +76,46 @@ A browser-based interactive platform for learning blockchain development. Write,
 - Keyboard shortcuts for power users
 - Mobile-optimized with bottom navigation
 
-### ♿ Accessibility (NEW!)
-- **WCAG 2.1 Level AA** compliant
-- **Screen reader support**: ARIA live regions announce all actions
-- **Visual feedback**: Toast notifications for deaf/hard-of-hearing users
-- **Keyboard navigation**: Full keyboard support with visible focus indicators
-- **Skip links**: Jump directly to main content
-- **High contrast**: Respects system high-contrast preferences
-- **Reduced motion**: Respects `prefers-reduced-motion` settings
-- See [ACCESSIBILITY.md](docs/ACCESSIBILITY.md) for full documentation
+### ♿ Accessibility - Beyond WCAG 2.1 AAA (NEW!)
+We go far beyond standard accessibility. Our system includes futuristic features that make Web3 truly accessible to everyone:
+
+**Quick Profiles** (one-click presets):
+- 👓 Low Vision • 🦯 Blind • 🦻 Deaf • 🖐️ Motor Impaired • 🧠 Cognitive
+
+**Vision Features**:
+- High contrast mode, large text (up to 200%), custom colors
+- **Color blind filters**: Protanopia, Deuteranopia, Tritanopia, and more
+- **Reading guide**: Horizontal line follows your cursor for easier reading
+- **OpenDyslexic font**: Specially designed for dyslexic readers
+
+**Motor Accessibility**:
+- **Dwell Click**: Click by hovering - no mouse button needed
+- Large click targets (up to 64px), sticky keys simulation
+- Full keyboard navigation with `Alt+A` quick access
+
+**Cognitive Support**:
+- Simplified interface mode, focus mode, reduced animations
+- Extended timeouts, reading speed adjustment
+- Clear, consistent layouts
+
+**Screen Reader & Audio**:
+- ARIA live regions announce all actions
+- **Text-to-Speech**: Read content aloud with adjustable speed/pitch
+- **Code-to-Natural-Language**: Translates code to plain English
+
+**Developer-Friendly**:
+- Draggable floating accessibility button
+- Export/import custom settings
+- Full keyboard shortcut support
+
+See [ACCESSIBILITY.md](docs/ACCESSIBILITY.md) for full documentation
+
+### 🤖 AI-Powered dApp Builder (NEW!)
+- **Natural language** → Full-stack dApp generation
+- Generates **Solidity + HTML + CSS + JavaScript** from prompts
+- **Smart contract templates**: Token, NFT, DAO
+- Interactive tutorial-style editor with step-by-step guidance
+- Deploy directly to testnets
 
 ### 🌐 Community Features (NEW!)
 - **Share Projects**: Publish your work with unique shareable links
@@ -90,6 +124,13 @@ A browser-based interactive platform for learning blockchain development. Write,
 - **Fork Projects**: Build on top of others' code
 - **Wallet Authentication**: Connect wallet to access community features
 - **Embed Code**: Embed shared projects in your own websites
+
+### 🌍 Internationalization (NEW!)
+- **10 languages** supported out of the box
+- English, Spanish, Chinese, French, German, Japanese, Korean, Portuguese, Russian, Arabic
+- **RTL support** for Arabic
+- Language selector in navigation
+- Persisted language preference
 
 ### 📊 Market Data Integration (NEW!)
 - **Live Crypto Prices**: Real-time data from CoinGecko
@@ -110,7 +151,7 @@ A browser-based interactive platform for learning blockchain development. Write,
 ```bash
 # Clone the repository
 git clone https://github.com/nirholas/lyra-web3-playground.git
-cd play
+cd lyra-web3-playground
 
 # Install dependencies
 npm install
@@ -135,6 +176,12 @@ npm run preview
 ```
 ├── src/
 │   ├── components/     # React components
+│   │   ├── Accessibility/    # Comprehensive a11y system
+│   │   │   ├── AccessibilityButton.tsx  # Floating button
+│   │   │   ├── AccessibilityPanel.tsx   # Settings panel
+│   │   │   ├── DwellClick.tsx           # Click-by-hovering
+│   │   │   ├── ReadingGuide.tsx         # Line highlighter
+│   │   │   └── ColorBlindFilters.tsx    # Color blind support
 │   │   ├── CodePlayground/   # Monaco editor & compiler
 │   │   ├── Tutorial/         # Tutorial system
 │   │   ├── Sandbox/          # Premium sandbox IDEs
@@ -143,6 +190,7 @@ npm run preview
 │   │   │   ├── UnifiedSandbox.tsx   # Generic sandbox wrapper
 │   │   │   └── ShareModal.tsx       # Project sharing modal
 │   │   ├── Playground/       # Full-stack dApp playground
+│   │   ├── FullStackPlayground/  # AI dApp builder
 │   │   └── Consolidation/    # Token consolidation
 │   ├── pages/          # Route pages
 │   │   ├── SandboxPage.tsx   # Premium IDE selection
@@ -156,6 +204,13 @@ npm run preview
 │   ├── hooks/          # Custom React hooks
 │   │   └── useMarketData.ts  # Market data hooks
 │   ├── stores/         # Zustand state management
+│   │   ├── accessibilityStore.ts  # 40+ a11y settings
+│   │   ├── i18nStore.ts           # 10 languages + RTL
+│   │   ├── themeStore.ts          # Dark/light mode
+│   │   └── walletStore.ts         # Wallet connection
+│   ├── styles/
+│   │   ├── index.css             # Main styles
+│   │   └── accessibility.css     # 580+ lines a11y CSS
 │   ├── examples/       # Code examples (web3, ai)
 │   └── utils/          # Helper functions
 │       └── contractTemplates.ts  # 40+ contract templates
@@ -174,8 +229,12 @@ npm run preview
 | Styling | TailwindCSS |
 | Editor | Monaco Editor |
 | Web3 | ethers.js v6, viem |
-| State | Zustand |
+| State | Zustand (with persist) |
+| i18n | Custom store (10 languages + RTL) |
+| Accessibility | Custom a11y system (WCAG 2.1 AAA+) |
+| Database | Supabase |
 | Testing | Vitest |
+| Deployment | Vercel, Netlify, Docker |
 
 ---
 
@@ -187,6 +246,7 @@ npm run preview
 - [Backend API](docs/BACKEND_API.md)
 - [Deployment Guide](docs/DEPLOYMENT.md)
 - [Security](docs/SECURITY.md)
+- [Accessibility](docs/ACCESSIBILITY.md)
 
 ---
 

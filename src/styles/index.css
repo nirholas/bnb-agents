@@ -4,6 +4,8 @@
  * 💫 Code is poetry written for machines 📝
  */
 
+@import './accessibility.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

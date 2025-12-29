@@ -15,6 +15,7 @@
  * @repository https://github.com/nirholas/lyra-web3-playground
  */
 
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useThemeStore } from './stores/themeStore';
 import Homepage from './pages/Homepage';
@@ -46,7 +47,19 @@ import MarketsPage from './pages/MarketsPage';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import MobileBottomNav from './components/MobileBottomNav';
-import { SkipLink, LiveAnnouncerProvider, VisualFeedbackProvider } from './components/Accessibility';
+import ConsentModal, { useConsent } from './components/ConsentModal';
+import { 
+  SkipLink, 
+  LiveAnnouncerProvider, 
+  VisualFeedbackProvider,
+  AccessibilityButton,
+  ColorBlindFilters,
+  ReadingGuide,
+  DwellClick,
+  AnnouncerProvider,
+} from './components/Accessibility';
+import { useAccessibilityStore } from './stores/accessibilityStore';
+import '@/styles/accessibility.css';
 
 // Get base path from Vite's configuration
 const basename = import.meta.env.BASE_URL;
@@ -57,9 +70,30 @@ const fullscreenPaths = ['/ide'];
 function AppContent() {
   const { mode } = useThemeStore();
   const location = useLocation();
+  const { hasConsented, acceptTerms } = useConsent();
+  const { applyAccessibilityCSS } = useAccessibilityStore();
+  
+  // Apply accessibility CSS whenever settings change
+  useEffect(() => {
+    applyAccessibilityCSS();
+  }, [applyAccessibilityCSS]);
   
   // Check if current path should be fullscreen (no navbar/footer)
   const isFullscreen = fullscreenPaths.some(path => location.pathname.startsWith(path));
+
+  // Allow Terms and Privacy pages to be viewed without accepting
+  const isLegalPage = location.pathname === '/terms' || location.pathname === '/privacy';
+
+  // Show consent modal if not accepted (except on legal pages)
+  if (!hasConsented && !isLegalPage) {
+    return (
+      <div className={`min-h-screen ${mode === 'dark' ? 'dark' : ''}`}>
+        <div className="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+          <ConsentModal onAccept={acceptTerms} />
+        </div>
+      </div>
+    );
+  }
 
   if (isFullscreen) {
     // Render without navbar and footer
@@ -111,6 +145,12 @@ function AppContent() {
         </main>
         <Footer />
         <MobileBottomNav />
+        
+        {/* Accessibility Features */}
+        <ColorBlindFilters />
+        <ReadingGuide />
+        <DwellClick />
+        <AccessibilityButton />
       </div>
     </div>
   );
@@ -118,13 +158,15 @@ function AppContent() {
 
 function App() {
   return (
-    <LiveAnnouncerProvider>
-      <VisualFeedbackProvider>
-        <Router basename={basename}>
-          <AppContent />
-        </Router>
-      </VisualFeedbackProvider>
-    </LiveAnnouncerProvider>
+    <AnnouncerProvider>
+      <LiveAnnouncerProvider>
+        <VisualFeedbackProvider>
+          <Router basename={basename}>
+            <AppContent />
+          </Router>
+        </VisualFeedbackProvider>
+      </LiveAnnouncerProvider>
+    </AnnouncerProvider>
   );
 }
 

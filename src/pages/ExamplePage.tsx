@@ -14,6 +14,7 @@ import NFTMinterFullStack from '@/examples/web3/NFTMinterFullStack';
 import TokenSwapExample from '@/examples/web3/TokenSwapExample';
 import TokenSwapFullStack from '@/examples/web3/TokenSwapFullStack';
 import AIContractGenerator from '@/examples/ai/AIContractGenerator';
+import AIFullStackBuilder from '@/examples/ai/AIFullStackBuilder';
 import DeFiLendingExample from '@/examples/web3/DeFiLendingExample';
 import YieldFarmingExample from '@/examples/web3/YieldFarmingExample';
 import DAOGovernanceExample from '@/examples/web3/DAOGovernanceExample';
@@ -123,6 +124,29 @@ async function getBalance(address: string, provider: ethers.Provider) {
 // - "Create an NFT collection with 10k max supply"
 // - "Build a staking contract with 10% APY"
 // - "Make a DAO with token-based voting"`,
+  },
+  'ai-fullstack-builder': {
+    component: AIFullStackBuilder,
+    title: 'AI Full-Stack dApp Builder',
+    description: 'Generate complete dApps with smart contracts AND frontend UI using AI',
+    difficulty: 'beginner',
+    tags: ['ai', 'fullstack', 'dapp', 'frontend'],
+    inlineCode: `// AI Full-Stack dApp Builder
+// Generate complete Web3 applications from natural language
+
+// This powerful tool creates:
+// 1. Smart Contract (Solidity)
+// 2. HTML Structure
+// 3. CSS Styling  
+// 4. JavaScript Integration (ethers.js)
+
+// Example prompts:
+// - "Build an NFT minting dApp with a gallery"
+// - "Create a DAO governance interface"
+// - "Make a token dashboard with transfer/burn"
+
+// The generated code is fully editable in the
+// interactive playground with live preview!`,
   },
   'defi-lending': {
     component: DeFiLendingExample,
@@ -337,7 +361,7 @@ export default function ExamplePage() {
   const { exampleId } = useParams<{ exampleId: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
   const viewParam = searchParams.get('view');
-  const viewMode: 'sandbox' | 'tutorial' = viewParam === 'tutorial' ? 'tutorial' : 'sandbox'; // Default to sandbox view
+  const viewMode: 'sandbox' | 'tutorial' = viewParam === 'sandbox' ? 'sandbox' : 'tutorial'; // Default to tutorial view
   
   if (!exampleId) {
     return (

@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import { Example } from '@/types';
 import { cn } from '@/utils/helpers';
+import useI18n from '@/stores/i18nStore';
 
 const examples: Example[] = [
   // Basic Web3 Examples
@@ -217,6 +218,17 @@ const examples: Example[] = [
     icon: Bot,
   },
   {
+    id: 'ai-fullstack-builder',
+    title: 'AI Full-Stack dApp Builder',
+    description: 'Generate complete dApps with smart contracts AND frontend using AI',
+    category: 'hybrid',
+    chain: 'ethereum',
+    difficulty: 'beginner',
+    tags: ['ai', 'fullstack', 'dapp', 'frontend'],
+    component: () => null,
+    icon: Sparkles,
+  },
+  {
     id: 'blockchain-analyzer',
     title: 'Blockchain Data Analyzer',
     description: 'Analyze on-chain data with AI-powered insights',
@@ -241,6 +253,7 @@ const examples: Example[] = [
 ];
 
 export default function Homepage() {
+  const { t } = useI18n();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'web3' | 'ai' | 'hybrid'>('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState<'all' | 'beginner' | 'intermediate' | 'advanced'>('all');
@@ -278,11 +291,10 @@ export default function Homepage() {
             <Zap className="w-12 h-12 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-            Lyra Web3 Playground
+            {t('hero.title')} {t('hero.subtitle')}
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
-            An open-source platform for interactive blockchain development. Explore the playground,
-            use production-ready templates, and follow guided tutorials to learn and build.
+            {t('hero.description')}
           </p>
           
           {/* Stats */}

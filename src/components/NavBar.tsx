@@ -13,10 +13,12 @@ import { truncateAddress } from '@/utils/helpers';
 import WalletConnect from './WalletConnect';
 import LanguageSelector from './LanguageSelector';
 import { useAnnounce } from './Accessibility';
+import useI18n from '@/stores/i18nStore';
 
 export default function NavBar() {
   const { mode, toggleTheme } = useThemeStore();
   const { address, isConnected } = useWalletStore();
+  const { t } = useI18n();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showWalletModal, setShowWalletModal] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -83,7 +85,7 @@ export default function NavBar() {
                 role="menuitem"
               >
                 <BookOpen className="w-4 h-4" aria-hidden="true" />
-                <span>Docs</span>
+                <span>{t('nav.docs')}</span>
               </Link>
 
               <Link
@@ -91,14 +93,14 @@ export default function NavBar() {
                 className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                 role="menuitem"
               >
-                Tutorials
+                {t('nav.tutorials')}
               </Link>
               
               <Link
                 to="/playground"
                 className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
               >
-                Templates
+                {t('nav.playground')}
               </Link>
 
               {/* Innovation features are experimental and currently not exposed */}
@@ -108,7 +110,7 @@ export default function NavBar() {
                 className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-2"
               >
                 <Users className="w-4 h-4" />
-                <span>Community</span>
+                <span>{t('nav.community')}</span>
               </Link>
 
               <Link
@@ -123,7 +125,7 @@ export default function NavBar() {
                 to="/about"
                 className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
               >
-                About
+                {t('nav.about')}
               </Link>
 
               <Link
@@ -140,7 +142,7 @@ export default function NavBar() {
                 role="menuitem"
               >
                 <Sparkles className="w-4 h-4" aria-hidden="true" />
-                <span>Interactive Sandbox</span>
+                <span>{t('nav.sandbox')}</span>
               </Link>
 
               <LanguageSelector compact />

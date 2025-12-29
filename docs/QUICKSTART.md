@@ -27,7 +27,7 @@ npm --version
 ```bash
 # Clone the repository
 git clone https://github.com/nirholas/lyra-web3-playground.git
-cd play
+cd lyra-web3-playground
 
 # Install frontend dependencies
 npm install
