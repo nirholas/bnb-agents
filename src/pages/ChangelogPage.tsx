@@ -15,7 +15,7 @@ interface Release {
   date: string;
   highlights: string[];
   tag: 'major' | 'minor' | 'patch';
-  icon: JSX.Element;
+  icon: React.JSX.Element;
 }
 
 const releases: Release[] = [

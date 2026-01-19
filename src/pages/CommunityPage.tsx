@@ -27,7 +27,7 @@ import {
 interface CommunityChannel {
   name: string;
   description: string;
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   link: string;
   action: string;
   color: string;
@@ -61,7 +61,7 @@ const channels: CommunityChannel[] = [
 ];
 
 interface ContributionWay {
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   title: string;
   description: string;
   link: string;

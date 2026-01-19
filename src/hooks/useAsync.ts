@@ -184,7 +184,7 @@ export function useDebouncedAsync<T, Args extends unknown[] = []>(
   delay: number = 300,
   options: UseAsyncOptions<T> = {}
 ): UseAsyncReturn<T, Args> {
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
   const asyncHook = useAsync(asyncFunction, options);
 
   const debouncedExecute = useCallback(
@@ -228,7 +228,7 @@ export function usePollingAsync<T>(
 ): UseAsyncReturn<T, []> {
   const { enabled = true, ...asyncOptions } = options;
   const asyncHook = useAsync(asyncFunction, asyncOptions);
-  const intervalRef = useRef<ReturnType<typeof setInterval>>();
+  const intervalRef = useRef<ReturnType<typeof setInterval>>(null);
 
   useEffect(() => {
     if (!enabled) {

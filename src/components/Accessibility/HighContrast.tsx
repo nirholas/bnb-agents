@@ -138,7 +138,7 @@ interface ContrastTextProps {
   high?: string;
   /** Base classes that always apply */
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof React.JSX.IntrinsicElements;
 }
 
 export function ContrastText({

@@ -41,7 +41,6 @@ export {
   SiVercel as Vercel,
   SiGithub as Github,
   SiDocker as Docker,
-  SiAmazonwebservices as AWS,
 } from '@icons-pack/react-simple-icons';
 
 // =============================================================================

@@ -97,7 +97,7 @@ interface MotionProps {
   /** Base classes that always apply */
   className?: string;
   /** HTML element to render (default: 'div') */
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof React.JSX.IntrinsicElements;
 }
 
 export function Motion({

@@ -14,7 +14,7 @@ interface ProjectItem {
   title: string;
   description: string;
   status: 'live' | 'building' | 'planned';
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   badges?: string[];
 }
 

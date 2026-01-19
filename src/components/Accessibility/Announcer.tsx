@@ -29,8 +29,8 @@ interface AnnouncerProviderProps {
 export function AnnouncerProvider({ children }: AnnouncerProviderProps) {
   const [politeMessage, setPoliteMessage] = useState('');
   const [assertiveMessage, setAssertiveMessage] = useState('');
-  const politeTimeoutRef = useRef<NodeJS.Timeout>();
-  const assertiveTimeoutRef = useRef<NodeJS.Timeout>();
+  const politeTimeoutRef = useRef<NodeJS.Timeout>(null);
+  const assertiveTimeoutRef = useRef<NodeJS.Timeout>(null);
 
   const announce = (message: string, priority: 'polite' | 'assertive' = 'polite') => {
     if (priority === 'assertive') {

@@ -828,7 +828,7 @@ export default function WebSandbox({
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const editorRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const runTimeoutRef = useRef<NodeJS.Timeout>();
+  const runTimeoutRef = useRef<NodeJS.Timeout>(null);
   
   // ---------------------------------------------------------------------------
   // COMPUTED

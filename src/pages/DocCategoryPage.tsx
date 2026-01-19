@@ -29,7 +29,7 @@ interface DocArticle {
 interface DocCategory {
   id: string;
   title: string;
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   description: string;
   articles: DocArticle[];
 }
