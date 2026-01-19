@@ -100,5 +100,8 @@
     "defi",
     "playground",
     "education"
-  ]
+  ],
+  "engines": {
+    "node": ">=18.0.0 <21.0.0"
+  }
 }
