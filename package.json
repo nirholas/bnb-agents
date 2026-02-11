@@ -32,7 +32,6 @@
         "type-check": "tsc --noEmit"
     },
     "devDependencies": {
-        "eslint": "^1.25.5",
         "@octokit/rest": "^20.1.1",
         "@types/fs-extra": "^11.0.4",
         "@types/lodash-es": "^4.17.12",
