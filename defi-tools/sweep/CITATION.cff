@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use sweep, please cite it as below."
+type: software
+title: "sweep"
+abstract: "Multi-chain dust sweeper that consolidates small token balances into DeFi yield. Supports Ethereum, Base, Arbitrum, Polygon, Solana & more. Gasless transactions via ERC-4337 account abstraction. MEV-protected swaps through CoW Protocol. Route dust to Aave, Yearn, Lido, Beefy & Jito yield vaults."
+authors:
+  - alias: nirholas
+    name: nirholas
+repository-code: "https://github.com/nirholas/sweep"
+url: "https://github.com/nirholas/sweep"
+license: MIT
+version: "1.0.0"
+date-released: "2026-02-11"
+keywords:
+  - open-source
+  - nirholas

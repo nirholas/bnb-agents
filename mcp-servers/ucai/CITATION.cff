@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use UCAI, please cite it as below."
+type: software
+title: "UCAI"
+abstract: "Universal Contract AI Interface (UCAI) 🔗 ABI to MCP | The open standard for connecting AI agents to blockchain. MCP server generator for smart contracts. Claude + Uniswap, Aave, ERC20, NFTs, DeFi. Python CLI, Web3 integration, transaction simulation. Polygon, Arbitrum, Base, Ethereum EVM chains. Claude, GPT, LLM tooling, Solidity, OpenAI."
+authors:
+  - alias: nirholas
+    name: nirholas
+repository-code: "https://github.com/nirholas/UCAI"
+url: "https://github.com/nirholas/UCAI"
+license: MIT
+version: "1.0.0"
+date-released: "2026-02-11"
+keywords:
+  - open-source
+  - nirholas

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use bnbchain-mcp, please cite it as below."
+type: software
+title: "bnbchain-mcp"
+abstract: "Developer tools for AI crypto agents  🛠️ Build apps with DeFi trading, DEX swaps, smart contract deployment, token operations, staking, bridging, wallet automation, honeypot detection, security analysis, price oracles, market data & protocol analytics on BSC and opBNB"
+authors:
+  - alias: nirholas
+    name: nirholas
+repository-code: "https://github.com/nirholas/bnbchain-mcp"
+url: "https://github.com/nirholas/bnbchain-mcp"
+license: MIT
+version: "1.0.0"
+date-released: "2026-02-11"
+keywords:
+  - open-source
+  - nirholas

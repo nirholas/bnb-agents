@@ -39,15 +39,33 @@ test-output
 .husky/prepare-commit-msg
 
 # misc
-# add other ignore file below
 public
 .env
-# extracted archives
-sperax-ai-agents 2/
+.env.*
 
 # macOS
 .DS_Store
 __MACOSX
+
+# Python
+__pycache__
+*.pyc
+.venv
+*.egg-info
+
+# Build artifacts
+dist
+build
+out
+*.wasm
+*.snap
+
+# Large files
+*.mov
+*.mp4
+*.sketch
+vendor/
+archive/
 
 
 

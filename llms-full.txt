@@ -1,15 +1,24 @@
-# defi-agents
+# BNB Chain AI Toolkit
 
-> DeFi agent definitions JSON API + MCP - Production-ready agents for Web3, crypto trading, portfolio management, and blockchain automation. MCP compatible.
+> The most comprehensive open-source AI toolkit for BNB Chain. 72+ AI agents, 6 MCP servers with 600+ tools, market data, DeFi tools, wallet utilities, and Web3 standards.
 
 ## Overview
 
-defi-agents is an open-source project by nirholas. DeFi agent definitions JSON API + MCP - Production-ready agents for Web3, crypto trading, portfolio management, and blockchain automation. MCP compatible.
+BNB Chain AI Toolkit is a unified monorepo that consolidates AI agents, MCP servers, market data pipelines, DeFi tools, wallet utilities, and Web3 standards for the BNB Chain ecosystem. Built by nirholas.
+
+## Components
+
+- 72+ AI agents (30 BNB-specific + 42 general DeFi)
+- 6 MCP servers (BNB Chain, Binance, Universal Crypto, Agenti, UCAI)
+- Market data (CoinGecko, DeFiLlama, 200+ news sources)
+- DeFi tools (dust sweeper, yield optimization)
+- Wallet toolkit (BSC-compatible, offline-capable)
+- Standards (ERC-8004 agent trust, W3AG accessibility)
 
 ## Repository
 
-- URL: https://github.com/nirholas/defi-agents
-- Language: TypeScript
+- URL: https://github.com/nirholas/bnb-agents
+- Languages: TypeScript, Python, Solidity
 - License: MIT
 - Author: nirholas
 

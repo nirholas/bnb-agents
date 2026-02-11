@@ -1,0 +1,18 @@
+# sweep
+
+> Multi-chain dust sweeper that consolidates small token balances into DeFi yield. Supports Ethereum, Base, Arbitrum, Polygon, Solana & more. Gasless transactions via ERC-4337 account abstraction. MEV-protected swaps through CoW Protocol. Route dust to Aave, Yearn, Lido, Beefy & Jito yield vaults.
+
+## Overview
+
+sweep is an open-source project by nirholas. Multi-chain dust sweeper that consolidates small token balances into DeFi yield. Supports Ethereum, Base, Arbitrum, Polygon, Solana & more. Gasless transactions via ERC-4337 account abstraction. MEV-protected swaps through CoW Protocol. Route dust to Aave, Yearn, Lido, Beefy & Jito yield vaults.
+
+## Repository
+
+- URL: https://github.com/nirholas/sweep
+- Language: Solidity
+- License: MIT
+- Author: nirholas
+
+## Contributing
+
+Contributions are welcome. See CONTRIBUTING.md for guidelines.

@@ -1,0 +1,9 @@
+# Binance-MCP
+
+> A Model Context Protocol (MCP) server for Binance.com API. Offers standardized access to spot trading, wallets, staking, simple earn, convert, mining, algo trading, VIP loans, NFTs, pay, copy trading, dual investments, C2C/P2P, fiat ops, and rebates. Built in TypeScript/Node.js. Manages auth, requests, and errors for AI agents/devs.
+
+## Links
+
+- Repository: https://github.com/nirholas/Binance-MCP
+- Author: https://github.com/nirholas
+- Full documentation: https://raw.githubusercontent.com/nirholas/Binance-MCP/main/llms-full.txt

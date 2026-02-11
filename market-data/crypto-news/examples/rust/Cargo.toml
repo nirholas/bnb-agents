@@ -1,0 +1,30 @@
+[package]
+name = "fcn-rust-examples"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+fcn-sdk = { path = "../../sdk/rust" }
+tokio = { version = "1", features = ["full", "time"] }
+futures-util = "0.3"
+
+[[example]]
+name = "basic"
+path = "basic.rs"
+
+[[example]]
+name = "trading"
+path = "trading.rs"
+
+[[example]]
+name = "ai_features"
+path = "ai_features.rs"
+
+[[example]]
+name = "streaming"
+path = "streaming.rs"
+
+[[example]]
+name = "portfolio"
+path = "portfolio.rs"

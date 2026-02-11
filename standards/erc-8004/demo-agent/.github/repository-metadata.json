@@ -1,0 +1,16 @@
+{
+    "name": "erc-8004-demo-agent",
+    "description": "A demo agent to showcase 8004 registration best practices",
+    "version": "1.0.0",
+    "publisher": "nirholas",
+    "repository": "https://github.com/nirholas/erc-8004-demo-agent",
+    "language": "TypeScript",
+    "topics": [
+        "agent",
+        "nirholas",
+        "demo",
+        "open-source",
+        "8004",
+        "erc"
+    ]
+}

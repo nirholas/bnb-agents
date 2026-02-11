@@ -1,180 +1,402 @@
-# BNB Chain AI Agents 🟡
+<p align="center">
+  <img src="https://img.shields.io/badge/BNB%20Chain-F0B90B?style=for-the-badge&logo=binance&logoColor=black" alt="BNB Chain" />
+  <img src="https://img.shields.io/badge/AI%20Agents-00B4D8?style=for-the-badge&logo=openai&logoColor=white" alt="AI Agents" />
+  <img src="https://img.shields.io/badge/MCP-7C3AED?style=for-the-badge&logo=protocol&logoColor=white" alt="MCP" />
+  <img src="https://img.shields.io/badge/DeFi-22C55E?style=for-the-badge&logo=ethereum&logoColor=white" alt="DeFi" />
+</p>
 
-> The world's first comprehensive collection of AI agents purpose-built for the BNB Chain ecosystem — powered by live MCP (Model Context Protocol) servers with 800+ tools.
+<h1 align="center">🔶 BNB Chain AI Toolkit</h1>
 
-[![BNB Chain](https://img.shields.io/badge/BNB%20Chain-F0B90B?style=for-the-badge&logo=binance&logoColor=black)](https://www.bnbchain.org/)
-[![MCP](https://img.shields.io/badge/MCP-Powered-blue?style=for-the-badge)](https://modelcontextprotocol.io/)
-[![Agents](https://img.shields.io/badge/Agents-30-green?style=for-the-badge)](#agents)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+<p align="center">
+  <strong>The most comprehensive open-source AI toolkit for BNB Chain, BSC, opBNB, and the Binance ecosystem</strong>
+</p>
 
-## 🏆 Good Vibes Only: OpenClaw Edition Hackathon
+<p align="center">
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#architecture">Architecture</a> •
+  <a href="#components">Components</a> •
+  <a href="#mcp-servers">MCP Servers</a> •
+  <a href="#ai-agents">AI Agents</a> •
+  <a href="#standards">Standards</a> •
+  <a href="#contributing">Contributing</a>
+</p>
 
-Built for the [BNB Chain Hackathon](https://www.bnbchain.org/en/hackathon) — Track 1: Agent.
-Live at: **[bnb-agents.sperax.click](https://bnb-agents.sperax.click)**
+<p align="center">
+  <img src="https://img.shields.io/github/license/nirholas/bnb-agents?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/badge/agents-72+-blue?style=flat-square" alt="Agents" />
+  <img src="https://img.shields.io/badge/MCP%20servers-6-purple?style=flat-square" alt="MCP Servers" />
+  <img src="https://img.shields.io/badge/tools-600+-green?style=flat-square" alt="Tools" />
+  <img src="https://img.shields.io/badge/chains-60+-orange?style=flat-square" alt="Chains" />
+</p>
+
+---
 
 ## Overview
 
-**30 specialized AI agents** covering every corner of the BNB Chain ecosystem:
+**BNB Chain AI Toolkit** is a unified, modular repository that consolidates everything you need to build AI-powered applications on BNB Chain. It combines **72+ AI agents**, **6 MCP servers** with **600+ tools**, **market data pipelines**, **DeFi tools**, **wallet utilities**, and **Web3 standards** into one cohesive toolkit.
 
-| Category | Count | Coverage |
-|----------|-------|----------|
-| **DeFi** | 10 | PancakeSwap, Venus, Thena, Alpaca, Lista DAO, bridging, aggregation, liquid staking |
-| **Exchange** | 3 | Binance spot, earn, copy trading |
-| **Trading** | 2 | Futures, launchpad analysis |
-| **Analytics** | 3 | BSCScan, whale tracking, news & alpha |
-| **Development** | 2 | BSC developer tools, MEV & gas optimization |
-| **Security** | 2 | Auditing, BEP-20 token analysis |
-| **Ecosystem** | 3 | BNB Chain, opBNB L2, Binance Web3 Wallet |
-| **Storage** | 1 | BNB Greenfield |
-| **Governance** | 1 | Cross-protocol governance |
-| **Gaming** | 1 | Web3 gaming on BSC |
-| **NFT** | 1 | BEP-721/1155 NFTs |
-| **Staking** | 1 | Native + liquid staking comparison |
+Whether you're building autonomous trading bots, DeFi yield optimizers, portfolio managers, or natural-language blockchain interfaces — this toolkit has you covered.
 
-## 🔌 MCP Integration — The Differentiator
+### Why This Toolkit?
 
-Every agent connects to **live MCP servers** via HTTP transport at `https://modelcontextprotocol.name/mcp/{server-name}`:
+| Problem | Solution |
+|---------|----------|
+| Fragmented BNB Chain tooling | **Single monorepo** with everything integrated |
+| No AI-native blockchain interface | **6 MCP servers** giving AI agents direct chain access |
+| Complex DeFi interactions | **72+ specialized agents** for every DeFi protocol |
+| Multi-chain complexity | **60+ chain support** with unified interfaces |
+| Missing accessibility standards | **W3AG + ERC-8004** for inclusive Web3 |
 
-| MCP Server | Tools | What It Does |
-|------------|-------|--------------|
-| **bnbchain-mcp** | 175+ | BSC/opBNB chain queries, DeFi data, contracts, gas, security |
-| **Binance-MCP** | 478+ | Exchange data — prices, orderbooks, klines, trading pairs |
-| **Binance-US-MCP** | 60+ | US-compliant Binance data and tools |
-| **sperax-crypto-mcp** | 85 | Protocol analytics and yield comparison |
-| **free-crypto-news** | 40 | Real-time crypto news (no API key needed!) |
-| **universal-crypto-mcp** | 50+ | Cross-chain data, multi-chain comparison |
-| **XActions** | 12+ | X/Twitter social sentiment analysis |
+---
 
-**Total: 800+ live tools** — no stale data, no hallucinated prices.
+## Quick Start
 
-## Agents
+```bash
+# Clone the toolkit
+git clone https://github.com/nirholas/bnb-agents.git
+cd bnb-agents
 
-### DeFi
-| Agent | Description | MCP Plugins |
-|-------|-------------|-------------|
-| 🥞 PancakeSwap Expert | Swaps, V3 liquidity, farming, CAKE staking | bnbchain, binance, news |
-| ♀️ Venus Protocol Expert | Lending, borrowing, XVS, health factor | bnbchain, binance, news |
-| ⚡ Thena DEX Expert | ve(3,3) liquidity, veTHE voting, bribes | bnbchain, binance, news |
-| 🦙 Alpaca Finance Expert | Leveraged farming, Automated Vaults | bnbchain, binance, news |
-| 🏛️ Lista DAO Expert | slisBNB staking, lisUSD CDPs, veLISTA | bnbchain, binance, sperax, news |
-| 🌉 Cross-Chain Bridge | All BSC bridges compared | bnbchain, universal, binance, news |
-| 🧮 DeFi Aggregator | 50+ protocol yield comparison | bnbchain, binance, sperax, universal, news |
-| 💧 Liquid Staking Optimizer | slisBNB vs BNBx vs ankrBNB | bnbchain, binance, sperax, news |
-| 🌉 Bridge Expert | BSC ↔ opBNB ↔ Ethereum bridging | bnbchain, universal, binance, news |
-| 💰 Staking Advisor | Native + liquid staking comparison | bnbchain, binance, sperax, news |
+# Install dependencies
+bun install
 
-### Exchange & Trading
-| Agent | Description | MCP Plugins |
-|-------|-------------|-------------|
-| 💹 Binance Spot Trader | Spot trading with 478+ live tools | binance, binance-us, news, bnbchain |
-| 📈 Binance Futures Expert | Perpetuals, leverage, funding rates | binance, news, bnbchain |
-| 🏦 Binance Earn Advisor | Simple Earn, BNB Vault, Launchpool | binance, binance-us, news, bnbchain |
-| 👥 Copy Trading | Lead trader analysis and risk management | binance, news |
-| 🎯 Earn Specialist | Deep Earn product analysis | binance, binance-us, news, bnbchain |
-| 🚀 Launchpad Analyst | IEO/Launchpool evaluation | binance, news, bnbchain |
+# Build the agent index
+bun run build
 
-### Analytics & Intelligence
-| Agent | Description | MCP Plugins |
-|-------|-------------|-------------|
-| 🔍 BSCScan Analytics | Transaction analysis, contract verification | bnbchain, binance, news |
-| 🐋 BSC Whale Tracker | Whale movements, smart money flows | bnbchain, binance, news |
-| 📰 News & Alpha | Real-time BNB ecosystem intelligence | news, bnbchain, binance, xactions |
+# Start using MCP servers
+cd mcp-servers/bnbchain-mcp && bun install && bun start
+```
 
-### Development & Security
-| Agent | Description | MCP Plugins |
-|-------|-------------|-------------|
-| 👨‍💻 BSC Developer | Solidity, Hardhat, contracts on BSC | bnbchain, news |
-| ⛽ MEV & Gas Expert | Gas optimization, sandwich protection | bnbchain, binance, news |
-| 🛡️ Security Auditor | Smart contract auditing, GoPlus scans | bnbchain, news |
-| 🪙 BEP-20 Token Analyst | Token security, rug-pull detection | bnbchain, binance, news |
+### Use with Claude Desktop
 
-### Ecosystem
-| Agent | Description | MCP Plugins |
-|-------|-------------|-------------|
-| ⛓️ BNB Chain Expert | The definitive BSC specialist (175+ tools) | all 6 MCP servers |
-| 🚀 opBNB L2 Expert | Layer 2 sub-cent transactions | bnbchain, binance, news |
-| 🌿 BNB Greenfield | Decentralized storage, data marketplace | bnbchain, binance, news |
-| 👛 Binance Web3 Wallet | MPC wallet, DApp browser, airdrops | binance, bnbchain, universal, news |
-| 🗳️ Governance Expert | Cross-protocol governance | bnbchain, binance, news |
-| 🎮 Gaming Expert | Web3 gaming on BSC/opBNB | bnbchain, binance, news |
-| 🖼️ NFT Expert | BEP-721/1155, marketplaces | bnbchain, binance, news |
+Add any MCP server to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "bnbchain": {
+      "command": "npx",
+      "args": ["-y", "@nirholas/bnbchain-mcp"],
+      "env": {
+        "BSC_RPC_URL": "https://bsc-dataseed.binance.org",
+        "PRIVATE_KEY": "your-private-key"
+      }
+    }
+  }
+}
+```
+
+---
 
 ## Architecture
 
 ```
 bnb-agents/
-├── src/                    # 30 agent source definitions
-│   ├── *.json              # Each agent with MCP plugins config
-├── locales/                # Auto-translated to 18 languages
-├── public/                 # Built output (GitHub Pages)
-├── scripts/
-│   ├── builders/           # Build pipeline
-│   ├── formatters/         # Validation + i18n translation
-│   ├── validators/         # Schema validation
-│   └── processors/         # Translation + categorization
-└── .github/workflows/      # CI/CD → GitHub Pages
+├── agents/                          # 72+ AI Agent definitions
+│   ├── bnb-chain-agents/            # 30 BNB Chain-specific agents
+│   │   ├── pancakeswap-trader.json
+│   │   ├── venus-protocol-expert.json
+│   │   ├── bnb-staking-advisor.json
+│   │   └── ... (30 agents)
+│   └── defi-agents/                 # 42 general DeFi agents
+│       ├── src/                     # Agent source definitions
+│       ├── schema/                  # Agent schema validation
+│       └── locales/                 # 18-language support
+│
+├── mcp-servers/                     # 6 Model Context Protocol servers
+│   ├── bnbchain-mcp/                # BNB Chain + EVM MCP (100+ tools)
+│   ├── binance-mcp/                 # Binance.com exchange (478+ tools)
+│   ├── binance-us-mcp/              # Binance.US exchange (US compliance)
+│   ├── universal-crypto-mcp/        # 60+ networks, 100+ tools
+│   ├── agenti/                      # Universal EVM MCP server
+│   └── ucai/                        # ABI-to-MCP generator (Python)
+│
+├── market-data/                     # Real-time market data
+│   ├── crypto-market-data/          # CoinGecko, DeFiLlama, Fear & Greed
+│   └── crypto-news/                 # 200+ sources, 150+ API endpoints
+│
+├── defi-tools/                      # DeFi utilities
+│   └── sweep/                       # Multi-chain dust sweeper + yield
+│
+├── wallets/                         # Wallet tooling
+│   └── ethereum-wallet-toolkit/     # BSC-compatible, offline-capable
+│
+├── standards/                       # Web3 standards & protocols
+│   ├── erc-8004/                    # Agent discovery & trust protocol
+│   │   ├── contracts/               # Solidity smart contracts
+│   │   └── demo-agent/              # Reference implementation
+│   └── w3ag/                        # Web3 Accessibility Guidelines
+│
+├── src/                             # Original agent source JSONs
+├── scripts/                         # Build pipeline & tooling
+├── locales/                         # 30+ language translations
+├── schema/                          # JSON Schema definitions
+└── public/                          # Built index.json output
 ```
 
-### Pipeline
+---
 
-```
-src/*.json → bun run format → bun run build → GitHub Pages
-                  ↓                 ↓
-           Validates schema    Merges src + locales
-           + translates to     → public/ with indexes
-           18 languages via
-           GPT-4.1-nano
-```
+## Components
 
-## Quick Start
+### 🤖 AI Agents (72+)
+
+#### BNB Chain Agents (30)
+
+Purpose-built AI agents for every major BNB Chain protocol and use case:
+
+| Agent | Description |
+|-------|-------------|
+| **PancakeSwap Trader** | DEX trading, liquidity provision, yield farming on PancakeSwap v3 |
+| **Venus Protocol Expert** | Lending, borrowing, and liquidation strategies on Venus |
+| **BNB Staking Advisor** | Liquid staking optimization across BNB validators |
+| **Binance Earn Specialist** | Savings, staking, and launchpool yield optimization |
+| **BSC Bridge Navigator** | Cross-chain bridging between BSC, opBNB, and L2s |
+| **BEP-20 Token Analyst** | Token analysis, security auditing, and smart money tracking |
+| **Binance Copy Trading** | Mirror trading strategies from top performers |
+| **opBNB Scaling Expert** | L2 transaction optimization and gas savings |
+| **Greenfield Storage** | Decentralized storage management on BNB Greenfield |
+| **Thena DEX Expert** | ve(3,3) DEX trading and liquidity on Thena |
+| + 20 more... | Full coverage of BNB Chain ecosystem |
+
+#### General DeFi Agents (42)
+
+Cross-chain DeFi agents with 18-language support:
+
+- **Portfolio Management** — Rebalancing, risk assessment, tax optimization
+- **Yield Optimization** — Auto-compounding, strategy rotation, IL protection
+- **Trading Automation** — Grid trading, DCA, arbitrage, MEV protection
+- **Risk Analysis** — Smart contract auditing, rug pull detection, exposure tracking
+- **Market Intelligence** — Sentiment analysis, whale tracking, on-chain analytics
+
+---
+
+### 🔌 MCP Servers (6)
+
+Model Context Protocol servers that give AI assistants direct blockchain access:
+
+#### 1. BNB Chain MCP (`mcp-servers/bnbchain-mcp/`)
+> **100+ tools** for BNB Chain, BSC, and EVM blockchains
+
+- Token transfers, swaps, and approvals on BSC
+- PancakeSwap DEX integration (swap, add/remove liquidity)
+- Smart contract deployment and interaction
+- Block explorer data and transaction history
+- BNB Greenfield decentralized storage
+- Gas estimation and optimization
+
+#### 2. Binance Exchange MCP (`mcp-servers/binance-mcp/`)
+> **478+ tools** for Binance.com
+
+- Spot, margin, and futures trading
+- Portfolio management and P&L tracking
+- Market data streams and order book analysis
+- Staking, savings, and earn products
+- NFT marketplace integration
+- Sub-account management
+
+#### 3. Binance US MCP (`mcp-servers/binance-us-mcp/`)
+> US regulatory-compliant Binance access
+
+- Spot trading with US compliance
+- Wallet management and withdrawals
+- Staking and OTC trading
+- Sub-account management
+
+#### 4. Universal Crypto MCP (`mcp-servers/universal-crypto-mcp/`)
+> **60+ networks**, **100+ tools**, full DeFi stack
+
+- Multi-chain DEX aggregation
+- Cross-chain bridging and swaps
+- DeFi protocol interactions across chains
+- Automated trading strategies
+- x402 payment protocol support
+
+#### 5. Agenti (`mcp-servers/agenti/`)
+> Universal EVM + Solana MCP server
+
+- All EVM chains: BSC, opBNB, Ethereum, Polygon, Arbitrum, Base, Optimism
+- Solana network support
+- x402-enabled for AI-to-AI payments
+- Smart contract deployment and interaction
+
+#### 6. UCAI (`mcp-servers/ucai/`)
+> **ABI-to-MCP Generator** — Convert any smart contract to an MCP server
 
 ```bash
-git clone https://github.com/nirholas/bnb-agents.git
-cd bnb-agents
+# Convert any contract ABI to an MCP server in one command
+ucai generate --abi ./MyContract.json --chain bsc --output ./my-mcp-server
+```
+
+- Supports any EVM chain including BSC and opBNB
+- Auto-generates tool definitions from contract ABI
+- Works with Claude, ChatGPT, and other LLMs
+- Python-based, pip installable
+
+---
+
+### 📊 Market Data (`market-data/`)
+
+#### Crypto Market Data (`market-data/crypto-market-data/`)
+Zero-dependency TypeScript library for real-time market data:
+
+- **CoinGecko** — Prices, market caps, volume, historical data
+- **DeFiLlama** — TVL, protocol data, yield data
+- **Fear & Greed Index** — Market sentiment tracking
+- Smart caching with configurable TTL
+- Rate limiting with automatic retry
+- Edge Runtime compatible (Cloudflare Workers, Vercel Edge)
+
+#### Crypto News (`market-data/crypto-news/`)
+200+ source aggregator with full API:
+
+- 150+ REST API endpoints
+- Real-time news stream
+- Sentiment analysis per article
+- MCP server included for AI integration
+- CLI, SDK, browser extension, and mobile app
+- 42-language README support
+
+---
+
+### 🧹 DeFi Tools (`defi-tools/`)
+
+#### Dust Sweeper (`defi-tools/sweep/`)
+Consolidate small token balances across 8 chains into DeFi yield:
+
+- Auto-detect dust tokens below $X threshold
+- Batch swap into stablecoins or yield positions
+- Supports BSC, Ethereum, Polygon, Arbitrum, Base, Optimism, Avalanche, Fantom
+- Built with Foundry smart contracts + TypeScript backend
+
+---
+
+### 👛 Wallets (`wallets/`)
+
+#### Ethereum Wallet Toolkit (`wallets/ethereum-wallet-toolkit/`)
+Offline-capable wallet operations, fully BSC compatible:
+
+- HD wallet generation (BIP-39/44)
+- Vanity address generation
+- Message signing (EIP-191, EIP-712)
+- Transaction signing (legacy + EIP-1559)
+- Keystore V3 import/export
+- Multiple specialized MCP servers for each capability
+- Works completely offline for cold storage
+
+---
+
+### 📜 Standards (`standards/`)
+
+#### ERC-8004: Agent Discovery & Trust (`standards/erc-8004/`)
+On-chain protocol for AI agent discovery, reputation, and trust:
+
+- **Smart Contracts** — Deployed on Ethereum mainnet and Sepolia
+- **Demo Agent** — Reference implementation for registration
+- Agent reputation scoring and validation
+- Decentralized agent registry
+
+#### W3AG: Web3 Accessibility Guidelines (`standards/w3ag/`)
+The first open standard for Web3 accessibility:
+
+- Comprehensive guidelines modeled after WCAG
+- React components: `GasEstimator`, `NetworkSwitcher`, `TokenApprovalDialog`
+- Testing checklists and conformance levels
+- Making DeFi accessible to people with disabilities
+
+---
+
+## Supported Networks
+
+| Network | Type | Status |
+|---------|------|--------|
+| **BNB Smart Chain (BSC)** | L1 | ✅ Full support |
+| **opBNB** | L2 | ✅ Full support |
+| **BNB Greenfield** | Storage | ✅ Full support |
+| Ethereum | L1 | ✅ Full support |
+| Polygon | L1 / L2 | ✅ Full support |
+| Arbitrum | L2 | ✅ Full support |
+| Base | L2 | ✅ Full support |
+| Optimism | L2 | ✅ Full support |
+| Avalanche | L1 | ✅ Full support |
+| Solana | L1 | ✅ Full support |
+| + 50 more | Various | ✅ Via Universal MCP |
+
+---
+
+## Tool Summary
+
+| Category | Count | Source |
+|----------|-------|--------|
+| BNB Chain on-chain tools | 100+ | bnbchain-mcp |
+| Binance exchange tools | 478+ | binance-mcp |
+| Cross-chain DeFi tools | 100+ | universal-crypto-mcp |
+| EVM chain tools | 50+ | agenti |
+| ABI-to-MCP generation | Dynamic | ucai |
+| Market data endpoints | 150+ | crypto-news, crypto-market-data |
+| Wallet operations | 20+ | ethereum-wallet-toolkit |
+| **Total** | **900+** | |
+
+---
+
+## Development
+
+```bash
+# Install dependencies
 bun install
-bun run test     # Validate all agents
-bun run build    # Build for deployment
-bun run format   # Format + translate (requires OPENAI_API_KEY)
+
+# Build agent index
+bun run build
+
+# Format agent JSON files
+bun run format
+
+# Lint TypeScript
+bun run lint
+
+# Run tests
+bun run test
+
+# Type checking
+bun run type-check
+
+# Validate i18n translations
+bun run i18n:validate
 ```
 
-## Compatible With
+### Adding a New Agent
 
-- **[SperaxOS](https://sperax.click)** — AI Agent Workspace (primary target)
-- Any platform that consumes the agent JSON schema
+```bash
+# Use the agent template
+cp agents/bnb-chain-agents/agent-template.json agents/bnb-chain-agents/my-new-agent.json
 
-## How Agents Use MCP
-
-Each agent declares a `plugins` array mapping to live MCP servers:
-
-```json
-{
-  "config": {
-    "systemRole": "...MCP TOOLS AVAILABLE:\n- bnbchain-mcp: get_bsc_defi...",
-    "plugins": ["bnbchain-mcp", "binance-mcp", "free-crypto-news"]
-  }
-}
+# Edit the agent definition
+# Then rebuild the index
+bun run build
 ```
 
-## MCP Server Repositories
+---
 
-| Server | Repository |
-|--------|-----------|
-| bnbchain-mcp | [github.com/nirholas/bnbchain-mcp](https://github.com/nirholas/bnbchain-mcp) |
-| Binance-MCP | [github.com/nirholas/Binance-MCP](https://github.com/nirholas/Binance-MCP) |
-| Binance-US-MCP | [github.com/nirholas/Binance-US-MCP](https://github.com/nirholas/Binance-US-MCP) |
-| sperax-crypto-mcp | [github.com/nirholas/sperax-crypto-mcp](https://github.com/nirholas/sperax-crypto-mcp) |
-| free-crypto-news | [github.com/nirholas/free-crypto-news](https://github.com/nirholas/free-crypto-news) |
-| universal-crypto-mcp | [github.com/nirholas/universal-crypto-mcp](https://github.com/nirholas/universal-crypto-mcp) |
-| XActions | [github.com/nirholas/XActions](https://github.com/nirholas/XActions) |
+## Hackathon: BNB Chain Good Vibes Only — OpenClaw Edition
 
-## On-Chain Identity (ERC-8004)
+This toolkit was built for the **BNB Chain "Good Vibes Only: OpenClaw Edition"** hackathon, Track 1: Agent.
 
-Registered on BSC Testnet:
-- **Agent Address**: `0xa010e277E3181FCb597914FBe39cF6d4C59A5F16`
-- **Identity Contract**: `0x8004A818BFB912233c491871b3d84c89A494BD9e`
-- **TX**: [`0xfc55d83d...`](https://testnet.bscscan.com/tx/0xfc55d83d20e6d92ff522f302fd3424d3fd5557f25c06f4bfc38ecf3246dc1962)
+### What Makes This Unique
+
+1. **Comprehensive Coverage** — No other project covers the entire BNB Chain AI stack
+2. **Production-Ready MCP Servers** — 6 servers with 600+ tools, ready for Claude and other AI agents
+3. **Original Standards** — ERC-8004 (agent trust) and W3AG (Web3 accessibility)
+4. **Real DeFi Tooling** — Dust sweeper, market data APIs, wallet toolkit
+5. **72+ Specialized Agents** — Purpose-built for every major BNB protocol
+6. **Multi-Language** — 30+ language translations, 18 agent locales
+
+---
 
 ## License
 
 MIT © [nirholas](https://github.com/nirholas)
+
+---
+
+<p align="center">
+  <strong>Built with 🔶 for BNB Chain</strong>
+</p>
 

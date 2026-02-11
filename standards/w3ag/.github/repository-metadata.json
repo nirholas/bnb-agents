@@ -1,0 +1,13 @@
+{
+    "name": "w3ag",
+    "description": "Web3 Accessibility Guidelines (W3AG) is the first open standard for making blockchain, DeFi, and crypto applications accessible to people with disabilities. Covers wallet UX, transaction signing, address readability, and more.",
+    "version": "1.0.0",
+    "publisher": "nirholas",
+    "repository": "https://github.com/nirholas/w3ag",
+    "language": "TypeScript",
+    "topics": [
+        "nirholas",
+        "w3ag",
+        "open-source"
+    ]
+}

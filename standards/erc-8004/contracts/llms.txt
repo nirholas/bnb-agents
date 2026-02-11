@@ -1,0 +1,9 @@
+# erc-8004-contracts
+
+> Registry contracts curated by the 8004 team
+
+## Links
+
+- Repository: https://github.com/nirholas/erc-8004-contracts
+- Author: https://github.com/nirholas
+- Full documentation: https://raw.githubusercontent.com/nirholas/erc-8004-contracts/main/llms-full.txt

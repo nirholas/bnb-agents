@@ -1,0 +1,16 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "erc-8004-demo-agent",
+    "name_for_model": "erc_8004_demo_agent",
+    "description_for_human": "A demo agent to showcase 8004 registration best practices",
+    "description_for_model": "A demo agent to showcase 8004 registration best practices",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "none"
+    },
+    "logo_url": "https://github.com/nirholas.png",
+    "contact_email": "nirholas@users.noreply.github.com",
+    "legal_info_url": "https://github.com/nirholas/erc-8004-demo-agent/blob/main/LICENSE"
+}

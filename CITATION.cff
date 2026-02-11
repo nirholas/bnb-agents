@@ -1,17 +1,22 @@
 cff-version: 1.2.0
-message: "If you use defi-agents, please cite it as below."
+message: "If you use BNB Chain AI Toolkit, please cite it as below."
 type: software
-title: "defi-agents"
-abstract: "DeFi agent definitions JSON API + MCP - Production-ready agents for Web3, crypto trading, portfolio management, and blockchain automation. MCP compatible."
+title: "BNB Chain AI Toolkit"
+abstract: "The most comprehensive open-source AI toolkit for BNB Chain. 72+ AI agents, 6 MCP servers with 600+ tools, market data, DeFi tools, wallet utilities, and Web3 standards."
 authors:
   - alias: nirholas
     name: nirholas
-repository-code: "https://github.com/nirholas/defi-agents"
-url: "https://github.com/nirholas/defi-agents"
+repository-code: "https://github.com/nirholas/bnb-agents"
+url: "https://github.com/nirholas/bnb-agents"
 license: MIT
-version: "1.0.0"
+version: "2.0.0"
 date-released: "2026-02-11"
 keywords:
+  - bnb-chain
+  - ai-agents
+  - mcp
+  - defi
+  - web3
   - open-source
   - nirholas
 

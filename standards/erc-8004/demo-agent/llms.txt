@@ -1,0 +1,9 @@
+# erc-8004-demo-agent
+
+> A demo agent to showcase 8004 registration best practices
+
+## Links
+
+- Repository: https://github.com/nirholas/erc-8004-demo-agent
+- Author: https://github.com/nirholas
+- Full documentation: https://raw.githubusercontent.com/nirholas/erc-8004-demo-agent/main/llms-full.txt

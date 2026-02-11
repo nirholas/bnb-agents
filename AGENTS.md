@@ -1,10 +1,10 @@
-# defi-agents Development Guidelines
+# BNB Chain AI Toolkit Development Guidelines
 
-> DeFi agent definitions JSON API + MCP - Production-ready agents for Web3, crypto trading, portfolio management, and blockchain automation. MCP compatible.
+> The most comprehensive open-source AI toolkit for BNB Chain. 72+ AI agents, 6 MCP servers with 600+ tools, market data, DeFi tools, wallet utilities, and Web3 standards.
 
 ## Project Overview
 
-defi-agents is built with TypeScript. See the README for full documentation.
+BNB Chain AI Toolkit is a monorepo built with TypeScript, Python, and Solidity. See the README for full documentation.
 
 ### Terminal Management
 

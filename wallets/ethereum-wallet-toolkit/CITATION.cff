@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use ethereum-wallet-toolkit, please cite it as below."
+type: software
+title: "ethereum-wallet-toolkit"
+abstract: "Python toolkit for Ethereum wallets: CLI tools + Model Context Protocol (MCP) servers for wallet generation, BIP39/BIP44 HD wallets, Web3 Secret Storage V3 keystores, and EIP-712 typed data signing"
+authors:
+  - alias: nirholas
+    name: nirholas
+repository-code: "https://github.com/nirholas/ethereum-wallet-toolkit"
+url: "https://github.com/nirholas/ethereum-wallet-toolkit"
+license: MIT
+version: "1.0.0"
+date-released: "2026-02-11"
+keywords:
+  - open-source
+  - nirholas

@@ -1,0 +1,16 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "erc-8004-contracts",
+    "name_for_model": "erc_8004_contracts",
+    "description_for_human": "Registry contracts curated by the 8004 team",
+    "description_for_model": "Registry contracts curated by the 8004 team",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "none"
+    },
+    "logo_url": "https://github.com/nirholas.png",
+    "contact_email": "nirholas@users.noreply.github.com",
+    "legal_info_url": "https://github.com/nirholas/erc-8004-contracts/blob/main/LICENSE"
+}

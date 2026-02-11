@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use erc-8004-contracts, please cite it as below."
+type: software
+title: "erc-8004-contracts"
+abstract: "Registry contracts curated by the 8004 team"
+authors:
+  - alias: nirholas
+    name: nirholas
+repository-code: "https://github.com/nirholas/erc-8004-contracts"
+url: "https://github.com/nirholas/erc-8004-contracts"
+license: MIT
+version: "1.0.0"
+date-released: "2026-02-11"
+keywords:
+  - open-source
+  - nirholas

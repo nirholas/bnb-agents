@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use erc-8004-demo-agent, please cite it as below."
+type: software
+title: "erc-8004-demo-agent"
+abstract: "A demo agent to showcase 8004 registration best practices"
+authors:
+  - alias: nirholas
+    name: nirholas
+repository-code: "https://github.com/nirholas/erc-8004-demo-agent"
+url: "https://github.com/nirholas/erc-8004-demo-agent"
+license: MIT
+version: "1.0.0"
+date-released: "2026-02-11"
+keywords:
+  - open-source
+  - nirholas

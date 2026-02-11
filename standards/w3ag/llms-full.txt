@@ -1,0 +1,18 @@
+# w3ag
+
+> Web3 Accessibility Guidelines (W3AG) is the first open standard for making blockchain, DeFi, and crypto applications accessible to people with disabilities. Covers wallet UX, transaction signing, address readability, and more.
+
+## Overview
+
+w3ag is an open-source project by nirholas. Web3 Accessibility Guidelines (W3AG) is the first open standard for making blockchain, DeFi, and crypto applications accessible to people with disabilities. Covers wallet UX, transaction signing, address readability, and more.
+
+## Repository
+
+- URL: https://github.com/nirholas/w3ag
+- Language: TypeScript
+- License: MIT
+- Author: nirholas
+
+## Contributing
+
+Contributions are welcome. See CONTRIBUTING.md for guidelines.

@@ -1,0 +1,15 @@
+{
+    "name": "erc-8004-contracts",
+    "description": "Registry contracts curated by the 8004 team",
+    "version": "1.0.0",
+    "publisher": "nirholas",
+    "repository": "https://github.com/nirholas/erc-8004-contracts",
+    "language": "TypeScript",
+    "topics": [
+        "contracts",
+        "nirholas",
+        "open-source",
+        "8004",
+        "erc"
+    ]
+}

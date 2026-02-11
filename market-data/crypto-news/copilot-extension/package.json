@@ -1,0 +1,109 @@
+{
+  "name": "crypto-news-copilot",
+  "displayName": "Crypto News for Copilot",
+  "description": "Get real-time crypto news directly in GitHub Copilot Chat",
+  "version": "1.0.0",
+  "publisher": "free-crypto-news",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Chat"
+  ],
+  "keywords": [
+    "crypto",
+    "news",
+    "bitcoin",
+    "ethereum",
+    "copilot",
+    "ai"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "crypto-news.chat",
+        "fullName": "Crypto News",
+        "name": "cryptonews",
+        "description": "Get real-time crypto news and market insights",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "breaking",
+            "description": "Get breaking crypto news"
+          },
+          {
+            "name": "market",
+            "description": "Get market sentiment analysis"
+          },
+          {
+            "name": "prices",
+            "description": "Get current crypto prices"
+          },
+          {
+            "name": "feargreed",
+            "description": "Get Fear & Greed index"
+          },
+          {
+            "name": "whale",
+            "description": "Get whale activity alerts"
+          },
+          {
+            "name": "trending",
+            "description": "Get trending topics"
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "cryptonews.refresh",
+        "title": "Refresh Crypto News",
+        "category": "Crypto News"
+      },
+      {
+        "command": "cryptonews.openDashboard",
+        "title": "Open News Dashboard",
+        "category": "Crypto News"
+      }
+    ],
+    "configuration": {
+      "title": "Crypto News",
+      "properties": {
+        "cryptonews.apiUrl": {
+          "type": "string",
+          "default": "https://cryptocurrency.cv",
+          "description": "API base URL for crypto news"
+        },
+        "cryptonews.defaultLimit": {
+          "type": "number",
+          "default": 5,
+          "description": "Default number of news items to fetch"
+        },
+        "cryptonews.showSentiment": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show sentiment indicators in news"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nirholas/free-crypto-news"
+  },
+  "homepage": "https://cryptocurrency.cv",
+  "icon": "media/icon.png"
+}

@@ -1,0 +1,18 @@
+# erc-8004-demo-agent
+
+> A demo agent to showcase 8004 registration best practices
+
+## Overview
+
+erc-8004-demo-agent is an open-source project by nirholas. A demo agent to showcase 8004 registration best practices
+
+## Repository
+
+- URL: https://github.com/nirholas/erc-8004-demo-agent
+- Language: TypeScript
+- License: MIT
+- Author: nirholas
+
+## Contributing
+
+Contributions are welcome. See CONTRIBUTING.md for guidelines.

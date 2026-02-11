@@ -1,7 +1,7 @@
 {
-    "name": "@nirholas/bnb-agents",
-    "version": "1.0.0",
-    "description": "25+ specialized AI agents for BNB Chain, Binance, opBNB, and Greenfield ecosystems. Supports linting, automated translation, and CI auto-build for seamless plugin discovery via index.json. GitHub Pages compatible.",
+    "name": "@nirholas/bnb-chain-ai-toolkit",
+    "version": "2.0.0",
+    "description": "The most comprehensive open-source AI toolkit for BNB Chain. 72+ AI agents, 6 MCP servers with 600+ tools, market data, DeFi tools, wallet utilities, and Web3 standards — all in one monorepo.",
     "homepage": "https://github.com/nirholas/bnb-agents",
     "repository": {
         "type": "git",

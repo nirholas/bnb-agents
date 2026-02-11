@@ -1,0 +1,18 @@
+# erc-8004-contracts
+
+> Registry contracts curated by the 8004 team
+
+## Overview
+
+erc-8004-contracts is an open-source project by nirholas. Registry contracts curated by the 8004 team
+
+## Repository
+
+- URL: https://github.com/nirholas/erc-8004-contracts
+- Language: TypeScript
+- License: MIT
+- Author: nirholas
+
+## Contributing
+
+Contributions are welcome. See CONTRIBUTING.md for guidelines.
