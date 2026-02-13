@@ -20,6 +20,11 @@ import {
   Sparkles,
   TrendingUp
 } from 'lucide-react';
+import {
+  checkChainCompatibility,
+  estimateDeploymentGas,
+  validateSyntax,
+} from '@/utils/solidityAnalyzer';
 
 interface Chain {
   id: number;
@@ -171,9 +176,26 @@ export default function CrossChainDreamWeaver({
       return;
     }
 
+    // Validate contract syntax before deployment
+    const { valid, errors } = validateSyntax(code);
+    if (!valid) {
+      onLog('error', `Contract validation failed: ${errors.join('; ')}`);
+      return;
+    }
+
+    // Check compatibility with each selected chain
+    for (const chainId of selectedChains) {
+      const compat = checkChainCompatibility(code, chainId);
+      const chain = chainStates.find(c => c.id === chainId);
+      if (compat.warnings.length > 0 && chain) {
+        onLog('warning', `${chain.name}: ${compat.warnings.join('; ')}`);
+      }
+    }
+
     setIsDeploying(true);
     const cost = calculateTotalCost();
-    onLog('info', `🚀 Deploying to ${selectedChains.length} chains... Total cost: $${cost}`);
+    const deployGas = estimateDeploymentGas(code);
+    onLog('info', `🚀 Deploying to ${selectedChains.length} chains... Gas: ${deployGas.toLocaleString()} | Cost: $${cost}`);
 
     // Deploy based on mode
     if (syncMode === 'parallel') {
@@ -276,9 +298,20 @@ export default function CrossChainDreamWeaver({
     for (const chainId of selectedChains) {
       const chain = chainStates.find(c => c.id === chainId);
       if (!chain?.deployed) continue;
-      
-      await new Promise(resolve => setTimeout(resolve, 500));
-      onLog('success', `✓ Verified on ${chain.name}scan`);
+
+      // Check chain compatibility as part of verification
+      const compat = checkChainCompatibility(code, chainId);
+      await new Promise(resolve => setTimeout(resolve, 200));
+
+      if (compat.warnings.length > 0) {
+        onLog('warning', `⚠️ ${chain.name}: ${compat.warnings.join('; ')}`);
+      } else {
+        onLog('success', `✓ Verified on ${chain.name}scan`);
+      }
+
+      if (compat.features.length > 0) {
+        onLog('info', `${chain.name} features: ${compat.features.join(', ')}`);
+      }
     }
   };
 

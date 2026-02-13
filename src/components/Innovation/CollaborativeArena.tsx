@@ -21,6 +21,14 @@ import {
   Star,
   Rocket
 } from 'lucide-react';
+import {
+  detectVulnerabilities,
+  estimateGas,
+  analyzeContract,
+  calculateSecurityScore,
+  parseFunctions,
+  validateChallengeSolution,
+} from '@/utils/solidityAnalyzer';
 
 interface Participant {
   id: string;
@@ -188,37 +196,50 @@ export default function CollaborativeArena({
   };
 
   const aiContribute = (ai: Participant, type: 'copilot' | 'mentor' | 'critic') => {
-    // Context-aware AI contributions based on actual code analysis
-    const getContextualContribution = (): string => {
-      const hasLoop = code.includes('for') || code.includes('while');
-      const hasTransfer = code.includes('.transfer(') || code.includes('.call{value:');
-      const hasMapping = code.includes('mapping');
-      const hasModifier = code.includes('modifier') || code.includes('onlyOwner');
-      const hasEvent = code.includes('emit');
-      const hasRequire = code.includes('require(');
+    // Progressive AI contributions using real code analysis
+    const vulns = detectVulnerabilities(code);
+    const gasOps = estimateGas(code);
+    const info = analyzeContract(code);
+    const funcs = parseFunctions(code);
+    const score = calculateSecurityScore(code);
 
+    const getContextualContribution = (): string => {
       if (type === 'copilot') {
-        if (hasLoop && !code.includes('unchecked')) return '💡 I can optimize this loop — use unchecked{} for the counter increment to save ~60 gas per iteration';
-        if (hasTransfer && !code.includes('ReentrancyGuard')) return '🔧 Let me add ReentrancyGuard to protect against reentrancy on this external call';
-        if (!hasEvent) return '✨ I\'ll add events for key state changes — essential for frontend indexing';
-        if (hasMapping) return '💡 Consider using packed storage for adjacent mapping values to reduce SSTORE costs';
-        return '🔧 Let me add NatSpec documentation for better developer experience';
+        // Progressive: each call analyzes different aspect
+        const topGasOp = gasOps.sort((a, b) => b.savings - a.savings)[0];
+        if (topGasOp && topGasOp.savings > 1000) {
+          return `💡 Biggest gas save: ${topGasOp.operation} — ${topGasOp.recommendations[0]} (saves ~${topGasOp.savings.toLocaleString()} gas)`;
+        }
+        const publicViewFuncs = funcs.filter(f => f.visibility === 'public' && (f.mutability === 'view' || f.mutability === 'pure'));
+        if (publicViewFuncs.length > 0) {
+          return `🔧 ${publicViewFuncs.length} public view function(s) could be external — saves ~22,100 gas each: ${publicViewFuncs.map(f => f.name).join(', ')}`;
+        }
+        if (!code.includes('emit') && info.functionCount > 0) return '✨ Add events for key state changes — essential for frontend indexing';
+        if (info.type.includes('ERC20')) return '💡 Consider adding pause(), burn(), and snapshot() for production ERC20';
+        return `🔧 Contract has ${info.functionCount} functions, complexity ${info.complexity} — looking good!`;
       }
 
       if (type === 'mentor') {
-        if (hasTransfer) return '📚 This pattern should follow Checks-Effects-Interactions: validate → update state → call external';
-        if (hasModifier) return '🎓 Good use of access control! Consider OpenZeppelin AccessControl for role-based permissions';
-        if (hasRequire) return '💭 Custom errors (error InsufficientBalance()) are cheaper than require strings — saves ~50 gas each';
-        if (hasMapping) return '📚 Mappings are O(1) vs arrays O(n) — you\'re using the right data structure here';
-        return '🎓 Every public function costs 22,100 gas for the selector — make view functions external when possible';
+        if (info.complexity > 15) return `🎓 Cyclomatic complexity is ${info.complexity} — consider splitting into library contracts for maintainability`;
+        if (!info.pragmaVersion) return '📚 Always start with a pragma directive: pragma solidity ^0.8.20;';
+        if (info.stateVarCount > 5) return `💭 ${info.stateVarCount} state variables — pack adjacent uint types into single 256-bit slots to save SSTORE costs`;
+        if (funcs.some(f => f.modifiers.length === 0 && f.visibility !== 'private' && f.visibility !== 'internal')) {
+          return '🎓 Some external/public functions lack modifiers — consider access control for sensitive operations';
+        }
+        return `🎓 Security score: ${score}/100 — ${score >= 80 ? 'excellent!' : score >= 50 ? 'room for improvement' : 'needs attention'}`;
       }
 
       // critic
-      if (hasTransfer && !hasRequire) return '⚠️ External call without input validation — add require checks before .call{value:}';
-      if (!hasModifier && code.includes('function')) return '🔒 Missing access control — critical functions should be restricted';
-      if (hasLoop && code.includes('storage')) return '🛡️ Storage reads in a loop are expensive — cache in memory first';
-      if (!code.includes('pragma solidity ^0.8')) return '⚠️ Use Solidity ^0.8.0+ for built-in overflow/underflow protection';
-      return '🛡️ Add input validation: check for zero addresses and reasonable value bounds';
+      if (vulns.length > 0) {
+        const critical = vulns.find(v => v.severity === 'critical');
+        if (critical) return `⚠️ CRITICAL: ${critical.title} — ${critical.fix}`;
+        return `🛡️ Found ${vulns.length} issue(s): ${vulns[0].title} — ${vulns[0].fix}`;
+      }
+      if (score < 60) return `🛡️ Security score ${score}/100 — add ReentrancyGuard, input validation, and access control`;
+      if (!code.includes('require') && !code.includes('revert') && info.functionCount > 0) {
+        return '⚠️ No require/revert statements found — add input validation to all public functions';
+      }
+      return `✅ Security looks solid (${score}/100). No critical vulnerabilities detected.`;
     };
 
     const contribution = getContextualContribution();
@@ -287,24 +308,34 @@ export default function CollaborativeArena({
   const submitSolution = () => {
     if (!challenge) return;
 
-    // Simulate testing
     onLog('info', '🧪 Testing solution...');
-    
+
+    // Deterministic validation using shared analyzer
+    const result = validateChallengeSolution(code, challenge.id);
+
+    // Brief delay for visual feedback
     setTimeout(() => {
-      const success = Math.random() > 0.3; // 70% success rate for demo
-      
-      if (success) {
+      if (result.passed) {
         endChallenge(true);
-        
-        // Award points to all participants
+
+        // Award points scaled by solution quality
+        const earnedPoints = Math.floor(50 * (result.score / 100));
         setParticipants(prev =>
-          prev.map(p => ({ ...p, score: p.score + 50 }))
+          prev.map(p => ({ ...p, score: p.score + earnedPoints }))
         );
+
+        // Show feedback
+        for (const fb of result.feedback.slice(0, 5)) {
+          addMessage('system', fb, 'system');
+        }
       } else {
-        addMessage('system', '❌ Tests failed. Check the hints!', 'system');
-        onLog('error', '❌ Solution doesn\'t pass all test cases');
+        addMessage('system', `❌ Score: ${result.score}/100 — need 50+ to pass`, 'system');
+        for (const fb of result.feedback.filter(f => f.startsWith('❌') || f.startsWith('⚠️')).slice(0, 3)) {
+          addMessage('system', fb, 'hint');
+        }
+        onLog('error', `❌ Solution scored ${result.score}/100. Check the hints!`);
       }
-    }, 1500);
+    }, 200);
   };
 
   const getDifficultyColor = (diff: string) => {

@@ -22,6 +22,14 @@ import {
   Mic,
   MicOff
 } from 'lucide-react';
+import {
+  detectVulnerabilities,
+  estimateGas,
+  analyzeContract,
+  identifyContractType,
+  calculateSecurityScore,
+  parseFunctions,
+} from '@/utils/solidityAnalyzer';
 
 interface AIInsight {
   id: string;
@@ -87,104 +95,128 @@ export default function AICodeWhisperer({
 
   const analyzeCode = async (contractCode: string) => {
     setIsAnalyzing(true);
-    const thinkingPhrase = thinkingPhrases[Math.floor(Math.random() * thinkingPhrases.length)];
-    setAiThinking(thinkingPhrase);
+    // Cycle through thinking phrases based on code hash for determinism
+    const phraseIndex = contractCode.length % thinkingPhrases.length;
+    setAiThinking(thinkingPhrases[phraseIndex]);
 
-    // Simulate advanced AI analysis
-    await new Promise(resolve => setTimeout(resolve, 800));
+    // Brief UI tick to show thinking state
+    await new Promise(resolve => setTimeout(resolve, 100));
 
     const newInsights: AIInsight[] = [];
+    const contractInfo = analyzeContract(contractCode);
+    const vulns = detectVulnerabilities(contractCode);
+    const gasEstimates = estimateGas(contractCode);
+    const secScore = calculateSecurityScore(contractCode);
+    const funcs = parseFunctions(contractCode);
 
-    // 1. Gas Optimization Detection
-    if (contractCode.includes('for') || contractCode.includes('while')) {
-      const gasImpact = Math.floor(Math.random() * 50000) + 10000;
+    // 1. Map real vulnerabilities to AI insights
+    for (const vuln of vulns) {
       newInsights.push({
-        id: `gas-${Date.now()}`,
-        type: 'optimization',
-        severity: gasImpact > 30000 ? 'warning' : 'info',
-        title: '⚡ Gas Optimization Detected',
-        message: `Loop detected. Potential gas savings: ~${gasImpact.toLocaleString()} gas`,
-        confidence: 0.87,
-        gasImpact,
-        fix: 'Consider using mappings or limiting loop iterations'
+        id: vuln.id,
+        type: 'vulnerability',
+        severity: vuln.severity === 'critical' ? 'critical' :
+                  vuln.severity === 'high' ? 'warning' :
+                  vuln.severity === 'medium' ? 'warning' : 'info',
+        title: `🚨 ${vuln.title}`,
+        message: vuln.description,
+        confidence: vuln.confidence,
+        fix: vuln.fix,
+        gasImpact: vuln.gasImpact,
+        line: vuln.line,
       });
     }
 
-    // 2. Reentrancy Detection
-    if (contractCode.includes('.call{value:') || contractCode.includes('.transfer(')) {
-      const hasChecksEffectsInteractions = contractCode.indexOf('require') < contractCode.indexOf('.call');
-      if (!hasChecksEffectsInteractions) {
+    // 2. Map real gas optimizations to insights
+    for (const est of gasEstimates) {
+      if (est.savings > 0) {
         newInsights.push({
-          id: `vuln-${Date.now()}`,
-          type: 'vulnerability',
-          severity: 'critical',
-          title: '🚨 Reentrancy Vulnerability',
-          message: 'External call before state update. Critical reentrancy risk detected!',
-          confidence: 0.94,
-          fix: 'Use ReentrancyGuard or Checks-Effects-Interactions pattern'
+          id: `gas-${est.operation}-${Date.now()}`,
+          type: 'optimization',
+          severity: est.savingsPercent > 25 ? 'warning' : 'info',
+          title: `⚡ ${est.operation} Optimization`,
+          message: `Save ~${est.savings.toLocaleString()} gas (${est.savingsPercent}%) on ${est.operation}.`,
+          confidence: 0.90,
+          gasImpact: est.savings,
+          fix: est.recommendations[0] || undefined,
         });
       }
     }
 
-    // 3. Access Control Analysis
-    if (contractCode.includes('onlyOwner') || contractCode.includes('require(msg.sender')) {
+    // 3. Security pattern recognition
+    if (contractCode.includes('onlyOwner') || contractCode.includes('AccessControl')) {
       newInsights.push({
         id: `security-${Date.now()}`,
         type: 'suggestion',
         severity: 'success',
         title: '✅ Good Security Pattern',
-        message: 'Access control detected. Consider using OpenZeppelin AccessControl for role-based permissions.',
-        confidence: 0.91
+        message: contractCode.includes('AccessControl')
+          ? 'Role-based access control detected — excellent for granular permissions.'
+          : 'Owner-based access control detected. Consider OpenZeppelin AccessControl for role-based permissions.',
+        confidence: 0.91,
       });
     }
 
-    // 4. Integer Overflow/Underflow
-    if (!contractCode.includes('pragma solidity ^0.8') && 
-        (contractCode.includes('uint') && (contractCode.includes('+') || contractCode.includes('-')))) {
+    // 4. Contract type insight
+    const types = contractInfo.type;
+    if (types.length > 0 && types[0] !== 'Custom') {
+      const typeLabel = types.join(', ');
       newInsights.push({
-        id: `overflow-${Date.now()}`,
-        type: 'vulnerability',
-        severity: 'critical',
-        title: '⚠️ Overflow Risk',
-        message: 'Pre-0.8 Solidity without SafeMath. Use Solidity ^0.8.0 or SafeMath library.',
-        confidence: 0.99
-      });
-    }
-
-    // 5. Unchecked Return Values
-    if (contractCode.includes('.call(') && !contractCode.includes('(bool success,')) {
-      newInsights.push({
-        id: `return-${Date.now()}`,
-        type: 'vulnerability',
-        severity: 'warning',
-        title: '❌ Unchecked Return Value',
-        message: 'Low-level call without checking return value. Always verify success.',
-        confidence: 0.89,
-        fix: '(bool success, ) = target.call(...); require(success);'
-      });
-    }
-
-    // 6. Predictive Insights
-    if (contractCode.includes('ERC20') || contractCode.includes('token')) {
-      newInsights.push({
-        id: `predict-${Date.now()}`,
-        type: 'prediction',
-        severity: 'info',
-        title: '🔮 AI Prediction',
-        message: 'Based on similar contracts, users will likely need: pause(), burn(), and snapshot() functions',
-        confidence: 0.76
-      });
-    }
-
-    // 7. Learning Insights
-    if (contractCode.length > 500) {
-      newInsights.push({
-        id: `learn-${Date.now()}`,
+        id: `type-${Date.now()}`,
         type: 'learning',
         severity: 'info',
-        title: '💡 Pattern Recognition',
-        message: 'This contract structure matches 43 successful audited contracts. You\'re on the right track!',
-        confidence: 0.81
+        title: '💡 Contract Pattern Identified',
+        message: `Detected: ${typeLabel}. ${
+          types.includes('ERC20') ? 'Consider adding pause(), burn(), and snapshot() for production.' :
+          types.includes('ERC721') ? 'Consider adding royalties (EIP-2981) and metadata freezing.' :
+          types.includes('DEX') ? 'Ensure flash loan protection and TWAP oracle integration.' :
+          types.includes('Lending') ? 'Validate collateral ratios and liquidation thresholds.' :
+          'Following standard patterns improves auditability.'
+        }`,
+        confidence: 0.85,
+      });
+    }
+
+    // 5. Complexity analysis
+    if (contractInfo.complexity > 15) {
+      newInsights.push({
+        id: `complexity-${Date.now()}`,
+        type: 'suggestion',
+        severity: 'warning',
+        title: '📊 High Complexity',
+        message: `Cyclomatic complexity of ${contractInfo.complexity}. Consider splitting into smaller contracts or libraries.`,
+        confidence: 0.82,
+        fix: 'Extract complex logic into separate library contracts',
+      });
+    }
+
+    // 6. Function visibility suggestions
+    const publicViewFuncs = funcs.filter(f => f.visibility === 'public' && (f.mutability === 'view' || f.mutability === 'pure'));
+    if (publicViewFuncs.length > 0) {
+      newInsights.push({
+        id: `visibility-${Date.now()}`,
+        type: 'optimization',
+        severity: 'info',
+        title: '⚡ Visibility Optimization',
+        message: `${publicViewFuncs.length} public view/pure function(s) could be external — saves ~22,100 gas each when not called internally.`,
+        confidence: 0.88,
+        gasImpact: publicViewFuncs.length * 22_100,
+        fix: 'Change public view → external view for functions not called internally',
+      });
+    }
+
+    // 7. Security score summary
+    if (contractInfo.functionCount > 0) {
+      newInsights.push({
+        id: `score-${Date.now()}`,
+        type: 'prediction',
+        severity: secScore >= 80 ? 'success' : secScore >= 50 ? 'warning' : 'critical',
+        title: `🔮 Security Score: ${secScore}/100`,
+        message: secScore >= 80
+          ? 'Strong security posture. Good use of protective patterns.'
+          : secScore >= 50
+          ? 'Moderate security. Address warnings above before deployment.'
+          : 'Critical security gaps detected. Do not deploy without fixing issues.',
+        confidence: 0.87,
       });
     }
 
@@ -470,7 +502,7 @@ export default function AICodeWhisperer({
             🎯 {insights.length} insights found
           </span>
           <span className="text-gray-600 dark:text-gray-400">
-            ⚡ AI Model: GPT-4 Turbo
+            ⚡ Solidity Static Analyzer
           </span>
         </div>
       </div>
