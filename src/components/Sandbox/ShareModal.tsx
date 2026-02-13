@@ -402,7 +402,7 @@ export default function ShareModal({ isOpen, onClose, projectData, onShare }: Sh
               {/* Social Share */}
               <div className="flex items-center justify-center gap-3">
                 <a
-                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(`Check out my project "${title}" on Lyra Playground!`)}`}
+                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(`Check out my project "${title}" on BNB Chain Playground!`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 bg-[#1DA1F2] text-white rounded-lg hover:opacity-90 transition-opacity"

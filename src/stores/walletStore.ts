@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * LYRA WEB3 PLAYGROUND - Wallet Store
+ * BNB CHAIN AI TOOLKIT - Wallet Store
  * ═══════════════════════════════════════════════════════════════════════════
  * ✨ Author: nich | 🐦 x.com/nichxbt | 🐙 github.com/nirholas
  * Copyright (c) 2024-2026 nirholas (nich) - MIT License

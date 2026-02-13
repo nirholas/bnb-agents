@@ -26,7 +26,7 @@ import { useSEO } from '@/hooks/useSEO';
 export default function ContributePage() {
   useSEO({
     title: 'Contribute',
-    description: 'Join the Lyra open source community. Contribute code, documentation, tutorials, or translations. Every contribution makes a difference.',
+    description: 'Join the BNB Chain AI Toolkit open source community. Contribute code, documentation, tutorials, or translations. Every contribution makes a difference.',
     path: '/contribute'
   });
 
@@ -46,7 +46,7 @@ export default function ContributePage() {
     {
       icon: BookOpen,
       title: 'Documentation',
-      description: 'Help make Lyra more accessible by improving docs, tutorials, and guides.',
+      description: 'Help make BNB Chain AI Toolkit more accessible by improving docs, tutorials, and guides.',
       color: 'green',
       examples: [
         'Write new tutorials for beginners',
@@ -132,7 +132,7 @@ export default function ContributePage() {
             <div className="p-3 bg-white/20 rounded-xl">
               <Heart className="w-8 h-8" />
             </div>
-            <h1 className="text-4xl font-bold">Contribute to Lyra</h1>
+            <h1 className="text-4xl font-bold">Contribute to BNB Chain AI Toolkit</h1>
           </div>
           <p className="text-xl text-white/80 max-w-2xl mb-8">
             BNB Chain AI Toolkit is open source and community-driven. 

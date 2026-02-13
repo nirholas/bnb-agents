@@ -6,7 +6,7 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { MessageCircle, Send, Sparkles, Copy, Check, Trash2 } from 'lucide-react';
-import { generateLyraResponse, getSuggestedPrompts, getWelcomeMessage, ChatMessage } from '@/services/lyraAI';
+import { generateBNBResponse, getSuggestedPrompts, getWelcomeMessage, ChatMessage } from '@/services/bnbAI';
 import { copyToClipboard } from '@/utils/helpers';
 import DOMPurify from 'dompurify';
 
@@ -54,7 +54,7 @@ export default function AIChatAssistant() {
     
     try {
       // Get AI response
-      const response = await generateLyraResponse(content);
+      const response = await generateBNBResponse(content);
       
       // Add AI message
       const aiMsg: ChatMessage = {
@@ -175,7 +175,7 @@ export default function AIChatAssistant() {
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-3 flex items-center justify-center gap-3">
             <span className="text-4xl">🎵</span>
-            Lyra AI Chat Assistant
+            BNB Chain AI Chat Assistant
           </h1>
           <p className="text-gray-400 max-w-lg mx-auto">
             A smart coding assistant built with pattern matching. Ask about Solidity, smart contracts, DeFi, and Web3 development!
@@ -208,7 +208,7 @@ export default function AIChatAssistant() {
                 <MessageCircle className="w-5 h-5" />
               </div>
               <div>
-                <h2 className="font-semibold">Lyra AI</h2>
+                <h2 className="font-semibold">BNB Chain AI</h2>
                 <p className="text-xs text-gray-400">Web3 Coding Assistant</p>
               </div>
             </div>

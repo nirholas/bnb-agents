@@ -155,7 +155,7 @@ async function getBalance(address: string, provider: ethers.Provider) {
     description: 'Smart coding assistant using pattern matching - no API key required!',
     difficulty: 'intermediate',
     tags: ['ai', 'chat', 'assistant', 'free'],
-    inlineCode: `// Lyra AI Chat Assistant
+    inlineCode: `// BNB Chain AI Chat Assistant
 // A smart coding assistant that works without an API key!
 
 // This example demonstrates how to build an AI assistant using:

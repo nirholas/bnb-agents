@@ -90,7 +90,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'lyra-accessibility-settings.json';
+    a.download = 'bnb-toolkit-accessibility-settings.json';
     a.click();
     URL.revokeObjectURL(url);
     speak('Settings exported successfully');

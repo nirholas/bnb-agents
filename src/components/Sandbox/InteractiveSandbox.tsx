@@ -26,7 +26,7 @@ import {
 import { useWalletStore } from '@/stores/walletStore';
 import { useWorkspaceStore } from '@/stores/workspaceStore';
 import { useThemeStore } from '@/stores/themeStore';
-import { LyraCompiler } from '@/services/lyraCompiler';
+import { BNBCompiler } from '@/services/bnbCompiler';
 import { NETWORK_CONFIGS } from '@/utils/networks';
 import { SandboxTemplate } from '@/utils/sandboxTemplates';
 import { ContractTemplate } from '@/utils/contractTemplates';
@@ -42,8 +42,8 @@ import CollaborativeArena from '../Innovation/CollaborativeArena.tsx';
 import NeuralGasOracle from '../Innovation/NeuralGasOracle.tsx';
 import CrossChainDreamWeaver from '../Innovation/CrossChainDreamWeaver.tsx';
 
-// Initialize Lyra Compiler (browser-based)
-const lyraCompiler = new LyraCompiler();
+// Initialize BNB Compiler (browser-based)
+const bnbCompiler = new BNBCompiler();
 
 interface Log {
   id: string;
@@ -113,8 +113,8 @@ export default function InteractiveSandbox() {
         if (ev.origin !== 'null') return;
       }
       
-      const data = ev.data as { __lyra_preview_console?: boolean; type?: string; entries?: string[] };
-      if (data && data.__lyra_preview_console) {
+      const data = ev.data as { __bnb_preview_console?: boolean; type?: string; entries?: string[] };
+      if (data && data.__bnb_preview_console) {
         const time = new Date().toLocaleTimeString();
         const text = (data.entries || []).join(' ');
         const typeMap: Record<string, Log['type']> = { log: 'info', info: 'info', warn: 'warning', error: 'error' };
@@ -131,7 +131,7 @@ export default function InteractiveSandbox() {
     const htmlFile = workspace.files.find(f => f.name.endsWith('.html'))?.content || '<div id="root"></div>';
     const css = workspace.files.filter(f => f.name.endsWith('.css')).map(f => f.content).join('\n');
     const js = workspace.files.filter(f => f.name.endsWith('.js')).map(f => f.content).join('\n');
-    const consoleBridge = `\n<script>;(function(){const origConsole={log:console.log,warn:console.warn,error:console.error,info:console.info};function send(type,args){try{parent.postMessage({__lyra_preview_console:true,type,entries:args.map(a=>String(a))},'*')}catch(e){}}['log','warn','error','info'].forEach(function(m){console[m]=function(){send(m,Array.from(arguments));try{origConsole[m].apply(console,arguments);}catch(e){}}});})();</script>`;
+    const consoleBridge = `\n<script>;(function(){const origConsole={log:console.log,warn:console.warn,error:console.error,info:console.info};function send(type,args){try{parent.postMessage({__bnb_preview_console:true,type,entries:args.map(a=>String(a))},'*')}catch(e){}}['log','warn','error','info'].forEach(function(m){console[m]=function(){send(m,Array.from(arguments));try{origConsole[m].apply(console,arguments);}catch(e){}}});})();</script>`;
     return `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1" /><style>${css}</style></head><body>${htmlFile}${consoleBridge}<script>${js}</script></body></html>`;
   };
 
@@ -163,11 +163,11 @@ export default function InteractiveSandbox() {
     }
 
     setIsCompiling(true);
-    addLog('info', `Compiling ${activeFile.name} with Lyra Compiler (Solidity ${solcVersion})...`);
+    addLog('info', `Compiling ${activeFile.name} with BNB Compiler (Solidity ${solcVersion})...`);
 
     try {
-      // Use browser-based Lyra Compiler
-      const result = await lyraCompiler.compile({
+      // Use browser-based BNB Compiler
+      const result = await bnbCompiler.compile({
         source: activeFile.content,
         filename: activeFile.name,
         version: solcVersion,

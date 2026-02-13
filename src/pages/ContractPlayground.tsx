@@ -27,7 +27,7 @@ import { copyToClipboard } from '@/utils/helpers';
 import { contractTemplates, ContractTemplate, searchTemplates } from '@/utils/contractTemplates';
 import { useWalletStore } from '@/stores/walletStore';
 import { useThemeStore } from '@/stores/themeStore';
-import { LyraCompiler, CompileOutput, CompiledContract } from '@/services/lyraCompiler';
+import { BNBCompiler, CompileOutput, CompiledContract } from '@/services/bnbCompiler';
 
 export default function ContractPlayground() {
   const { address, isConnected, chainId } = useWalletStore();
@@ -56,7 +56,7 @@ export default function ContractPlayground() {
   const [compilerLog, setCompilerLog] = useState<string[]>([]);
   // Multi-file playground for web preview and other file types
   const [files, setFiles] = useState<{name: string; content: string}[]>(() => [
-    { name: 'index.html', content: '<h1>Hello Lyra Playground</h1>\n<button id="btn">Click me</button>' },
+    { name: 'index.html', content: '<h1>Hello BNB Chain Playground</h1>\n<button id="btn">Click me</button>' },
     { name: 'styles.css', content: 'body { font-family: system-ui, sans-serif; padding: 24px; } button { padding:8px 12px; }' },
     { name: 'script.js', content: 'document.getElementById("btn").addEventListener("click", () => console.log("Button clicked"))' },
   ]);
@@ -75,8 +75,8 @@ export default function ContractPlayground() {
   
   const editorRef = useRef<any>(null);
   
-  // Initialize Lyra Compiler with progress callback
-  const compiler = useMemo(() => new LyraCompiler({
+  // Initialize BNB Compiler with progress callback
+  const compiler = useMemo(() => new BNBCompiler({
     onProgress: (msg) => setCompilerLog(prev => [...prev, msg])
   }), []);
 
@@ -160,7 +160,7 @@ export default function ContractPlayground() {
     }
   };
 
-  // Compile Handler - Real compilation with Lyra Compiler
+  // Compile Handler - Real compilation with BNB Compiler
   const handleCompile = async () => {
     if (!code.trim()) {
       setError('No contract code to compile');
@@ -174,7 +174,7 @@ export default function ContractPlayground() {
     setDeploymentStatus('Starting compilation...');
     
     try {
-      // Real compilation using Lyra Compiler
+      // Real compilation using BNB Compiler
       const result = await compiler.compile({
         source: code,
         optimize: true,
@@ -323,7 +323,7 @@ export default function ContractPlayground() {
     const js = files.filter(f => f.name.endsWith('.js')).map(f => f.content).join('\n');
 
     // Inject console bridge to post messages to parent
-    const consoleBridge = `\n<script>;(function(){const origConsole={log:console.log,warn:console.warn,error:console.error,info:console.info};function send(type,args){try{parent.postMessage({__lyra_preview_console:true,type,entries:args.map(a=>String(a))},'*')}catch(e){}}['log','warn','error','info'].forEach(function(m){console[m]=function(){send(m,Array.from(arguments));try{origConsole[m].apply(console,arguments);}catch(e){}}});})();</script>`;
+    const consoleBridge = `\n<script>;(function(){const origConsole={log:console.log,warn:console.warn,error:console.error,info:console.info};function send(type,args){try{parent.postMessage({__bnb_preview_console:true,type,entries:args.map(a=>String(a))},'*')}catch(e){}}['log','warn','error','info'].forEach(function(m){console[m]=function(){send(m,Array.from(arguments));try{origConsole[m].apply(console,arguments);}catch(e){}}});})();</script>`;
 
     return `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1" /><style>${css}</style></head><body>${htmlFile}${consoleBridge}<script>${js}</script></body></html>`;
   };
@@ -345,8 +345,8 @@ export default function ContractPlayground() {
         if (ev.origin !== 'null') return;
       }
       
-      const data = ev.data as { __lyra_preview_console?: boolean; type?: string; entries?: string[] };
-      if (data && data.__lyra_preview_console) {
+      const data = ev.data as { __bnb_preview_console?: boolean; type?: string; entries?: string[] };
+      if (data && data.__bnb_preview_console) {
         const time = new Date().toLocaleTimeString();
         const text = (data.entries || []).join(' ');
         setConsoleLogs(prev => [{ type: data.type || 'log', text, time }, ...prev].slice(0, 200));

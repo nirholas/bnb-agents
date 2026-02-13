@@ -132,7 +132,7 @@ export default function UserButton() {
               )}
               <div className="flex-1 min-w-0">
                 <p className="font-semibold truncate">
-                  {profile?.name || 'Lyra User'}
+                  {profile?.name || 'BNB User'}
                 </p>
                 <p className="text-sm text-gray-500 dark:text-gray-400 truncate">
                   {profile?.email || (profile?.wallet ? truncateAddress(profile.wallet) : 'Anonymous')}

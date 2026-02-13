@@ -42,7 +42,7 @@ interface TemplateSelectorProps {
 }
 
 // LocalStorage key for preferences
-const PREFERENCES_KEY = 'lyra-template-preferences';
+const PREFERENCES_KEY = 'bnb-toolkit-template-preferences';
 
 // Category mapping from existing template categories to new ones
 const CATEGORY_MAP: Record<string, string> = {

@@ -97,7 +97,7 @@ export const BNBBrand = memo<BNBBrandProps>(({
         fontWeight: 700,
         letterSpacing: '-0.02em',
       }}>
-        Lyra
+        BNB Chain
       </span>
     </div>
   );
