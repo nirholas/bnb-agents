@@ -57,7 +57,7 @@ export default function SandboxPage() {
         </Link>
         <div className="ml-4 flex items-center gap-2">
           <Zap className="w-4 h-4 text-primary-500" />
-          <span className="text-sm font-medium text-white">Lyra UDE</span>
+          <span className="text-sm font-medium text-white">BNB Chain UDE</span>
         </div>
       </header>
 

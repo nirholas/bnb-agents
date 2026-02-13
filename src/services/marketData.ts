@@ -5,9 +5,9 @@
  */
 
 /**
- * Lyra Market Data Service
+ * BNB Chain Market Data Service
  * Integrates CoinGecko, DeFiLlama, and other market data APIs
- * from the Lyra MCP framework
+ * from the BNB Chain MCP framework
  */
 
 const COINGECKO_BASE = 'https://api.coingecko.com/api/v3';

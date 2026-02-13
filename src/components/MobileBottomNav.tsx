@@ -40,12 +40,6 @@ export default function MobileBottomNav() {
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
-  const hasMounted = useRef(false);
-
-  // Track initial mount to skip entrance animation
-  useEffect(() => {
-    hasMounted.current = true;
-  }, []);
 
   // Hide on scroll down, show on scroll up
   useEffect(() => {

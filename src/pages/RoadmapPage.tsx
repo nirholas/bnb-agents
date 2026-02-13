@@ -59,7 +59,7 @@ const phases: Phase[] = [
       "Crypto news aggregator with 200+ sources",
       "AI-powered sentiment analysis",
       "Event classification and trend detection",
-      "Lyra Market Data package for developers",
+      "BNB Chain Market Data package for developers",
     ],
   },
   {

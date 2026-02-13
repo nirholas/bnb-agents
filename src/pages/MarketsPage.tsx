@@ -561,7 +561,7 @@ export default function MarketsPage() {
             <h1 className="text-3xl font-bold text-white">Markets</h1>
             <p className="text-gray-400 mt-1">
               Live cryptocurrency and DeFi market data powered by{' '}
-              <span className="text-indigo-400">Lyra MCP</span>
+              <span className="text-indigo-400">BNB Chain MCP</span>
             </p>
           </div>
           <Link
@@ -610,7 +610,7 @@ export default function MarketsPage() {
             </a>
           </p>
           <p className="mt-2">
-            Integrated via <span className="text-purple-400">Lyra MCP Framework</span>
+            Integrated via <span className="text-purple-400">BNB Chain MCP Framework</span>
           </p>
         </div>
       </div>

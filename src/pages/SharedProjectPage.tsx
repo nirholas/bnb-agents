@@ -308,7 +308,7 @@ export default function SharedProjectPage() {
                       <span>Copy Embed Code</span>
                     </button>
                     <a
-                      href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(`Check out "${project.title}" on Lyra Playground!`)}`}
+                      href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(`Check out "${project.title}" on BNB Chain Playground!`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"

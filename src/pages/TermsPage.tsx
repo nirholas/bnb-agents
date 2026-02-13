@@ -86,7 +86,7 @@ DO NOT make financial decisions based on information from this Platform.`
     {
       icon: Scale,
       title: '6. Limitation of Liability',
-      content: `TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, LYRA WEB3 PLAYGROUND, ITS CREATORS, CONTRIBUTORS, AND MAINTAINERS SHALL NOT BE LIABLE FOR:
+      content: `TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, BNB CHAIN AI TOOLKIT, ITS CREATORS, CONTRIBUTORS, AND MAINTAINERS SHALL NOT BE LIABLE FOR:
 
 • Any loss of cryptocurrency, tokens, or digital assets
 • Any loss of profits, revenue, data, or business opportunities
@@ -133,7 +133,7 @@ You are SOLELY RESPONSIBLE for reviewing, testing, and auditing any code before 
 • Code examples and tutorials may be used freely for learning
 • You retain ownership of any original code you create
 • Third-party libraries are subject to their respective licenses
-• The "Lyra" name and branding are property of the project maintainers
+• The "BNB Chain AI Toolkit" name and branding are property of the project maintainers
 • AI-generated code has no guaranteed intellectual property status`
     },
     {

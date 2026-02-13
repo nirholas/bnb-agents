@@ -17,7 +17,7 @@ import {
   GraduationCap
 } from 'lucide-react';
 
-const CONSENT_KEY = 'lyra_terms_accepted';
+const CONSENT_KEY = 'bnb_toolkit_terms_accepted';
 const CONSENT_VERSION = '1.0.0';
 
 export type ConsentTrigger = 'wallet' | 'project' | 'account';
