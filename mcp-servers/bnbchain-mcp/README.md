@@ -277,7 +277,7 @@ npx @nirholas/bnb-chain-mcp@latest --sse
 ### Tool Categories
 
 <details>
-<summary><strong>🔗 Core Blockchain (45+ tools)</strong></summary>
+<summary><strong>🔗 Core Blockchain (60+ tools)</strong></summary>
 
 | Tool | Description |
 |------|-------------|
@@ -293,7 +293,7 @@ npx @nirholas/bnb-chain-mcp@latest --sse
 </details>
 
 <details>
-<summary><strong>💰 Token Operations (30+ tools)</strong></summary>
+<summary><strong>💰 Token Operations (35+ tools)</strong></summary>
 
 | Tool | Description |
 |------|-------------|
@@ -308,7 +308,7 @@ npx @nirholas/bnb-chain-mcp@latest --sse
 </details>
 
 <details>
-<summary><strong>🏦 DeFi (50+ tools)</strong></summary>
+<summary><strong>🏦 DeFi (80+ tools)</strong></summary>
 
 | Tool | Description |
 |------|-------------|
@@ -323,7 +323,7 @@ npx @nirholas/bnb-chain-mcp@latest --sse
 </details>
 
 <details>
-<summary><strong>🔒 Security (15+ tools)</strong></summary>
+<summary><strong>🔒 Security (20+ tools)</strong></summary>
 
 | Tool | Description |
 |------|-------------|
@@ -338,7 +338,7 @@ npx @nirholas/bnb-chain-mcp@latest --sse
 </details>
 
 <details>
-<summary><strong>📊 Market Data (25+ tools)</strong></summary>
+<summary><strong>📊 Market Data (90+ tools)</strong></summary>
 
 | Tool | Description |
 |------|-------------|
@@ -418,23 +418,23 @@ bnb-chain-mcp
 
 ```bash
 # Clone
-git clone https://github.com/nirholas/bnb-chain-mcp
-cd bnb-chain-mcp
+git clone https://github.com/nirholas/bnbchain-mcp
+cd bnbchain-mcp
 
 # Install dependencies
-bun install
+npm install
 
 # Build
-bun run build
+npm run build
 
-# Run dev server (stdio - Claude)
-bun dev
+# Run (stdio - Claude, Cursor)
+npm start
 
-# Run dev server (HTTP - ChatGPT)
-bun dev:http
+# Run (HTTP - ChatGPT Developer Mode)
+npm run start:http
 
-# Run dev server (SSE - legacy)
-bun dev:sse
+# Run (SSE - legacy clients)
+npm run start:sse
 ```
 
 ### Docker
@@ -461,11 +461,14 @@ docker run -p 3001:3001 bnb-chain-mcp --http
 | `PRIVATE_KEY` | Wallet private key for transactions | - | No (read-only without) |
 | `COINGECKO_API_KEY` | CoinGecko Pro API key | - | No |
 | `COINSTATS_API_KEY` | CoinStats API key | - | No |
-| `LUNARCRUSH_API_KEY` | LunarCrush API key | - | No |
-| `CRYPTOPANIC_API_KEY` | CryptoPanic news API key | - | No |
+| `LUNARCRUSH_API_KEY` | LunarCrush social sentiment API key | - | No |
+| `CRYPTOCOMPARE_API_KEY` | CryptoCompare social data API key | - | No |
+| `UNIVERSAL_CRYPTO_API_KEY` | Tatum / Universal Crypto API key | - | No |
+| `ARBITRUM_RPC_URL` | Arbitrum RPC for Sperax module | - | No |
+| `CORS_ORIGINS` | CORS origins for HTTP mode (comma-separated) | `*` | No |
 | `CUSTOM_RPC_<CHAIN_ID>` | Custom RPC for specific chain | - | No |
-| `PORT` | HTTP server port | 3001 | No |
-| `LOG_LEVEL` | Logging level | info | No |
+| `PORT` | HTTP/SSE server port | 3001 | No |
+| `LOG_LEVEL` | Logging level (DEBUG, INFO, WARN, ERROR) | INFO | No |
 
 ### Full Configuration Example
 
@@ -620,27 +623,56 @@ This MCP server integrates with the following APIs:
 
 ```
 src/
-├── index.ts              # Entry point
+├── index.ts              # Entry point (stdio / HTTP / SSE)
+├── evm.ts                # EVM registration (all modules)
 ├── server/
-│   ├── stdio.ts          # stdio transport
-│   ├── http.ts           # HTTP transport
-│   └── sse.ts            # SSE transport
-├── tools/
-│   ├── blockchain/       # Core chain operations
-│   ├── tokens/           # Token operations
-│   ├── defi/             # DeFi protocols
-│   ├── security/         # Security checks
-│   ├── market/           # Market data
-│   └── social/           # Social sentiment
-├── providers/
-│   ├── coingecko.ts      # CoinGecko API
-│   ├── defillama.ts      # DefiLlama API
-│   ├── goplus.ts         # GoPlus Security
-│   └── ...
+│   ├── base.ts           # Server factory & tool registration
+│   ├── stdio.ts          # stdio transport (Claude, Cursor)
+│   ├── http.ts           # Streamable HTTP transport (ChatGPT)
+│   └── sse.ts            # SSE transport (legacy)
+├── evm/                  # Core EVM tools (112 tools)
+│   ├── modules/
+│   │   ├── blocks/       # Block queries
+│   │   ├── bridge/       # Cross-chain bridging
+│   │   ├── contracts/    # Contract interactions
+│   │   ├── deployment/   # Contract deployment & upgrades
+│   │   ├── domains/      # ENS & name resolution
+│   │   ├── events/       # Event log queries
+│   │   ├── gas/          # Gas estimation & EIP-1559
+│   │   ├── governance/   # On-chain governance
+│   │   ├── lending/      # Aave/Compound lending
+│   │   ├── mev/          # MEV protection (Flashbots)
+│   │   ├── multicall/    # Batch calls
+│   │   ├── network/      # Chain info & network status
+│   │   ├── nft/          # ERC-721/1155 NFT ops
+│   │   ├── portfolio/    # Multi-chain portfolio
+│   │   ├── price-feeds/  # Oracle price feeds
+│   │   ├── security/     # GoPlus security checks
+│   │   ├── signatures/   # Message signing & EIP-712
+│   │   ├── staking/      # Liquid staking (Lido)
+│   │   ├── swap/         # DEX aggregator swaps
+│   │   ├── tokens/       # ERC-20 token ops
+│   │   ├── transactions/ # Tx queries & execution
+│   │   └── wallet/       # Wallet management
+│   ├── services/         # Shared viem clients
+│   └── chains.ts         # Chain configurations
+├── modules/              # Data & analytics (174 tools)
+│   ├── defi/             # DefiLlama TVL, yields, fees
+│   ├── dex-analytics/    # GeckoTerminal pools & trades
+│   ├── governance/       # Governance analytics
+│   ├── market-data/      # CoinGecko prices, OHLCV
+│   ├── news/             # Crypto news feeds
+│   ├── social/           # LunarCrush sentiment
+│   └── utils/            # ABI encoding, hashing, signing
+├── gnfd/                 # BNB Greenfield storage (18 tools)
+│   ├── services/         # Bucket, object, group, account
+│   └── tools/            # GNFD MCP tool definitions
+├── sperax/               # Sperax Protocol (72 tools)
+│   ├── tools/            # USDs, SPA, veSPA, xSPA, Demeter
+│   └── blockchain.ts     # Contract ABIs & addresses
 └── utils/
-    ├── chains.ts         # Chain configurations
-    ├── abi.ts            # Common ABIs
-    └── format.ts         # Formatters
+    ├── logger.ts         # Structured logging
+    └── helper.ts         # Response formatters
 ```
 
 ---
@@ -1565,18 +1597,18 @@ We welcome contributions! Here's how to get started:
 
 ```bash
 # Fork and clone
-git clone https://github.com/YOUR_USERNAME/bnb-chain-mcp
-cd bnb-chain-mcp
+git clone https://github.com/YOUR_USERNAME/bnbchain-mcp
+cd bnbchain-mcp
 
 # Install dependencies
-bun install
+npm install
 
 # Create feature branch
 git checkout -b feature/amazing-feature
 
-# Make changes and test
-bun dev
-bun test
+# Build and test
+npm run build
+npm test
 
 # Commit and push
 git commit -m "feat: add amazing feature"

@@ -166,3 +166,18 @@ For the crypto news widget, recommended approach:
 - [x] Add "Open in StackBlitz/CodeSandbox" badges to README
 - [ ] Set up GitHub Pages for live preview (optional)
 - [ ] Add widget preview image to docs/images/
+
+---
+
+## DeFi Tools Implementation — February 2026 ✅ COMPLETED
+
+All TODO items in `defi-tools/sweep/` have been resolved:
+
+| Component | TODOs Resolved | What Was Implemented |
+|-----------|---------------|---------------------|
+| `api/server.ts` | 3 | Sweep quote/execute + consolidation execute endpoints |
+| `queue/workers/sweep.ts` | 2 | Real viem tx execution + on-chain confirmation tracking |
+| `queue/workers/bridge.ts` | 4 | Webhook/email/push notifications + real bridge tx submission |
+| `services/payments/facilitator.ts` | 1 | Dispute refund wired to `processRefund()` |
+| `services/bridge/index.ts` | 1 | Synapse provider registered |
+| `services/bridge/synapse.ts` | — | New file: full Synapse `IBridgeProvider` implementation |

@@ -61,6 +61,11 @@ bnb-chain-toolkit/
 │
 ├── defi-tools/                      # DeFi utilities
 │   └── sweep/                       # Multi-chain dust sweeper
+│       ├── src/api/                 # Hono REST API + x402 payments
+│       ├── src/queue/               # BullMQ workers (sweep, bridge)
+│       ├── src/services/bridge/     # 6-provider bridge aggregator
+│       ├── src/services/payments/   # x402 facilitator + disputes
+│       └── src/config/              # Chain + token configuration
 │
 ├── wallets/                         # Wallet tooling
 │   └── ethereum-wallet-toolkit/     # Offline wallet operations
@@ -206,6 +211,47 @@ Each component is **independent** — you can use MCP servers without agents, ma
 4. **Offline Capable** — Wallet operations and agent definitions work without internet
 5. **Multi-Language** — 30+ translations for global accessibility
 6. **AI-First** — Every component is designed for AI assistant consumption
+
+---
+
+## Sweep Subsystem Architecture
+
+```
+┌──────────────────────────────────────────────────────┐
+│                   Hono API Server                     │
+│   /wallet  /price  /sweep  /consolidate  /bridge     │
+│              │ x402 Payment Middleware │               │
+└──────┬───────┴───────────┬────────────┴──────────────┘
+       │                   │
+       ▼                   ▼
+┌──────────────┐   ┌──────────────────┐
+│   Redis      │   │   BullMQ Queues   │
+│   Cache +    │   │   sweep-execute   │
+│   Rate Limit │   │   sweep-track     │
+│              │   │   bridge-execute  │
+│              │   │   bridge-track    │
+└──────────────┘   └────────┬─────────┘
+                            │
+                   ┌────────┴─────────┐
+                   │  Bridge Aggregator │
+                   │  6 Providers:      │
+                   │  Across, Stargate, │
+                   │  Hop, cBridge,     │
+                   │  Socket, Synapse   │
+                   └────────┬──────────┘
+                            │
+                   ┌────────┴─────────┐
+                   │   viem Clients    │
+                   │   (per chain)     │
+                   └────────┬──────────┘
+                            │
+                   ┌────────┴─────────┐
+                   │  EVM Chains (8+)  │
+                   │  BSC, ETH, ARB,   │
+                   │  OP, POLY, BASE,  │
+                   │  AVAX, FTM        │
+                   └───────────────────┘
+```
 
 ---
 

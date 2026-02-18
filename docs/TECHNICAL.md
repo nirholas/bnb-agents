@@ -119,7 +119,18 @@ Each server implements the [Model Context Protocol](https://modelcontextprotocol
 
 #### DeFi Tools (`defi-tools/sweep/`)
 
-Multi-chain dust sweeper that consolidates small token balances into a single asset. Supports BSC, Ethereum, Polygon, and more.
+Multi-chain dust sweeper that consolidates small token balances into a single asset. Supports BSC, Ethereum, Polygon, Arbitrum, Base, Optimism, Avalanche, and Fantom.
+
+**Key subsystems:**
+
+| Subsystem | Location | Description |
+|-----------|----------|-------------|
+| API Server | `src/api/` | Hono REST API with x402 micropayment middleware |
+| Queue Workers | `src/queue/workers/` | BullMQ workers for sweep + bridge execution & tracking |
+| Bridge Aggregator | `src/services/bridge/` | 6 providers: Across, Stargate, Hop, cBridge, Socket, Synapse |
+| Payment Facilitator | `src/services/payments/` | x402 USDC settlement, dispute resolution, automated refunds |
+| Price Service | `src/services/price.service.ts` | Multi-source validated pricing |
+| Consolidation Engine | `src/services/consolidation/` | Multi-chain sweep planning + execution |
 
 #### Wallets (`wallets/`)
 

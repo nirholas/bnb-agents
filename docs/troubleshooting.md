@@ -218,3 +218,60 @@ const client = new CoinGecko({ cacheTtl: 60_000 }); // Cache for 60 seconds
    - Steps to reproduce
    - Your Node.js version (`node --version`)
    - Your OS
+
+---
+
+## Security Configuration
+
+### CORS errors in production
+
+**Cause:** Servers restrict cross-origin requests by default. Wildcard (`*`) origins are only allowed in development mode.
+
+**Fix:** Set allowed origins via environment variables:
+```bash
+# MCP servers, Agent Runtime, Search Service
+export CORS_ORIGINS="https://your-app.example.com,https://admin.example.com"
+
+# Translate API (single origin)
+export CORS_ORIGIN="https://your-app.example.com"
+```
+
+### Rate limiter blocking legitimate requests
+
+**Cause:** When behind a reverse proxy or load balancer, all requests may appear to come from the same IP.
+
+**Fix:**
+```bash
+# Enable X-Forwarded-For trust
+export TRUST_PROXY=true
+```
+
+### Redis "NOAUTH" errors in Docker
+
+**Cause:** Redis is configured to require authentication.
+
+**Fix:** Set the Redis password in your environment:
+```bash
+export REDIS_PASSWORD=your-secure-password
+```
+
+### WebSocket connection rejected (code 1013)
+
+**Cause:** Server reached the maximum WebSocket connection limit (default: 1,000).
+
+**Fix:**
+```bash
+# Increase limit if needed
+export MAX_WS_CONNECTIONS=2000
+```
+
+### Stack traces not showing in development
+
+**Cause:** Stack traces are opt-in for security.
+
+**Fix:**
+```bash
+export SHOW_STACK_TRACES=true
+```
+
+See [SECURITY.md](../SECURITY.md) for the full environment variables reference.

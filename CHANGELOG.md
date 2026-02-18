@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.2.0] - 2026-02-18
+
+### Added
+
+#### DeFi Tools — Sweep Subsystem Completion
+
+- **Sweep API endpoints** — Implemented `/api/sweep/quote`, `/api/sweep/execute`, `/api/consolidate/execute` with x402 payment gates, input validation, BullMQ job queuing, and Redis caching
+- **Sweep execution worker** — Real on-chain execution via viem: ERC-20 approvals, transaction submission, per-chain wallet clients
+- **Transaction tracking worker** — On-chain confirmation monitoring via `getTransactionReceipt()` with automatic retry and timeout handling
+- **Bridge execution worker** — Real cross-chain bridge transaction submission using aggregator-built calldata, replacing mock implementations
+- **Bridge notification system** — Webhook dispatch (POST to user-configured URLs), email notifications (configurable SMTP/API), push notifications (Firebase/OneSignal) for bridge lifecycle events
+- **Synapse Protocol bridge provider** — Full `IBridgeProvider` implementation: quote via Synapse REST API, transaction building via SynapseRouter ABI, status tracking via bridge explorer API. Supports ETH, ARB, OP, BASE, POLY, BSC, AVAX
+- **Payment dispute refunds** — Wired `processRefund()` into `resolveDispute()` with automatic USDC transfer on Base when disputes are approved
+
+### Changed
+
+- **Bridge aggregator** — Added Synapse to default enabled providers (now 6 total: Across, Stargate, Hop, cBridge, Socket, Synapse)
+- **Documentation** — Updated `docs/defi-tools.md` with API endpoints, bridge providers, queue workers, payment facilitator, and environment variables; updated `docs/architecture.md` with sweep subsystem diagram; updated `docs/TECHNICAL.md` with subsystem table
+
+---
+
 ## [2.1.0] - 2026-02-18
 
 ### Added
@@ -152,6 +173,8 @@ Consolidated 14 independent repositories into one comprehensive AI toolkit for B
 
 ---
 
+[2.2.0]: https://github.com/nirholas/bnb-chain-toolkit/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/nirholas/bnb-chain-toolkit/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/nirholas/bnb-chain-toolkit/compare/v1.0.0...v2.0.0
 [1.1.0]: https://github.com/nirholas/bnb-chain-toolkit/releases/tag/v1.1.0
 [1.0.0]: https://github.com/nirholas/bnb-chain-toolkit/releases/tag/v1.0.0
