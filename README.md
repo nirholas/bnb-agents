@@ -26,7 +26,6 @@
 <a href="https://github.com/nirholas/bnb-chain-toolkit/issues"><img src="https://img.shields.io/github/issues/nirholas/bnb-chain-toolkit?style=for-the-badge&labelColor=000" alt="Issues" /></a>
 <a href="https://github.com/nirholas/bnb-chain-toolkit"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge&labelColor=000" alt="PRs Welcome" /></a>
 <a href="https://bnb-chain-toolkit.vercel.app/"><img src="https://img.shields.io/badge/demo-live-00C853?style=for-the-badge&logo=vercel&labelColor=000" alt="Live Demo" /></a>
-<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnirholas%2Fbnb-chain-toolkit&project-name=bnb-chain-toolkit&repository-name=bnb-chain-toolkit"><img src="https://vercel.com/button" alt="Deploy with Vercel" /></a>
 
 <br>
 
@@ -35,6 +34,10 @@
 <img src="https://img.shields.io/badge/tools-1,100+-00B4D8?style=for-the-badge&labelColor=000" alt="Tools" />
 <img src="https://img.shields.io/badge/chains-60+-22C55E?style=for-the-badge&labelColor=000" alt="Chains" />
 <img src="https://img.shields.io/badge/languages-30+-FF6B6B?style=for-the-badge&labelColor=000" alt="Languages" />
+
+<br>
+
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnirholas%2Fbnb-chain-toolkit&project-name=bnb-chain-toolkit&repository-name=bnb-chain-toolkit"><img src="https://vercel.com/button" alt="Deploy with Vercel" /></a>
 
 <br><br>
 

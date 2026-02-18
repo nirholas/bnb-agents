@@ -87,7 +87,7 @@ export default function InteractiveSandbox() {
   
   const [isCompiling, setIsCompiling] = useState(false);
   const [isDeploying, setIsDeploying] = useState(false);
-  const [compiledData, setCompiledData] = useState<{ bytecode: string; abi: Record<string, unknown>[]; name: string; allContracts: unknown[] } | null>(null);
+  const [compiledData, setCompiledData] = useState<{ bytecode: string; abi: AbiItem[]; name: string; allContracts: unknown[] } | null>(null);
   const [deployedContract, setDeployedContract] = useState<DeployedContract | null>(null);
   const [logs, setLogs] = useState<Log[]>([]);
   const [solcVersion, setSolcVersion] = useState('0.8.20');
