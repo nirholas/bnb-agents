@@ -718,14 +718,18 @@ export default function Homepage() {
                                     <div className="ml-4 text-neutral-500">
                                         <div>├── bnbchain-mcp/ <span className="text-neutral-600"># BSC + opBNB (100+ tools)</span></div>
                                         <div>├── binance-mcp/ <span className="text-neutral-600"># Binance.com (478+ tools)</span></div>
+                                        <div>├── binance-us-mcp/ <span className="text-neutral-600"># Binance.US exchange</span></div>
                                         <div>├── universal-crypto-mcp/ <span className="text-neutral-600"># 60+ networks</span></div>
                                         <div>├── agenti/ <span className="text-neutral-600"># EVM + Solana</span></div>
                                         <div>└── ucai/ <span className="text-neutral-600"># ABI-to-MCP generator</span></div>
                                     </div>
+                                    <div><span className="text-blue-400">├── erc8004-agents/</span><span className="text-neutral-600 ml-4"># ERC-8004 agent creator + SDKs</span></div>
+                                    <div><span className="text-blue-400">├── agent-runtime/</span><span className="text-neutral-600 ml-4"># Agent runtime (A2A + x402)</span></div>
                                     <div><span className="text-blue-400">├── market-data/</span><span className="text-neutral-600 ml-4"># Market data &amp; news</span></div>
                                     <div><span className="text-blue-400">├── defi-tools/</span><span className="text-neutral-600 ml-4"># DeFi utilities</span></div>
                                     <div><span className="text-blue-400">├── wallets/</span><span className="text-neutral-600 ml-4"># Wallet tooling</span></div>
                                     <div><span className="text-blue-400">├── standards/</span><span className="text-neutral-600 ml-4"># ERC-8004 + W3AG</span></div>
+                                    <div><span className="text-blue-400">├── examples/</span><span className="text-neutral-600 ml-4"># Runnable example scripts</span></div>
                                     <div><span className="text-blue-400">└── docs/</span><span className="text-neutral-600 ml-4"># Documentation</span></div>
                                 </div>
                             </div>

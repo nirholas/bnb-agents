@@ -1,17 +1,60 @@
 # MCP Servers Guide
 
-How to set up and use the 6 Model Context Protocol servers in this toolkit.
+How to set up and use the 6 Model Context Protocol servers — the core technology that connects AI to blockchains.
+
+> **New to MCP?** Don't worry — this guide explains everything from scratch. Also see the [Glossary](GLOSSARY.md) for term definitions.
 
 ---
 
 ## What Is MCP?
 
-**Model Context Protocol (MCP)** is an open standard that lets AI assistants connect to external tools and data sources. Think of it like USB for AI — a universal way to plug in new capabilities.
+**Model Context Protocol (MCP)** is an open standard (created by Anthropic) that lets AI assistants connect to external tools and data sources.
 
-When you connect an MCP server to Claude, ChatGPT, or another AI:
-- The AI can **read** blockchain data (balances, prices, transactions)
-- The AI can **write** to blockchains (send tokens, swap, deploy contracts)
-- The AI can **query** exchanges (order books, trading history, portfolio)
+**The simplest way to understand MCP:** Without MCP, AI can only *talk about* crypto. With MCP, AI can *interact with* crypto.
+
+| Without MCP | With MCP |
+|------------|---------|
+| "BNB is probably around $600" | "BNB is exactly $623.47 right now" |
+| "You could try swapping on PancakeSwap" | *Actually executes the swap for you* |
+| "I can't check your wallet" | "Your wallet has 1.5 BNB and 4 tokens" |
+
+Think of MCP like **USB for AI** — a universal way to plug in new capabilities. Each MCP server exposes "tools" (individual actions the AI can call), and any MCP-compatible AI client can use them.
+
+### How MCP Works (Simplified)
+
+```
+ You ask Claude a question
+        │
+        ▼
+ Claude recognizes it needs real data
+        │
+        ▼
+ Claude calls an MCP tool (e.g., "get_balance")
+        │
+        ▼
+ The MCP server handles the request
+   (talks to the blockchain, exchange, or API)
+        │
+        ▼
+ Server returns the data to Claude
+        │
+        ▼
+ Claude uses the data to answer you in plain English
+```
+
+This all happens in about 1-2 seconds, completely automatically.
+
+### Which AI Assistants Support MCP?
+
+| Assistant | MCP Support | Notes |
+|-----------|:-----------:|-------|
+| Claude Desktop | ✅ | First-class support |
+| Claude Code | ✅ | CLI-based |
+| GitHub Copilot | ✅ | Via extensions |
+| Cursor | ✅ | Built-in |
+| Windsurf | ✅ | Built-in |
+| ChatGPT | ❌ | Not yet — use as API with wrapper |
+| Any MCP client | ✅ | The protocol is open standard |
 
 ---
 
@@ -26,11 +69,16 @@ cd mcp-servers/<server-name>
 # 2. Install dependencies
 bun install    # or npm install
 
-# 3. Start the server
+# 3. Build (if needed)
+bun run build  # or npm run build
+
+# 4. Start the server
 bun start      # or npm start
 ```
 
-Then add it to your AI assistant's config.
+Then add it to your AI assistant's config (details for each server below).
+
+> **Which server should I start with?** If you're on BNB Chain, start with **BNB Chain MCP** (#1 below). If you trade on Binance.com, start with **Binance MCP** (#2). If you work across many chains, try **Universal Crypto MCP** (#4).
 
 ---
 

@@ -1,19 +1,52 @@
 # AI Agents Guide
 
-Everything you need to know about the 78 AI agents in this toolkit.
+Everything you need to know about the 78 AI agents — what they are, how to use them, and how to create your own.
+
+> **New here?** An AI agent is just a set of instructions (a "personality") that makes a general-purpose AI act like a domain expert. No coding required to use them. See the [Glossary](GLOSSARY.md) for term definitions.
 
 ---
 
 ## What Are AI Agents?
 
-AI agents are pre-configured personality definitions for AI assistants. Each agent has:
+AI agents are pre-configured personality definitions for AI assistants. Each agent is a JSON file that contains:
 
 - **A specific role** — What it specializes in (trading, analysis, staking, etc.)
-- **System prompt** — Instructions that shape how the AI behaves
-- **Tool access** — Which MCP tools it can use
+- **System prompt** — Instructions that shape how the AI behaves and what it knows
+- **Tool access** — Which MCP tools it can use for real-time data
 - **Knowledge** — Domain-specific context and expertise
+- **Opening questions** — Suggested first questions to ask the agent
 
-You load an agent into your AI assistant, and it becomes a specialist in that domain.
+You load an agent into your AI assistant (Claude, ChatGPT, etc.), and it becomes a specialist in that domain.
+
+**Analogy:** Loading an agent is like handing an expert a role card before a conversation. The expert (your AI) reads the card and acts accordingly — bringing the right knowledge, using the right tools, and giving domain-specific answers.
+
+### What Agents Can NOT Do
+
+- Agents don't *run* code — they're inert JSON text
+- Agents don't access your wallet or keys — they need an MCP server for that
+- Agents aren't magic — they improve AI accuracy in their domain but don't guarantee correct answers
+- Agents don't learn between sessions — each conversation starts fresh
+
+---
+
+## Find the Right Agent for Your Task
+
+Not sure which agent to use? Start with your goal:
+
+| I Want To... | Best Agent(s) | Category |
+|-------------|---------------|----------|
+| Trade tokens on PancakeSwap | PancakeSwap Trader | BNB Chain |
+| Earn interest on my crypto | Venus Protocol Expert, Binance Earn Specialist | BNB Chain |
+| Stake BNB for rewards | BNB Staking Advisor, BNB Liquid Staking | BNB Chain |
+| Check if a token is safe | BSC Smart Contract Auditor, BEP-20 Token Analyst | Security |
+| Track whale wallets | BSC Whale Tracker | Intelligence |
+| Bridge tokens between chains | BNB Bridge Expert, BNB Cross-Chain Bridge | Infrastructure |
+| Trade futures on Binance | Binance Futures Expert | Trading |
+| Manage a portfolio | BSC Portfolio Tracker | Portfolio |
+| Get BNB Chain news and alpha | BNB Chain News Alpha | Intelligence |
+| Build smart contracts on BSC | BSC Developer | Development |
+| Optimize yields across DeFi | DeFi agents — Yield Optimization | DeFi |
+| Set up a grid trading bot | DeFi agents — Trading Automation | DeFi |
 
 ---
 
@@ -82,12 +115,31 @@ Cross-chain agents that work on any supported network. Located in `agents/defi-a
 
 ## How to Use an Agent
 
-### Option 1: With Claude Desktop (Recommended)
+There are three ways to use agents, from simplest to most technical.
 
-1. Choose an agent from the list above
-2. Open the agent's JSON file (e.g., `agents/bnb-chain-agents/pancakeswap-trader.json`)
-3. Copy the `systemRole` field
-4. Paste it into Claude's custom instructions or a "Project" prompt
+### Option 1: With Claude Desktop (Recommended for Beginners)
+
+This is the easiest approach. No coding needed.
+
+1. **Choose an agent** from the lists above
+2. **Find the agent file** — e.g., `agents/bnb-chain-agents/pancakeswap-trader.json`
+3. **Open the file** and copy the `systemRole` field (the long text string)
+4. **In Claude Desktop**, create a new Project → click "Instructions" → paste the text
+5. **Start chatting** — Claude now behaves like that agent
+
+**What a conversation looks like with the PancakeSwap Trader agent loaded:**
+
+> **You:** I want to swap 0.5 BNB for CAKE. What's the best route?
+>
+> **Claude (as PancakeSwap Trader):** Let me check the current rates on PancakeSwap v3.
+>
+> Based on current pricing:
+> - **Direct route:** 0.5 BNB → ~12.3 CAKE (via BNB/CAKE pool)
+> - **Split route:** 0.5 BNB → USDT → CAKE gives ~12.1 CAKE (slightly worse due to two swaps)
+>
+> I recommend the direct route. The BNB/CAKE v3 pool has $45M TVL and tight spreads. With 0.5% slippage tolerance, your minimum output would be ~12.24 CAKE.
+>
+> Want me to execute the swap?
 
 ### Option 2: With Any AI Platform
 
@@ -248,8 +300,27 @@ DeFi agents support 30+ languages:
 
 ---
 
+## Understanding Agent + MCP Server Combos
+
+Agents provide expertise, but they need MCP servers to access real data. Here are the most powerful combinations:
+
+| Agent | + MCP Server | Result |
+|-------|-------------|--------|
+| PancakeSwap Trader | BNB Chain MCP | AI can quote and execute real DEX trades |
+| Binance Futures Expert | Binance MCP | AI can place and manage futures positions |
+| Portfolio Tracker | Universal Crypto MCP | AI tracks holdings across 60+ chains |
+| Security Auditor | BNB Chain MCP | AI can read contract code and check on-chain data |
+| BNB Chain News Alpha | Crypto News MCP | AI cross-references news with on-chain activity |
+
+> **Without an MCP server:** The agent gives theoretical advice based on its training data.
+> **With an MCP server:** The agent can look up real-time data, verify claims, and execute actions.
+
+---
+
 ## See Also
 
-- [MCP Servers](mcp-servers.md) — Connect agents to blockchains
-- [Examples](examples.md) — Real-world agent usage
+- [Glossary](GLOSSARY.md) — Definitions for terms used on this page
+- [MCP Servers](mcp-servers.md) — Connect agents to blockchains for live data
+- [Examples](examples.md) — Real-world agent usage patterns
 - [Architecture](architecture.md) — How agents fit in the system
+- [Getting Started](getting-started.md) — Install the toolkit first

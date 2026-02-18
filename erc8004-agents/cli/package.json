@@ -21,7 +21,7 @@
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
     "lint": "eslint src --ext .ts",
-    "test": "ts-node --project tsconfig.json node_modules/.bin/mocha --require ts-node/register --timeout 120000 'test/**/*.test.ts'"
+    "test": "ts-node --project tsconfig.test.json node_modules/.bin/mocha --require ts-node/register --timeout 120000 'test/**/*.test.ts'"
   },
   "dependencies": {
     "chalk": "^4.1.2",
