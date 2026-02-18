@@ -84,7 +84,7 @@ bnb-chain-toolkit/
 ├── wallets/          # Offline wallet operations
 ├── standards/        # ERC-8004 + W3AG specifications
 ├── erc8004-agents/   # Agent registry platform
-├── agent-runtime/    # Execution runtime (in progress)
+├── agent-runtime/    # Production-ready execution runtime
 └── locales/          # 30+ language translations
 ```
 
@@ -96,10 +96,10 @@ Model Context Protocol (MCP) servers are the core bridge between AI and blockcha
 
 | MCP Server             | Scope                          | Tools |
 | ---------------------- | ------------------------------ | ----- |
-| `bnbchain-mcp`         | BSC, opBNB, Greenfield + EVM   | 150+  |
-| `binance-mcp`          | Binance.com exchange API        | 200+  |
+| `bnbchain-mcp`         | BSC, opBNB, Greenfield + EVM   | 100+  |
+| `binance-mcp`          | Binance.com exchange API        | 478+  |
 | `binance-us-mcp`       | Binance.US exchange API         | 100+  |
-| `universal-crypto-mcp` | 60+ networks                   | 300+  |
+| `universal-crypto-mcp` | 60+ networks                   | 100+  |
 | `agenti`               | Universal EVM + Solana          | 100+  |
 | `ucai`                 | ABI-to-MCP generator (Python)  | —     |
 
@@ -271,8 +271,8 @@ The entire project is MIT licensed and designed for community contribution. We p
 
 ### 4.2 Short-Term Roadmap
 
-- **opBNB deployment** for ERC-8004 — extend agent identity to BNB Chain's L2
-- **Agent runtime** — the `agent-runtime/` package is in active development, providing actual execution capabilities for agent definitions
+- ~~**opBNB deployment** for ERC-8004~~ — ✅ Completed: deployed on opBNB mainnet (204) and testnet (5611)
+- ~~**Agent runtime**~~ — ✅ Completed: production-ready TypeScript runtime with A2A protocol, x402 micropayments, ERC-8004 on-chain identity, and discovery endpoints
 - **Expanded test suite** — comprehensive unit, integration, and end-to-end tests
 - **CI/CD pipeline** — automated testing, linting, and deployment on every pull request
 

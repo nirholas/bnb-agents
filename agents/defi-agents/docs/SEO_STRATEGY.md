@@ -76,8 +76,8 @@ Go to: <https://github.com/nirholas/defi-agents/settings>
 
   ## 🎉 What's Included
 
-  - ✅ 57 specialized AI agents
-  - ✅ 18 language translations
+  - ✅ 78 specialized AI agents
+  - ✅ 30+ language translations
   - ✅ RESTful JSON API
   - ✅ Complete documentation
   - ✅ Machine-readable indexes

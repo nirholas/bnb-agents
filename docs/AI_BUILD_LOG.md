@@ -149,7 +149,7 @@ The following files serve as direct evidence of continuous AI tool usage through
 | [`.github/copilot-instructions.md`](../.github/copilot-instructions.md) | Active use of GitHub Copilot with custom project context |
 | [`AGENTS.md`](../AGENTS.md) | Shared development guidelines for all AI coding assistants |
 | [`locales/`](../locales/) | 30 agent translation directories — all AI-generated |
-| [`agents/bnb-chain-agents/`](../agents/bnb-chain-agents/) | 30+ agent definitions with AI-generated system prompts |
+| [`agents/bnb-chain-agents/`](../agents/bnb-chain-agents/) | 36 agent definitions with AI-generated system prompts |
 | [`agents/defi-agents/`](../agents/defi-agents/) | 42+ agent definitions with AI-generated system prompts |
 | [`mcp-servers/`](../mcp-servers/) | 6 MCP servers — AI-scaffolded, human-reviewed |
 | [`scripts/`](../scripts/) | Build pipeline tools — AI-generated formatters, validators, parsers |

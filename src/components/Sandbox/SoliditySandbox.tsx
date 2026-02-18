@@ -1058,15 +1058,15 @@ contract ${name.replace('.sol', '')} {
                     return (
                       <div key={i} className="space-y-2">
                         {/* Function inputs */}
-                        {func.inputs.length > 0 && (
+                        {func.inputs && func.inputs.length > 0 && (
                           <div className="space-y-1">
                             {func.inputs.map((input: { name: string; type: string }, j: number) => (
                               <input
                                 key={j}
                                 type="text"
                                 placeholder={`${input.name} (${input.type})`}
-                                value={functionInputs[contract.id]?.[func.name]?.[input.name] || ''}
-                                onChange={(e) => updateFunctionInput(contract.id, func.name, input.name, e.target.value)}
+                                value={functionInputs[contract.id]?.[func.name as string]?.[input.name] || ''}
+                                onChange={(e) => updateFunctionInput(contract.id, func.name as string, input.name, e.target.value)}
                                 className="w-full bg-[#0a0a0a] border border-gray-600 rounded px-2 py-1.5 text-sm font-mono"
                               />
                             ))}

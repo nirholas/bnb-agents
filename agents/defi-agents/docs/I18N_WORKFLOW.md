@@ -271,11 +271,11 @@ After running `bun run format`:
   │   ├── index.json       (en-US)
   │   ├── index.ar.json
   │   ├── index.zh-CN.json
-  │   └── ... (18 language files)
+  │   └── ... (30+ language files)
   │
   ├── alpha-leak-detector/
   │   ├── index.json
-  │   └── ... (18 language files)
+  │   └── ... (30+ language files)
   │
   └── ... (41 agent folders)
 ```
@@ -451,7 +451,7 @@ bun run prettier   # Format all code files
 5. **Commit changes**
    ```bash
    git add .
-   git commit -m "feat: add my-new-agent with 18 language support"
+   git commit -m "feat: add my-new-agent with 30+ language support"
    git push
    ```
 

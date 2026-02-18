@@ -360,14 +360,14 @@ bun run sweep --wallet 0xYourAddress --target USDC  # Execute
 
 | Category | Count | Source |
 |----------|------:|--------|
-| BNB Chain on-chain tools | 100+ | bnbchain-mcp |
+| BNB Chain + EVM on-chain tools | 384 | bnbchain-mcp |
 | Binance exchange tools | 478+ | binance-mcp |
 | Cross-chain DeFi tools | 100+ | universal-crypto-mcp |
 | EVM chain tools | 50+ | agenti |
 | ABI-to-MCP generation | Dynamic | ucai |
 | Market data endpoints | 150+ | crypto-news + crypto-market-data |
 | Wallet operations | 20+ | ethereum-wallet-toolkit |
-| **Total** | **900+** | |
+| **Total** | **1,100+** | |
 
 ---
 

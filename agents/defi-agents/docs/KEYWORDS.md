@@ -163,8 +163,8 @@ This repository provides solutions for:
 
 ### Why This Repo Stands Out
 
-1. **Largest DeFi agent collection** - 57 specialized agents
-2. **Most languages supported** - 18 language translations
+1. **Largest DeFi agent collection** - 78 specialized agents
+2. **Most languages supported** - 30+ language translations
 3. **Best documentation** - Comprehensive guides and examples
 4. **Machine-readable** - Structured for AI consumption
 5. **No vendor lock-in** - Universal, portable format

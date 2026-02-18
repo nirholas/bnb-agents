@@ -29,21 +29,21 @@ Purpose-built for the BNB Chain ecosystem. Located in `agents/bnb-chain-agents/`
 | 2 | **Venus Protocol Expert** | Lending, borrowing, liquidation on Venus |
 | 3 | **BNB Staking Advisor** | Liquid staking optimization across validators |
 | 4 | **Binance Earn Specialist** | Savings, staking, Launchpool yields |
-| 5 | **BSC Bridge Navigator** | Cross-chain bridging (BSC ↔ opBNB ↔ L2s) |
-| 6 | **BEP-20 Token Analyst** | Token security, smart money tracking |
-| 7 | **Binance Copy Trading** | Mirror top performers' strategies |
-| 8 | **opBNB Scaling Expert** | L2 gas optimization |
-| 9 | **Greenfield Storage** | Decentralized storage on BNB Greenfield |
-| 10 | **Thena DEX Expert** | ve(3,3) DEX trading on Thena |
-| 11 | **BiSwap DeFi Agent** | BiSwap DEX operations |
-| 12 | **BNB Liquid Staking** | stkBNB, BNBx, ankrBNB strategies |
-| 13 | **BSC NFT Specialist** | NFT trading and analysis on BSC |
-| 14 | **Binance Launchpad** | IEO and token sale participation |
-| 15 | **opBNB Gaming Expert** | GameFi on opBNB |
-| 16 | **BSC MEV Protection** | Front-running protection strategies |
-| 17 | **BNB Chain Governance** | DAO voting and proposals |
-| 18 | **BSC Yield Aggregator** | Auto-compounding yield strategies |
-| 19 | **Binance P2P Trading** | Peer-to-peer crypto trading |
+| 5 | **Binance Earn Advisor** | Personalized Binance Earn recommendations |
+| 6 | **Binance Futures Expert** | Futures trading strategies on Binance |
+| 7 | **Binance Spot Trader** | Spot trading execution on Binance |
+| 8 | **BNB Chain Expert** | General BNB Chain ecosystem knowledge |
+| 9 | **BNB DeFi Aggregator** | Cross-protocol DeFi aggregation on BNB Chain |
+| 10 | **BEP-20 Token Analyst** | Token security, smart money tracking |
+| 11 | **Binance Copy Trading** | Mirror top performers' strategies |
+| 12 | **Greenfield Storage** | Decentralized storage on BNB Greenfield |
+| 13 | **Thena DEX Expert** | ve(3,3) DEX trading on Thena |
+| 14 | **BNB Liquid Staking** | stkBNB, BNBx, ankrBNB strategies |
+| 15 | **BSC NFT Specialist** | NFT trading and analysis on BSC |
+| 16 | **Binance Launchpad** | IEO and token sale participation |
+| 17 | **opBNB Gaming Expert** | GameFi on opBNB |
+| 18 | **BSC MEV Protection** | Front-running protection strategies |
+| 19 | **BNB Chain Governance** | DAO voting and proposals |
 | 20 | **BSC Smart Contract Auditor** | Contract security analysis |
 | 21 | **BNB Chain News Alpha** | Real-time BNB Chain news, alpha signals |
 | 22 | **BNB Cross-Chain Bridge** | Cross-chain bridging between BSC and other networks |
@@ -58,9 +58,9 @@ Purpose-built for the BNB Chain ecosystem. Located in `agents/bnb-chain-agents/`
 | 31 | **opBNB L2 Expert** | Layer 2 scaling on opBNB |
 | 32 | **BNB Agent Builder** | Building and deploying AI agents for BNB Chain |
 | 33 | **Binance Margin Expert** | Margin trading strategies on Binance |
-| 34 | **Binance Earn Specialist** | Advanced Binance Earn products and yields |
-| 35 | **Binance Web3 Wallet** | Binance Web3 Wallet operations |
-| 36 | **Alpaca Finance Expert** | Leveraged yield farming on Alpaca Finance |
+| 34 | **Binance Web3 Wallet** | Binance Web3 Wallet operations |
+| 35 | **Alpaca Finance Expert** | Leveraged yield farming on Alpaca Finance |
+| 36 | **BNB Bridge Expert** | Cross-chain bridging (BSC ↔ opBNB ↔ L2s) |
 
 ### General DeFi Agents (42)
 

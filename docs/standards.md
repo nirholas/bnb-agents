@@ -57,9 +57,11 @@ Located in `standards/erc-8004/contracts/`:
 | `IAgentRegistry.sol` | Interface for the registry |
 
 **Deployed on:**
-- Ethereum Mainnet
-- Sepolia Testnet
-- BSC (planned)
+- BSC Mainnet & Testnet
+- opBNB Mainnet & Testnet
+- Ethereum Mainnet & Sepolia Testnet
+- Base, Arbitrum, Optimism, Polygon, Avalanche, Linea, Scroll, zkSync Era, Mantle, Fantom, Gnosis, Celo, Moonbeam (mainnets + testnets)
+- **24 chains total** with deterministic `0x8004` vanity addresses via CREATE2
 
 ### Demo Agent
 

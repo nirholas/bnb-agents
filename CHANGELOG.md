@@ -85,7 +85,7 @@ Consolidated 14 independent repositories into one comprehensive AI toolkit for B
 
 **AI Agents (78)**
 - 36 BNB Chain-specific agents (PancakeSwap, Venus, staking, bridging, etc.)
-- 42 general DeFi agents with 18-language support
+- 42 general DeFi agents with 30+ language support
 
 **MCP Servers (6)**
 - `bnbchain-mcp` — BNB Chain + EVM operations (100+ tools)
@@ -158,7 +158,7 @@ Consolidated 14 independent repositories into one comprehensive AI toolkit for B
 
 - 57 AI agent definitions
 - JSON Schema validation
-- 18-language translation support
+- 30+ language translation support
 - Build pipeline (format, build, validate)
 - Vercel deployment
 - GitHub Pages support

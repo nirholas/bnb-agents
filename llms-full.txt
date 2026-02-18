@@ -44,11 +44,11 @@ Purpose-built for the BNB Chain ecosystem:
 - BEP-20 Token Analyst — Token security, smart money
 - opBNB Scaling Expert — L2 gas optimization
 - Greenfield Storage — Decentralized storage
-- Plus 22 more covering the full ecosystem
+- Plus 28 more covering the full ecosystem
 
 ### DeFi Agents (42)
 
-Cross-chain agents with 18-language support:
+Cross-chain agents with 30+-language support:
 - Portfolio Management (8) — Tracking, rebalancing, tax, risk
 - Trading Automation (7) — Grid, DCA, arbitrage, signals
 - Yield Optimization (6) — Compounding, IL protection
@@ -166,7 +166,7 @@ Offline-capable, BSC-compatible:
 On-chain protocol for AI agent registration and reputation:
 - Smart contracts (Solidity)
 - Agent registry and trust attestation
-- Deployed on Ethereum mainnet and Sepolia
+- Deployed on 24 chains: BSC, opBNB, Ethereum, Base, Arbitrum, Optimism, Polygon, Avalanche, Linea, Scroll, zkSync Era, and more
 
 ### W3AG: Web3 Accessibility Guidelines
 First open standard for Web3 accessibility:

@@ -153,7 +153,7 @@ Zero-dependency price feeds and news aggregation from 200+ sources.
 | **Usability** | Live demo, 30+ languages, comprehensive docs, 24-chain deployment |
 | **Impact** | Enables any AI to interact with BNB Chain + 60 networks |
 | **Code Quality** | TypeScript, tests, linting, CI/CD |
-| **Documentation** | 12 docs, beginner-friendly guides, FAQ, troubleshooting |
+| **Documentation** | 17+ docs, beginner-friendly guides, FAQ, troubleshooting |
 
 ---
 

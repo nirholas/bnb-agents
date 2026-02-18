@@ -252,8 +252,8 @@
     "schema": "https://sperax.click/schema/speraxAgentSchema_v1.json"
   },
   "features": [
-    "57 specialized AI agents",
-    "18 language translations",
+    "78 specialized AI agents",
+    "30+ language translations",
     "RESTful JSON API",
     "No rate limiting",
     "GitHub Pages CDN",

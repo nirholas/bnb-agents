@@ -143,7 +143,7 @@ const faqs: FAQItem[] = [
   {
     question: "How do I contribute?",
     answer:
-      "Contributions are welcome: submitting PRs with new agents or tools, reporting bugs via Issues, suggesting features in Discussions, improving documentation, adding translations to the 30+ existing locales, or starring the repo. Use gitmoji for commit messages. Current high-priority areas: expanding agent definitions (72 → 100+), adding MCP server tests, ucai Pro templates (Flash Loans, MEV Bundles), and Solana tool coverage in agenti.",
+      "Contributions are welcome: submitting PRs with new agents or tools, reporting bugs via Issues, suggesting features in Discussions, improving documentation, adding translations to the 30+ existing locales, or starring the repo. Use gitmoji for commit messages. Current high-priority areas: expanding agent definitions (78 → 100+), adding MCP server tests, ucai Pro templates (Flash Loans, MEV Bundles), and Solana tool coverage in agenti.",
     category: "contributing",
   },
   {
