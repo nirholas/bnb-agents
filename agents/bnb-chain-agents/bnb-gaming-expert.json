@@ -18,6 +18,7 @@
   "createdAt": "2026-02-11",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "bnb-gaming-expert",
+  "knowledgeCount": 0,
   "meta": {
     "title": "BNB Gaming Expert",
     "description": "Expert in BNB Chain GameFi — play-to-earn games, gaming NFTs, opBNB gaming, and game development on BSC",
@@ -32,6 +33,7 @@
     ],
     "category": "gaming"
   },
-  "schemaVersion": 1
+  "pluginCount": 3,
+  "schemaVersion": 1,
+  "tokenUsage": 427
 }
-

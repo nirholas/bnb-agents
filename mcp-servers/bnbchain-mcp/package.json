@@ -44,24 +44,26 @@
   },
   "homepage": "https://github.com/nirholas/bnbchain-mcp#readme",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0",
-    "viem": "^2.0.0",
     "@bnb-chain/greenfield-js-sdk": "^2.0.0",
-    "zod": "^3.22.0",
-    "express": "^4.21.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.0",
-    "reflect-metadata": "^0.2.0"
+    "@bnb-chain/reed-solomon": "^1.1.4",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "mime": "^4.1.0",
+    "reflect-metadata": "^0.2.2",
+    "viem": "^2.0.0",
+    "zod": "^3.22.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.25",
     "@types/node": "^20.0.0",
-    "@types/express": "^4.17.21",
-    "@types/cors": "^2.8.17",
-    "typescript": "^5.3.0",
-    "tsup": "^8.0.0",
-    "vitest": "^1.0.0",
     "eslint": "^8.0.0",
-    "ts-node": "^10.9.0"
+    "ts-node": "^10.9.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
   },
   "engines": {
     "node": ">=18.0.0"

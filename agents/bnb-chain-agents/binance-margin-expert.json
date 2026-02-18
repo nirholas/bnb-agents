@@ -18,6 +18,7 @@
   "createdAt": "2026-02-13",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "binance-margin-expert",
+  "knowledgeCount": 0,
   "meta": {
     "title": "Binance Margin Expert",
     "description": "Expert in Binance margin trading — cross/isolated margin, leverage optimization, liquidation prevention, and risk management",
@@ -31,5 +32,7 @@
     ],
     "category": "trading"
   },
-  "schemaVersion": 1
+  "pluginCount": 3,
+  "schemaVersion": 1,
+  "tokenUsage": 634
 }

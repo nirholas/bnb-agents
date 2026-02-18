@@ -19,8 +19,15 @@ const languageNames: Record<string, string> = {
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // CORS headers — restrict to trusted origins
+  const allowedOrigin = process.env.CORS_ORIGIN || 'https://bnbchaintoolkit.com';
+  const requestOrigin = req.headers.origin || '';
+  // Security: Only allow specific origins, not wildcard
+  if (allowedOrigin === '*' || requestOrigin === allowedOrigin) {
+    res.setHeader('Access-Control-Allow-Origin', requestOrigin || allowedOrigin);
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+  }
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 

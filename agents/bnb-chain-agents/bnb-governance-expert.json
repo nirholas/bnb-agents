@@ -18,6 +18,7 @@
   "createdAt": "2026-02-11",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "bnb-governance-expert",
+  "knowledgeCount": 0,
   "meta": {
     "title": "BNB Governance Expert",
     "description": "Expert in BNB Chain governance — BEP proposals, validator voting, protocol DAOs, and BNB tokenomics",
@@ -32,6 +33,7 @@
     ],
     "category": "governance"
   },
-  "schemaVersion": 1
+  "pluginCount": 3,
+  "schemaVersion": 1,
+  "tokenUsage": 456
 }
-

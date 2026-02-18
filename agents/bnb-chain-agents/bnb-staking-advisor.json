@@ -19,6 +19,7 @@
   "createdAt": "2026-02-11",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "bnb-staking-advisor",
+  "knowledgeCount": 0,
   "meta": {
     "title": "BNB Staking Advisor",
     "description": "Expert in BNB staking — native delegation, liquid staking (slisBNB, BNBx, ankrBNB), and DeFi composability",
@@ -33,6 +34,7 @@
     ],
     "category": "defi"
   },
-  "schemaVersion": 1
+  "pluginCount": 4,
+  "schemaVersion": 1,
+  "tokenUsage": 475
 }
-

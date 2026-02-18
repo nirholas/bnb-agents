@@ -1847,9 +1847,14 @@ function showResults(data, query) {
   
   // Set avatar
   if (data.avatar) {
-    avatar.innerHTML = \`<img src="\${data.avatar}" alt="avatar">\`;
+    // Security: Sanitize avatar URL to prevent XSS via innerHTML
+    const img = document.createElement('img');
+    img.src = data.avatar;
+    img.alt = 'avatar';
+    avatar.textContent = '';
+    avatar.appendChild(img);
   } else {
-    avatar.innerHTML = '🧑';
+    avatar.textContent = '🧑';
   }
   
   // Build info grid
@@ -2129,7 +2134,13 @@ async function mint() {
     // Simulated mint - replace with actual contract call
     await new Promise(r => setTimeout(r, 2000));
     
-    status.innerHTML = '✅ NFT Minted!<br>Name: ' + name + '<br>Owner: ' + accounts[0].slice(0,10) + '...';
+    status.textContent = '';
+    const line1 = document.createTextNode('✅ NFT Minted!');
+    status.appendChild(line1);
+    status.appendChild(document.createElement('br'));
+    status.appendChild(document.createTextNode('Name: ' + name));
+    status.appendChild(document.createElement('br'));
+    status.appendChild(document.createTextNode('Owner: ' + accounts[0].slice(0,10) + '...'));
     console.log('Minted NFT:', { name, desc, owner: accounts[0] });
   } catch (err) {
     status.textContent = '❌ ' + (err.message || 'Minting failed');
@@ -2339,7 +2350,11 @@ async function fetchUsers() {
     
     users.forEach(user => {
       const li = document.createElement('li');
-      li.innerHTML = '<strong>' + user.name + '</strong><br>' + user.email;
+      const strong = document.createElement('strong');
+      strong.textContent = user.name;
+      li.appendChild(strong);
+      li.appendChild(document.createElement('br'));
+      li.appendChild(document.createTextNode(user.email));
       usersList.appendChild(li);
     });
     

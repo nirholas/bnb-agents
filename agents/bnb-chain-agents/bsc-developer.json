@@ -17,6 +17,7 @@
   "createdAt": "2026-02-11",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "bsc-developer",
+  "knowledgeCount": 0,
   "meta": {
     "title": "BSC Developer",
     "description": "Expert in BNB Chain smart contract development — Solidity, Hardhat, Foundry, deployment, and BSCScan verification",
@@ -31,6 +32,7 @@
     ],
     "category": "development"
   },
-  "schemaVersion": 1
+  "pluginCount": 2,
+  "schemaVersion": 1,
+  "tokenUsage": 454
 }
-

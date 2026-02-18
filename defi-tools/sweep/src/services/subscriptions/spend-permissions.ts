@@ -398,7 +398,7 @@ export class SpendPermissionsService {
       // Usage query failed, assume zero
     }
 
-    const remainingAllowance = permission.allowance - usedInPeriod;
+    const remainingAllowance = BigInt(permission.allowance) - BigInt(usedInPeriod);
 
     return {
       isValid: !isExpired && !isRevoked && remainingAllowance > 0n,

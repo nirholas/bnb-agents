@@ -18,6 +18,7 @@
   "createdAt": "2026-02-13",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "bnb-rwa-stablecoin-expert",
+  "knowledgeCount": 0,
   "meta": {
     "title": "BNB RWA & Stablecoin Expert",
     "description": "Expert in Real-World Assets and stablecoins on BNB Chain — FDUSD, lisUSD, tokenized treasuries, stable yield strategies, and de-peg risk analysis",
@@ -32,5 +33,7 @@
     ],
     "category": "defi"
   },
-  "schemaVersion": 1
+  "pluginCount": 3,
+  "schemaVersion": 1,
+  "tokenUsage": 728
 }

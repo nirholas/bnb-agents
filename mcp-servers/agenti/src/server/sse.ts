@@ -27,8 +27,10 @@ export const startSSEServer = async () => {
     const app = express()
     const server = startServer()
     
+    // Security: Restrict CORS to configured origins instead of wildcard
+    const allowedOrigins = process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ['*']
     app.use(cors({
-      origin: "*",
+      origin: allowedOrigins.includes('*') ? '*' : allowedOrigins,
       methods: ["GET", "POST", "OPTIONS"],
       allowedHeaders: ["Content-Type"]
     }))

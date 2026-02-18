@@ -735,6 +735,49 @@ export default function Homepage() {
             </section>
 
             {/* ═══════════════════════════════════════════════════════════════
+                SECTION 9.5 — FEATURED DEV TOOLS
+            ═══════════════════════════════════════════════════════════════ */}
+            <section className="py-24 md:py-32 bg-neutral-50 dark:bg-white/[0.01]">
+                <div className="container mx-auto px-4">
+                    <SectionHeading
+                        badge="Dev Tools"
+                        badgeIcon={Wrench}
+                        title="Build, Test & Deploy"
+                        subtitle="Interactive development environments and AI-powered tools — all in your browser."
+                    />
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                        {[
+                            { title: 'Contract Playground', desc: 'Write, compile, and deploy Solidity contracts with 41+ templates — ERC-20, NFTs, DeFi, DAOs, and more.', icon: Code, href: '/ide', accent: '#F59E0B' },
+                            { title: 'AI Sandbox', desc: 'AI-powered code generation for smart contracts. Describe what you want and get deployable Solidity.', icon: Bot, href: '/sandbox', accent: '#8B5CF6' },
+                            { title: 'Full-Stack Builder', desc: 'Build complete dApps with smart contract + frontend in one workflow. Preview and deploy instantly.', icon: Layers, href: '/fullstack-demo', accent: '#F0B90B' },
+                            { title: 'Learning Playground', desc: 'Interactive tutorials and exercises — learn BNB Chain development by building real projects.', icon: GraduationCap, href: '/learn', accent: '#10B981' },
+                            { title: 'Dust Sweeper', desc: 'Scan 8+ chains for tiny token balances and batch-swap them into stablecoins. Reclaim trapped value.', icon: Coins, href: '/docs', accent: '#EF4444' },
+                            { title: 'Innovation Lab', desc: 'Experimental AI features — Code Whisperer, Contract Time Machine, Security Testing Lab, and more.', icon: Sparkles, href: '/innovation', accent: '#EC4899' },
+                        ].map((tool) => (
+                            <Link
+                                key={tool.title}
+                                to={tool.href}
+                                className="group relative p-6 rounded-2xl border border-neutral-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] hover:border-[#F0B90B]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-[#F0B90B]/[0.04]"
+                            >
+                                <div
+                                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                                    style={{ backgroundColor: `${tool.accent}15`, border: `1px solid ${tool.accent}25` }}
+                                >
+                                    <tool.icon className="w-5 h-5" style={{ color: tool.accent }} />
+                                </div>
+                                <h3 className="font-bold text-neutral-900 dark:text-white mb-2 group-hover:text-[#F0B90B] transition-colors tracking-tight">
+                                    {tool.title}
+                                </h3>
+                                <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">{tool.desc}</p>
+                                <ChevronRight className="w-4 h-4 text-neutral-300 dark:text-neutral-600 mt-4 group-hover:translate-x-1 group-hover:text-[#F0B90B] transition-all" />
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════════════════════════════════════════════════════════
                 SECTION 10 — WHY THIS TOOLKIT
             ═══════════════════════════════════════════════════════════════ */}
             <section className="py-24 md:py-32 bg-neutral-900 dark:bg-neutral-950 relative overflow-hidden">

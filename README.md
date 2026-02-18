@@ -26,6 +26,7 @@
 <a href="https://github.com/nirholas/bnb-chain-toolkit/issues"><img src="https://img.shields.io/github/issues/nirholas/bnb-chain-toolkit?style=for-the-badge&labelColor=000" alt="Issues" /></a>
 <a href="https://github.com/nirholas/bnb-chain-toolkit"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge&labelColor=000" alt="PRs Welcome" /></a>
 <a href="https://bnb-chain-toolkit.vercel.app/"><img src="https://img.shields.io/badge/demo-live-00C853?style=for-the-badge&logo=vercel&labelColor=000" alt="Live Demo" /></a>
+<a href="HACKATHON.md"><img src="https://img.shields.io/badge/hackathon-Good%20Vibes%20Only-F0B90B?style=for-the-badge&labelColor=000" alt="Good Vibes Only" /></a>
 
 <br>
 
@@ -76,6 +77,9 @@ It's a single repository with **everything** you need to build AI-powered applic
 ---
 
 ## ⚡ Quick Start
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/nirholas/bnb-chain-toolkit)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/nirholas/bnb-chain-toolkit)
 
 ```bash
 # Clone
@@ -141,7 +145,7 @@ ERC-8004 contracts are deployed and verified on **BSC Mainnet**, **BSC Testnet**
 
 Built for the **BNB Chain "Good Vibes Only: OpenClaw Edition"** hackathon — Track 1: Agent.
 
-> **[Live Demo →](https://bnb-chain-toolkit.vercel.app/)**
+> **[Full Submission → HACKATHON.md](HACKATHON.md)** | **[Live Demo →](https://bnb-chain-toolkit.vercel.app/)**
 
 ### What Makes This Unique
 
@@ -158,6 +162,7 @@ Built for the **BNB Chain "Good Vibes Only: OpenClaw Edition"** hackathon — Tr
 
 | Document | Description |
 |----------|-------------|
+| [`HACKATHON.md`](HACKATHON.md) | **Primary submission document** — on-chain proof, architecture, reproduction steps |
 | [`bsc.address`](bsc.address) | Deployed contract addresses (JSON) |
 | [`docs/PROJECT.md`](docs/PROJECT.md) | Problem, solution, impact, roadmap |
 | [`docs/TECHNICAL.md`](docs/TECHNICAL.md) | Architecture, setup, demo guide |

@@ -173,9 +173,11 @@ export class AgentDatabase {
       return this.getAllAgents(limit, offset);
     }
     const stmt = this.db.prepare(
-      "SELECT * FROM agents WHERE name LIKE ? OR description LIKE ? ORDER BY reputation_score DESC LIMIT ? OFFSET ?"
+      "SELECT * FROM agents WHERE name LIKE ? ESCAPE '\\' OR description LIKE ? ESCAPE '\\' ORDER BY reputation_score DESC LIMIT ? OFFSET ?"
     );
-    const pattern = `%${query}%`;
+    // Security: Escape LIKE metacharacters to prevent pattern injection
+    const escaped = query.replace(/[%_\\]/g, '\\$&');
+    const pattern = `%${escaped}%`;
     return (stmt.all(pattern, pattern, limit, offset) as any[]).map(this.rowToAgent);
   }
 

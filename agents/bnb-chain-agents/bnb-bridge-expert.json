@@ -19,6 +19,7 @@
   "createdAt": "2026-02-11",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "bnb-bridge-expert",
+  "knowledgeCount": 0,
   "meta": {
     "title": "BNB Bridge Expert",
     "description": "Expert in cross-chain bridges — BSC ↔ opBNB ↔ Ethereum bridging, fee optimization, and security assessment",
@@ -33,6 +34,7 @@
     ],
     "category": "ecosystem"
   },
-  "schemaVersion": 1
+  "pluginCount": 4,
+  "schemaVersion": 1,
+  "tokenUsage": 441
 }
-

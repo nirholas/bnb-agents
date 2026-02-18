@@ -49,7 +49,9 @@ async function main(): Promise<void> {
   // ── Build Hono app ────────────────────────────────────────────────
 
   const app = new Hono();
-  app.use("*", cors());
+  // Security: Restrict CORS origin to configured domains
+  const allowedOrigins = process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : undefined;
+  app.use("*", cors(allowedOrigins ? { origin: allowedOrigins } : undefined));
   app.use("*", logger());
 
   // Mount REST routes

@@ -14,14 +14,24 @@ export class AgentFeed {
   private wss: WebSocketServer | null = null;
   private clients = new Set<WebSocket>();
   private heartbeat: ReturnType<typeof setInterval> | null = null;
+  // Security: Limit maximum concurrent WebSocket connections to prevent resource exhaustion
+  private readonly maxConnections: number;
 
-  constructor(private db: AgentDatabase) {}
+  constructor(private db: AgentDatabase, maxConnections = 1000) {
+    this.maxConnections = maxConnections;
+  }
 
   /** Attach WebSocket server to an HTTP server. */
   attach(server: Server, path = "/api/feed"): void {
     this.wss = new WebSocketServer({ server, path });
 
     this.wss.on("connection", (ws) => {
+      // Security: Reject connections exceeding the limit
+      if (this.clients.size >= this.maxConnections) {
+        ws.close(1013, 'Maximum connections reached');
+        return;
+      }
+
       this.clients.add(ws);
 
       ws.on("close", () => {

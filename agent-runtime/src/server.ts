@@ -48,8 +48,12 @@ export function createAgentServer(config: AgentServerConfig) {
   // ─── Global Middleware ──────────────────────────────────────────
 
   // CORS for browser-based agent discovery
+  // Security: Restrict CORS origin to trusted domains instead of wildcard
+  const allowedOrigins = process.env.CORS_ORIGINS
+    ? process.env.CORS_ORIGINS.split(',')
+    : (config.devMode ? ['*'] : []);
   app.use('*', cors({
-    origin: '*',
+    origin: allowedOrigins.includes('*') ? '*' : allowedOrigins,
     allowMethods: ['GET', 'POST', 'OPTIONS'],
     allowHeaders: ['Content-Type', 'Authorization', 'X-PAYMENT', 'X-Request-Id'],
     exposeHeaders: ['X-Request-Id', 'X-RateLimit-Limit', 'X-RateLimit-Remaining', 'X-RateLimit-Reset'],

@@ -31,9 +31,9 @@ import {
 import { generateMnemonic, mnemonicToAccount, privateKeyToAccount, english, signMessage } from "viem/accounts"
 import { z } from "zod"
 
-import { getPublicClient } from "@/services/clients.js"
+import { getPublicClient } from "@/evm/services/clients.js"
 import { mcpToolRes } from "@/utils/helper.js"
-import { defaultNetworkParam } from "../common/types.js"
+import { defaultNetworkParam } from "@/modules/common/types.js"
 
 export function registerUtilityTools(server: McpServer) {
   // Keccak256 hash

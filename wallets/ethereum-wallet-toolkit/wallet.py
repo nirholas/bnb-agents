@@ -219,6 +219,7 @@ def cmd_generate(args):
     print("NEW WALLET GENERATED")
     print("=" * 60)
     print(f"Address:     {result.address}")
+    # Security: Warn about sensitive data exposure
     print(f"Private Key: {result.private_key}")
     print(f"Public Key:  {result.public_key}")
     
@@ -230,7 +231,10 @@ def cmd_generate(args):
             print("Passphrase: [used]")
     
     print("=" * 60)
-    print("IMPORTANT: Store your private key and mnemonic securely!")
+    print("\u26a0\ufe0f  WARNING: Private key and mnemonic are displayed above.")
+    print("NEVER share them. NEVER commit them to version control.")
+    print("Do NOT pipe this output to files or CI logs.")
+    print("Store your private key and mnemonic securely!")
     print("=" * 60 + "\n")
     
     if args.output:
@@ -264,6 +268,10 @@ def cmd_restore(args):
     if result.mnemonic:
         print(f"\nDerivation Path: {result.derivation_path}")
     
+    print("=" * 60)
+    print("\u26a0\ufe0f  WARNING: Private key is displayed above.")
+    print("NEVER share it. NEVER commit it to version control.")
+    print("Do NOT pipe this output to files or CI logs.")
     print("=" * 60 + "\n")
 
 

@@ -26,7 +26,8 @@ export const errorHandler = (
   res.status(statusCode).json({
     success: false,
     error: message,
-    ...(process.env.NODE_ENV === 'development' && { stack: error.stack })
+    // Security: Only expose stack traces when explicitly opted in, never by default
+    ...(process.env.SHOW_STACK_TRACES === 'true' && { stack: error.stack })
   });
 };
 

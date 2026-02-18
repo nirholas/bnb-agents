@@ -218,11 +218,19 @@ class AgentFormatter {
       Logger.success('内容生成和分类完成', id);
     }
 
-    // 处理创建时间字段
+    // 处理创建时间字段 — migrate legacy `createAt` to `createdAt`
     if (!agent.createdAt) {
-      // @ts-ignore
-      // TODO: 移除 createAt 字段
-      agent.createdAt = agent.createAt;
+      // @ts-ignore — legacy field migration
+      if (agent.createAt) {
+        agent.createdAt = agent.createAt;
+        // @ts-ignore — remove deprecated field after migration
+        delete agent.createAt;
+      } else {
+        agent.createdAt = new Date().toISOString();
+      }
+    } else {
+      // @ts-ignore — clean up deprecated field if both exist
+      if (agent.createAt) delete agent.createAt;
     }
 
     // 写入格式化后的文件

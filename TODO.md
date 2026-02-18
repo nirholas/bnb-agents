@@ -51,7 +51,7 @@ During a codebase review, we identified several features that were not properly 
 - [x] Add dropdown menu for "Dev Tools" with all environments
 - [x] Add Innovation Lab link to navigation  
 - [x] Update mobile bottom nav (IDE link added)
-- [ ] Add feature cards on homepage showcasing tools
+- [x] Add feature cards on homepage showcasing tools
 
 ### Action Items - Enterprise Improvements ✅ COMPLETED (January 2026)
 
@@ -163,6 +163,6 @@ For the crypto news widget, recommended approach:
 
 - [ ] Create CodePen with widget code
 - [ ] Take screenshot/GIF of widget
-- [ ] Add "Open in StackBlitz/CodeSandbox" badges to README
+- [x] Add "Open in StackBlitz/CodeSandbox" badges to README
 - [ ] Set up GitHub Pages for live preview (optional)
 - [ ] Add widget preview image to docs/images/

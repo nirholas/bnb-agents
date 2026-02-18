@@ -37,9 +37,14 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint . --max-warnings 20",
+    "lint:fix": "eslint . --fix --max-warnings 20",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
+    "test:locale": "vitest run tests/locales.test.ts",
+    "type-check": "tsc --noEmit",
+    "format": "bun run scripts/commands/format.ts",
+    "i18n:validate": "vitest run tests/locales.test.ts",
     "attribution": "node scripts/inject-attribution.js"
   },
   "dependencies": {

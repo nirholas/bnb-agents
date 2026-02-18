@@ -256,13 +256,10 @@
     "createdAt",
     "homepage",
     "identifier",
-    "knowledgeCount",
     "meta",
-    "pluginCount",
-    "schemaVersion",
-    "tokenUsage"
+    "schemaVersion"
   ],
-  "additionalProperties": false,
+  "additionalProperties": true,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }
 

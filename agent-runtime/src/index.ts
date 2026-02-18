@@ -135,6 +135,7 @@ export {
   generateNonce,
   keccak256,
   privateKeyToAddress,
+  generateDevPrivateKey,
   signPaymentHeader,
   verifyPaymentHeader,
 } from './utils/crypto.js';

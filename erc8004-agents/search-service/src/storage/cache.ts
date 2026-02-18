@@ -8,9 +8,12 @@ interface CacheEntry<T> {
 export class Cache {
   private store = new Map<string, CacheEntry<unknown>>();
   private defaultTtl: number;
+  // Security: Maximum cache size to prevent unbounded memory growth
+  private readonly maxSize: number;
 
-  constructor(defaultTtlMs = 60_000) {
+  constructor(defaultTtlMs = 60_000, maxSize = 10_000) {
     this.defaultTtl = defaultTtlMs;
+    this.maxSize = maxSize;
   }
 
   get<T>(key: string): T | undefined {
@@ -24,6 +27,17 @@ export class Cache {
   }
 
   set<T>(key: string, data: T, ttlMs?: number): void {
+    // Security: Evict oldest entries when cache exceeds max size (LRU-like)
+    if (this.store.size >= this.maxSize && !this.store.has(key)) {
+      this.prune(); // First try removing expired entries
+      if (this.store.size >= this.maxSize) {
+        // Remove the oldest entry (first key in Map iteration order)
+        const oldestKey = this.store.keys().next().value;
+        if (oldestKey !== undefined) {
+          this.store.delete(oldestKey);
+        }
+      }
+    }
     this.store.set(key, {
       data,
       expiresAt: Date.now() + (ttlMs ?? this.defaultTtl),

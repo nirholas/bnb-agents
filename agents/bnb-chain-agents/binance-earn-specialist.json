@@ -19,6 +19,7 @@
   "createdAt": "2026-02-11",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "binance-earn-specialist",
+  "knowledgeCount": 0,
   "meta": {
     "title": "Binance Earn Specialist",
     "description": "Expert in Binance Earn products — Simple Earn, BNB Vault, Launchpool, Dual Investment, and staking",
@@ -33,6 +34,7 @@
     ],
     "category": "trading"
   },
-  "schemaVersion": 1
+  "pluginCount": 4,
+  "schemaVersion": 1,
+  "tokenUsage": 433
 }
-

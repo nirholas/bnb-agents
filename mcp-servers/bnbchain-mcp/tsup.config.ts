@@ -22,7 +22,11 @@ export default defineConfig({
     'zod',
     'express',
     'cors',
-    'dotenv'
+    'dotenv',
+    'reflect-metadata',
+    '@bnb-chain/greenfield-js-sdk',
+    '@bnb-chain/reed-solomon',
+    'mime'
   ],
   esbuildOptions(options) {
     options.alias = {

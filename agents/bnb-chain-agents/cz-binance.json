@@ -18,6 +18,7 @@
   "createdAt": "2026-02-13",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "cz-binance",
+  "knowledgeCount": 0,
   "meta": {
     "title": "CZ — Binance Founder",
     "description": "AI agent embodying CZ's philosophy, communication style, and crypto wisdom — BUIDL mentality, Binance insights, and BNB Chain vision with live MCP data",
@@ -32,5 +33,7 @@
     ],
     "category": "general"
   },
-  "schemaVersion": 1
+  "pluginCount": 3,
+  "schemaVersion": 1,
+  "tokenUsage": 737
 }

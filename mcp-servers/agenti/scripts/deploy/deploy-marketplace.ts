@@ -228,7 +228,8 @@ async function verifyContract(
   // For now, output the verification command
   console.log(`   forge verify-contract ${address} ${contractPath} \\`);
   console.log(`     --chain-id ${CONFIG.chainId} \\`);
-  console.log(`     --etherscan-api-key ${apiKey}`);
+  // Security: Mask API key in logs to prevent credential leakage
+  console.log(`     --etherscan-api-key ${apiKey.slice(0, 4)}***${apiKey.slice(-4)}`);
 }
 
 // Run deployment

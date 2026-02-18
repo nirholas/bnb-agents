@@ -17,6 +17,7 @@
   "createdAt": "2026-02-11",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "binance-copy-trading",
+  "knowledgeCount": 0,
   "meta": {
     "title": "Binance Copy Trading",
     "description": "Expert in Binance Copy Trading — lead trader analysis, risk management, and portfolio allocation for spot and futures",
@@ -31,6 +32,7 @@
     ],
     "category": "trading"
   },
-  "schemaVersion": 1
+  "pluginCount": 2,
+  "schemaVersion": 1,
+  "tokenUsage": 436
 }
-

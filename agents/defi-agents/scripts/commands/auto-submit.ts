@@ -6,7 +6,7 @@
 import { Octokit } from '@octokit/rest';
 import 'dotenv/config';
 import { kebabCase } from 'lodash-es';
-import { execSync } from 'node:child_process';
+import { execSync, execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import pMap from 'p-map';
@@ -132,11 +132,17 @@ class AutoSubmit {
    * Git 提交流程
    */
   async gitCommit(filePath: string, agent: any, agentName: string) {
+    // Security: Validate agentName to prevent command injection
+    if (!/^[a-zA-Z0-9_-]+$/.test(agentName)) {
+      throw new Error(`Invalid agent name: "${agentName}". Only alphanumeric characters, hyphens, and underscores are allowed.`);
+    }
+
     execSync('git diff');
     execSync('git config --global user.name "speraxos"');
     execSync('git config --global user.email "speraxos@users.noreply.github.com"');
     execSync('git pull');
-    execSync(`git checkout -b agent/${agentName}`);
+    // Security: Use execFileSync to avoid shell interpretation of agentName
+    execFileSync('git', ['checkout', '-b', `agent/${agentName}`]);
     Logger.info('切换分支', `agent/${agentName}`);
 
     // 生成文件
@@ -150,8 +156,9 @@ class AutoSubmit {
 
     // 提交代码
     execSync('git add -A');
-    execSync(`git commit -m "🤖 chore(auto-submit): Add ${agentName} (#${this.issueNumber})"`);
-    execSync(`git push origin agent/${agentName}`);
+    // Security: Use execFileSync to avoid shell interpretation of agentName
+    execFileSync('git', ['commit', '-m', `🤖 chore(auto-submit): Add ${agentName} (#${this.issueNumber})`]);
+    execFileSync('git', ['push', 'origin', `agent/${agentName}`]);
     Logger.success('推送 Agent 完成');
 
     // 创建 PR

@@ -14,10 +14,15 @@ const JWT_SECRET = process.env.JWT_SECRET || 'agenti-mcp-hosting-secret-change-i
 const JWT_EXPIRES_IN = '7d';
 const BCRYPT_ROUNDS = 12;
 
-// TODO: Replace with database storage (Prisma/Postgres)
 // In-memory user storage for development
+// NOTE: Production should use Prisma/Postgres. Set DATABASE_URL env var when migrating.
+// Migration: replace Map lookups with prisma.user.findUnique / prisma.user.create
 const users = new Map<string, StoredUser>();
 const usersByEmail = new Map<string, string>(); // email -> id mapping
+
+if (!process.env.DATABASE_URL) {
+  Logger.warn('Running with in-memory user storage (development mode). Set DATABASE_URL for persistence.');
+}
 
 interface StoredUser {
   id: string;

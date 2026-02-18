@@ -18,6 +18,7 @@
   "createdAt": "2026-02-11",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "bnb-nft-expert",
+  "knowledgeCount": 0,
   "meta": {
     "title": "BNB NFT Expert",
     "description": "Expert in BNB Chain NFTs — BEP-721/1155 creation, marketplace analysis, gaming NFTs, and NFT-Fi on BSC and opBNB",
@@ -32,6 +33,7 @@
     ],
     "category": "nft"
   },
-  "schemaVersion": 1
+  "pluginCount": 3,
+  "schemaVersion": 1,
+  "tokenUsage": 413
 }
-

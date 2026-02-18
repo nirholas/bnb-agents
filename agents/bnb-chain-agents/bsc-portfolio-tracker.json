@@ -18,6 +18,7 @@
   "createdAt": "2026-02-13",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "bsc-portfolio-tracker",
+  "knowledgeCount": 0,
   "meta": {
     "title": "BSC Portfolio Tracker",
     "description": "Track and analyze your entire BNB Chain DeFi portfolio — positions, P&L, risk metrics, and liquidation alerts with live MCP data",
@@ -32,5 +33,7 @@
     ],
     "category": "portfolio"
   },
-  "schemaVersion": 1
+  "pluginCount": 3,
+  "schemaVersion": 1,
+  "tokenUsage": 486
 }

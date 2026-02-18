@@ -18,6 +18,7 @@
   "createdAt": "2026-02-11",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "binance-launchpad-analyst",
+  "knowledgeCount": 0,
   "meta": {
     "title": "Binance Launchpad Analyst",
     "description": "Expert in Binance Launchpad, Launchpool, Megadrop — new token launches, ROI analysis, and participation strategies",
@@ -32,6 +33,7 @@
     ],
     "category": "exchange"
   },
-  "schemaVersion": 1
+  "pluginCount": 3,
+  "schemaVersion": 1,
+  "tokenUsage": 476
 }
-

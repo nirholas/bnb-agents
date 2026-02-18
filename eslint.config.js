@@ -13,7 +13,24 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['dist', 'node_modules', 'coverage', 'server/dist', '*.config.js'] },
+  { ignores: [
+    'dist',
+    'node_modules',
+    'coverage',
+    'server/dist',
+    '*.config.js',
+    'wallets/**/offline-build/**',
+    'defi-tools/**/contracts/lib/**',
+    'mcp-servers/**/node_modules/**',
+    'mcp-servers/**/dist/**',
+    'mcp-servers/**/build/**',
+    'market-data/**/node_modules/**',
+    'market-data/**/dist/**',
+    'agent-runtime/dist/**',
+    'packages/**/dist/**',
+    'erc8004-agents/**/node_modules/**',
+    'erc8004-agents/**/dist/**',
+  ] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],

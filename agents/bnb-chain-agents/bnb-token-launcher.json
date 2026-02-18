@@ -18,6 +18,7 @@
   "createdAt": "2026-02-13",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "bnb-token-launcher",
+  "knowledgeCount": 0,
   "meta": {
     "title": "BNB Token Launcher",
     "description": "Launch tokens on BNB Chain — tokenomics design, BEP-20 deployment, PancakeSwap liquidity, and security best practices",
@@ -32,5 +33,7 @@
     ],
     "category": "tooling"
   },
-  "schemaVersion": 1
+  "pluginCount": 3,
+  "schemaVersion": 1,
+  "tokenUsage": 593
 }

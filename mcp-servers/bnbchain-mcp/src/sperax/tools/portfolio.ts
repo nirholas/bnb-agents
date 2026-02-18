@@ -13,7 +13,7 @@ import {
   USDs_ABI,
   SPAABI,
   VeSPAABI,
-  xSPAABI,
+  XSpaABI,
   ERC20ABI,
 } from '../blockchain.js';
 import { formatUnits } from '../utils.js';
@@ -118,7 +118,7 @@ export const portfolioTools = [
         try {
           const redemptionCount = await readContract({
             address: CONTRACTS.XSPA as `0x${string}`,
-            abi: xSPAABI,
+            abi: XSpaABI,
             functionName: 'getUserRedemptionCount',
             args: [userAddress],
           }) as bigint;
@@ -131,7 +131,7 @@ export const portfolioTools = [
               try {
                 const redemption = await readContract({
                   address: CONTRACTS.XSPA as `0x${string}`,
-                  abi: xSPAABI,
+                  abi: XSpaABI,
                   functionName: 'getUserRedemption',
                   args: [userAddress, BigInt(i)],
                 }) as [bigint, bigint];

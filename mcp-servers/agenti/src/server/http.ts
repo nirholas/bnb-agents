@@ -50,8 +50,10 @@ export const startHTTPServer = async (config: HTTPServerConfig = {}) => {
     const app = express()
     
     // Middleware
+    // Security: Restrict CORS to configured origins instead of wildcard
+    const allowedOrigins = process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ['*']
     app.use(cors({
-      origin: "*",
+      origin: allowedOrigins.includes('*') ? '*' : allowedOrigins,
       methods: ["GET", "POST", "DELETE", "OPTIONS"],
       allowedHeaders: ["Content-Type", "mcp-session-id", "last-event-id", "x-payment-proof"],
       exposedHeaders: ["mcp-session-id"]

@@ -219,7 +219,16 @@ export const RESERVED_SUBDOMAINS = [
 export function isSubdomainAvailable(subdomain: string): boolean {
   if (!isValidSubdomain(subdomain)) return false;
   if (RESERVED_SUBDOMAINS.includes(subdomain)) return false;
-  // TODO: Check database for existing subdomains
+  // In-memory check for existing subdomains (production: query database)
+  // NOTE: When migrating to a persistent store (e.g. Prisma/Postgres),
+  // replace this with: await prisma.hostedServer.findUnique({ where: { subdomain } })
+  try {
+    const { getServerBySubdomain } = require('./router.js');
+    const existing = getServerBySubdomain(subdomain);
+    if (existing) return false;
+  } catch {
+    // router module not yet initialized — allow through
+  }
   return true;
 }
 

@@ -53,8 +53,10 @@ services:
   # Redis for caching (optional)
   redis:
     image: redis:7-alpine
+    # Security: Bind to localhost only and require password
+    command: redis-server --requirepass ${REDIS_PASSWORD:-changeme} --bind 127.0.0.1
     ports:
-      - "6379:6379"
+      - "127.0.0.1:6379:6379"
     volumes:
       - redis-data:/data
     restart: unless-stopped

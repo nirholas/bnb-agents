@@ -16,6 +16,7 @@
   "createdAt": "2026-02-13",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "bnb-agent-builder",
+  "knowledgeCount": 0,
   "meta": {
     "title": "BNB Agent Builder",
     "description": "Build custom AI agents for BNB Chain — generate agent definitions, connect MCP servers, and deploy to the toolkit",
@@ -30,5 +31,7 @@
     ],
     "category": "tooling"
   },
-  "schemaVersion": 1
+  "pluginCount": 1,
+  "schemaVersion": 1,
+  "tokenUsage": 580
 }

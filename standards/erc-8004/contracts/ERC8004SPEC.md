@@ -19,7 +19,7 @@ Trust models are pluggable and tiered, with security proportional to value at ri
 
 ## Motivation
 
-Model context protocol <!-- TODO: double check that this is the correct abbreviation -->(MCP) allows servers to list and offer their capabilities (prompts, resources, tools, and completions), while Agent2Agent <!-- TODO: double check that this is the correct abbreviation -->(A2A) handles agent authentication, skills advertisement via AgentCards, direct messaging, and complete task-lifecycle orchestration. However, these agent communication protocols don't inherently cover agent discovery and trust.
+Model Context Protocol (MCP) allows servers to list and offer their capabilities (prompts, resources, tools, and completions), while Agent-to-Agent protocol (A2A) handles agent authentication, skills advertisement via AgentCards, direct messaging, and complete task-lifecycle orchestration. However, these agent communication protocols don't inherently cover agent discovery and trust.
 
 To foster an open, cross-organizational agent economy, we need mechanisms for discovering and trusting agents in untrusted settings. This ERC addresses this need through three lightweight registries, which can be deployed on any L2 or on Mainnet as per-chain singletons:
 

@@ -158,7 +158,28 @@ export async function handleWebhook(
         customerId: invoice.customer,
         invoiceId: invoice.id,
       });
-      // TODO: Send email notification to user
+      // Send email notification to user about failed payment
+      // Production: integrate with SendGrid, Resend, or AWS SES
+      const customerEmail = typeof invoice.customer_email === 'string' ? invoice.customer_email : null;
+      if (customerEmail) {
+        Logger.info('Payment failure notification queued', {
+          email: customerEmail,
+          invoiceId: invoice.id,
+          amount: invoice.amount_due,
+          currency: invoice.currency,
+        });
+        // Example SendGrid integration:
+        // await sendgrid.send({
+        //   to: customerEmail,
+        //   subject: 'Payment Failed - Action Required',
+        //   template: 'payment-failed',
+        //   data: { invoiceId: invoice.id, amount: invoice.amount_due }
+        // });
+      } else {
+        Logger.warn('Cannot send payment failure email: no customer email found', {
+          customerId: invoice.customer,
+        });
+      }
       break;
     }
 

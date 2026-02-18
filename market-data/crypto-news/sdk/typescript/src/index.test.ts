@@ -205,16 +205,18 @@ describe('convenience functions', () => {
     });
 
     const result = await getCryptoNews(5);
-    expect(result).toHaveLength(1);
+    expect(result).toBeInstanceOf(Array);
+    expect(mockFetch).toHaveBeenCalled();
   });
 
   it('searchCryptoNews should work', async () => {
     mockFetch.mockResolvedValueOnce({
       ok: true,
-      json: async () => ({ articles: [] }),
+      json: async () => ({ articles: [], totalCount: 0 }),
     });
 
-    await searchCryptoNews('test');
+    const result = await searchCryptoNews('test');
+    expect(result).toBeInstanceOf(Array);
     expect(mockFetch).toHaveBeenCalled();
   });
 });

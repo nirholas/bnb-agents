@@ -314,7 +314,13 @@ export class AgentCreatorPanel {
         const status = document.getElementById('walletStatus');
         const btn = document.getElementById('walletBtn');
         if (d.connected) {
-          status.innerHTML = '<span class="chain-badge">' + d.chain + '</span> ' + d.shortAddress;
+          // Security: Use textContent + DOM APIs instead of innerHTML to prevent XSS
+          status.textContent = '';
+          const badge = document.createElement('span');
+          badge.className = 'chain-badge';
+          badge.textContent = d.chain;
+          status.appendChild(badge);
+          status.appendChild(document.createTextNode(' ' + d.shortAddress));
           btn.textContent = 'Switch Chain';
           btn.onclick = () => vscode.postMessage({ type: 'switchChain' });
         } else {

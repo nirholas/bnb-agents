@@ -17,6 +17,7 @@
   "createdAt": "2026-02-11",
   "homepage": "https://github.com/nirholas/bnb-chain-toolkit",
   "identifier": "bsc-security-auditor",
+  "knowledgeCount": 0,
   "meta": {
     "title": "BSC Security Auditor",
     "description": "Expert in BNB Chain smart contract security — vulnerability detection, rug-pull analysis, and DeFi exploit prevention",
@@ -31,6 +32,7 @@
     ],
     "category": "security"
   },
-  "schemaVersion": 1
+  "pluginCount": 2,
+  "schemaVersion": 1,
+  "tokenUsage": 452
 }
-

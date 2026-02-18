@@ -54,7 +54,7 @@ import { PaymentFacilitator } from './protocols/x402/facilitator.js';
 import { searchAgents, fetchAgentCard } from './discovery/search.js';
 import { connectToAgent, callAgent } from './discovery/connect.js';
 import { resolveChain } from './utils/chains.js';
-import { privateKeyToAddress } from './utils/crypto.js';
+import { privateKeyToAddress, generateDevPrivateKey } from './utils/crypto.js';
 import { createAgentServer, type AgentServerConfig } from './server.js';
 import { createLogger } from './middleware/logging.js';
 
@@ -101,6 +101,11 @@ export class ERC8004Agent extends EventEmitter<AgentEvents> {
 
   constructor(config: ERC8004AgentConfig) {
     super();
+
+    // Generate a random dev key if none provided
+    if (!config.privateKey) {
+      config = { ...config, privateKey: generateDevPrivateKey() };
+    }
 
     this.config = config;
     this.address = privateKeyToAddress(config.privateKey);

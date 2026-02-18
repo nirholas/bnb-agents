@@ -72,11 +72,17 @@ export function keccak256(data: string): string {
  */
 export function privateKeyToAddress(privateKey: string): string {
   if (!privateKey) {
-    const wallet = ethers.Wallet.createRandom();
-    return wallet.address;
+    return ethers.Wallet.createRandom().address;
   }
   const wallet = new ethers.Wallet(privateKey);
   return wallet.address;
+}
+
+/**
+ * Generate a random private key for dev mode.
+ */
+export function generateDevPrivateKey(): string {
+  return ethers.Wallet.createRandom().privateKey;
 }
 
 /**

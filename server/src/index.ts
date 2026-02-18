@@ -22,8 +22,10 @@ config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Trust proxy (needed for rate limiting behind reverse proxies/devcontainers)
-app.set('trust proxy', 1);
+// Security: Only trust proxy when explicitly configured via environment variable
+if (process.env.TRUST_PROXY) {
+  app.set('trust proxy', parseInt(process.env.TRUST_PROXY) || 1);
+}
 
 // Middleware
 app.use(helmet());
