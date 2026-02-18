@@ -96,8 +96,8 @@ export default function InteractiveCodePlayground({
     try {
       await onRun(currentCode, activeTabData.language);
       setOutput('Execution completed successfully');
-    } catch (err: any) {
-      setError(err.message || 'Execution failed');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Execution failed');
       setOutput('');
     } finally {
       setIsRunning(false);

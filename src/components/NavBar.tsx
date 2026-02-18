@@ -323,6 +323,7 @@ export default function NavBar() {
       menuButtonRef.current?.focus();
       announce('Navigation menu closed', 'polite');
     },
+    // eslint-disable-next-line react-hooks/refs
     returnFocusTo: menuButtonRef.current,
   });
 

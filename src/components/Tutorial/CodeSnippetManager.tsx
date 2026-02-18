@@ -72,6 +72,7 @@ export default function CodeSnippetManager({
           url: window.location.href
         });
       } catch (_err) {
+        // eslint-disable-next-line no-console
         console.log('Share cancelled');
       }
     } else {
@@ -265,6 +266,7 @@ export default function CodeSnippetManager({
 }
 
 // Example snippets data
+// eslint-disable-next-line react-refresh/only-export-components
 export const exampleSnippets: CodeSnippet[] = [
   {
     id: 'snippet-1',

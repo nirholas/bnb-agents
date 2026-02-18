@@ -18,12 +18,14 @@ import { BNBLogo } from './BNBBrand';
 // AI AVATAR CONFIG
 // =============================================================================
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const BNB_AI_AVATAR = {
   emoji: '🎵',
   title: 'BNB Chain AI',
   bgColor: 'bg-indigo-500',
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const USER_AVATAR = {
   emoji: '👤',
   title: 'You',

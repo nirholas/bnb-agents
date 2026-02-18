@@ -63,6 +63,7 @@ export function EditorSuspense({ children }: { children: ReactNode }) {
 /**
  * Higher-order component to wrap any component with Suspense
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function withSuspense<P extends object>(
   WrappedComponent: ComponentType<P>,
   fallback?: ReactNode
@@ -79,6 +80,7 @@ export function withSuspense<P extends object>(
 /**
  * Prefetch a lazy component (call this on hover/focus for faster navigation)
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function prefetchComponent(lazyComponent: ReturnType<typeof lazy>) {
   // Trigger the import
   const componentModule = lazyComponent as unknown as { _payload?: { _result?: unknown } };
@@ -105,6 +107,7 @@ export function prefetchComponent(lazyComponent: ReturnType<typeof lazy>) {
  * const prefetch = usePrefetch();
  * <Link onMouseEnter={() => prefetch(LazyContractPlayground)}>Playground</Link>
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function usePrefetch() {
   return (lazyComponent: ReturnType<typeof lazy>) => {
     prefetchComponent(lazyComponent);

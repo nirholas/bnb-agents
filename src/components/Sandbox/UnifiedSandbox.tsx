@@ -604,7 +604,7 @@ export default function UnifiedSandbox({
                   <button
                     onClick={() => setExpandedContracts(prev => {
                       const next = new Set(prev);
-                      next.has(c.id) ? next.delete(c.id) : next.add(c.id);
+                      if (next.has(c.id)) { next.delete(c.id); } else { next.add(c.id); }
                       return next;
                     })}
                     className="w-full flex items-center gap-2 p-3 hover:bg-zinc-900/50"

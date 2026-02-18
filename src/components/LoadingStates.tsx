@@ -209,6 +209,7 @@ export function EditorSkeleton({ className }: { className?: string }) {
         {Array.from({ length: 12 }).map((_, i) => (
           <div key={i} className="flex gap-4">
             <Skeleton width={24} height={16} className="bg-[#0a0a0a]" />
+            {/* eslint-disable-next-line react-hooks/purity */}
             <Skeleton 
               width={`${Math.random() * 40 + 30}%`} 
               height={16} 

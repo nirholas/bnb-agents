@@ -262,7 +262,7 @@ export default function WalletButton() {
           )}
         />
         <span className="text-sm font-medium">
-          {truncateAddress(address!)}
+          {truncateAddress(address ?? '')}
         </span>
         <ChevronDown
           className={cn('w-4 h-4 transition-transform', isOpen && 'rotate-180')}

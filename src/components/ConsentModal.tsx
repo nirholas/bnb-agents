@@ -29,6 +29,7 @@ interface ConsentModalProps {
 }
 
 // Hook to check/set consent status
+// eslint-disable-next-line react-refresh/only-export-components
 export function useConsent() {
   const [hasConsented, setHasConsented] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;

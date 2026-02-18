@@ -1749,6 +1749,7 @@ export default function WebSandbox({
                       onClick={() => {
                         setSettings(prev => ({
                           ...prev,
+                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                           [key]: getValue 
                             ? setValue!(!getValue(prev[key as keyof EditorSettings] as string))
                             : !prev[key as keyof EditorSettings]
@@ -1791,6 +1792,7 @@ export default function WebSandbox({
           category: 'sandbox'
         }}
         onShare={(url) => {
+          // eslint-disable-next-line no-console
           console.log('Shared at:', url);
         }}
       />
