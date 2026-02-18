@@ -80,9 +80,6 @@ It's a single repository with **everything** you need to build AI-powered applic
 
 ## ⚡ Quick Start
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/nirholas/bnb-chain-toolkit)
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/devbox/github/nirholas/bnb-chain-toolkit)
-
 ```bash
 # Clone
 git clone https://github.com/nirholas/bnb-chain-toolkit.git
