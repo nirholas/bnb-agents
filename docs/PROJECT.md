@@ -65,7 +65,7 @@ BNB Chain AI Toolkit is a monorepo that provides everything a developer needs to
 
 ### 2.1 Single Monorepo with Everything Integrated
 
-One repository. 78 AI agents, 6 MCP servers, 900+ tools, market data services, DeFi utilities, wallet operations, and Web3 standards — all MIT licensed, all designed to work together.
+One repository. 78 AI agents, 6 MCP servers, 1,100+ tools, market data services, DeFi utilities, wallet operations, and Web3 standards — all MIT licensed, all designed to work together.
 
 ```
 bnb-chain-toolkit/

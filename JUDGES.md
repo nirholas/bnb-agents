@@ -148,7 +148,7 @@ Zero-dependency price feeds and news aggregation from 200+ sources.
 | Criteria | Where to Look |
 |----------|--------------|
 | **Innovation** | ERC-8004 standard, ABI-to-MCP generator (ucai), W3AG, Agent Runtime with A2A + x402 |
-| **Technical Complexity** | 6 MCP servers, 900+ tools, 60+ chain support, agent-runtime SDK |
+| **Technical Complexity** | 6 MCP servers, 1,100+ tools, 60+ chain support, agent-runtime SDK |
 | **Completeness** | Full stack: agents, servers, data, tools, wallets, standards, runtime |
 | **Usability** | Live demo, 30+ languages, comprehensive docs, 24-chain deployment |
 | **Impact** | Enables any AI to interact with BNB Chain + 60 networks |

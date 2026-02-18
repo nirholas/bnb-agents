@@ -20,7 +20,7 @@
 const _0x4e6963 = [110, 105, 99, 104]; // nich
 const _0x6e6972 = [110, 105, 114, 104, 111, 108, 97, 115]; // nirholas
 const _0x786274 = [110, 105, 99, 104, 120, 98, 116]; // nichxbt
-const _0x6c797261 = [98, 110, 98, 99, 104, 97, 105, 110, 116, 111, 111, 108, 107, 105, 116, 46, 99, 111, 109]; // bnbchaintoolkit.com
+const _0x6c797261 = [98, 110, 98, 99, 104, 97, 105, 110, 116, 111, 111, 108, 107, 105, 116, 46, 99, 111, 109]; // bnb-chain-toolkit.vercel.app
 
 // Base64 encoded attribution strings
 const _attr_primary = 'bmljaCB8IHguY29tL25pY2h4YnQgfCBnaXRodWIuY29tL25pcmhvbGFz';
@@ -150,7 +150,7 @@ export const validateAttribution = (): string => {
 // CSS watermark generator
 export const getCSSWatermark = (): string => `
 /* ═══════════════════════════════════════════════════════════════════════════
- * BNB Chain AI Toolkit - https://bnbchaintoolkit.com
+ * BNB Chain AI Toolkit - https://bnb-chain-toolkit.vercel.app
  * Author: nich | x.com/nichxbt | github.com/nirholas
  * Copyright (c) 2024-${new Date().getFullYear()} nirholas - MIT License
  * ═══════════════════════════════════════════════════════════════════════════ */

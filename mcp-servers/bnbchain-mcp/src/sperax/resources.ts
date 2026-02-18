@@ -1206,15 +1206,15 @@ export const AGENTS_DOCUMENTATION = `# SperaxOS DeFi Agents
 
 ## Overview
 
-The DeFi Agents API provides access to 58+ production-ready AI agent definitions for DeFi, portfolio management, trading, and Web3 workflows.
+The DeFi Agents API provides access to 78+ production-ready AI agent definitions for DeFi, portfolio management, trading, and Web3 workflows.
 
 **API Base URL:** \`https://sperax.click\`
 **Repository:** https://github.com/speraxos/SperaxOS-Defi-Agents
 
 ## Features
 
-- ✅ **58+ Production-Ready Agents** - DeFi, portfolio, trading, security, education
-- ✅ **18 Languages** - Full i18n support
+- ✅ **78+ Production-Ready Agents** - DeFi, portfolio, trading, security, education
+- ✅ **30+ Languages** - Full i18n support
 - ✅ **RESTful JSON API** - Easy integration
 - ✅ **Sperax Ecosystem Agents** - USDs, SPA, veSPA specialists
 
@@ -1486,7 +1486,7 @@ export const resources = [
   {
     uri: 'sperax://ecosystem/agents',
     name: 'DeFi Agents API',
-    description: 'Documentation for the DeFi Agents API with 58+ AI agent definitions',
+    description: 'Documentation for the DeFi Agents API with 78+ AI agent definitions',
     mimeType: 'text/markdown',
     content: AGENTS_DOCUMENTATION,
   },

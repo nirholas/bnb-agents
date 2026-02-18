@@ -34,7 +34,7 @@ The core of this project is 78 AI agent definitions split across [`agents/bnb-ch
 - All 30+ language translations in [`locales/`](../locales/) (30 agent directories, each with multiple language files) were AI-generated. That's thousands of translated strings across languages like Chinese, Japanese, Korean, Spanish, Arabic, Hindi, and more
 - Agent JSON schema validation was AI-designed to catch malformed definitions early
 
-### 2. MCP Servers (6 servers, 900+ tools)
+### 2. MCP Servers (6 servers, 1,100+ tools)
 
 The [`mcp-servers/`](../mcp-servers/) directory contains six self-contained MCP servers — this was the most technically demanding part.
 
@@ -155,7 +155,6 @@ The following files serve as direct evidence of continuous AI tool usage through
 | [`scripts/`](../scripts/) | Build pipeline tools — AI-generated formatters, validators, parsers |
 | [`docs/`](../docs/) | 17 documentation files — AI-drafted, human-edited |
 | [`CHANGELOG.md`](../CHANGELOG.md) | Version history showing iterative AI-assisted development |
-| [`.hackathon-prompts/`](../.hackathon-prompts/) | Structured prompts used to generate hackathon docs with AI |
 
 ---
 
@@ -165,7 +164,7 @@ The following files serve as direct evidence of continuous AI tool usage through
 | --- | --- | --- | --- |
 | Dec 21, 2025 | v1.0.0 | Initial release — 57 agents, build pipeline, 30+ languages | AI generated agent definitions and translations |
 | Dec 21, 2025 | v1.1.0 | Added master agent (58 total) | AI helped design the unified agent combining 16 plugin features |
-| Feb 11, 2026 | v2.0.0 | Monorepo transformation — 78 agents, 6 MCP servers, 900+ tools | AI-intensive consolidation of 14 repos; scaffolded all MCP servers |
+| Feb 11, 2026 | v2.0.0 | Monorepo transformation — 78 agents, 6 MCP servers, 1,100+ tools | AI-intensive consolidation of 14 repos; scaffolded all MCP servers |
 | Feb 2026 | — | Hackathon submission | All submission docs AI-drafted from structured prompts || Feb 18, 2026 | v2.1.0 — opBNB + hackathon polish | opBNB chain support (24 chains), CLI expanded to 26 chains, agent runtime showcase, enhanced judges guide |
 ---
 

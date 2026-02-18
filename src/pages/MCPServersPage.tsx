@@ -3,7 +3,7 @@
  * BNB CHAIN AI TOOLKIT - MCP Servers Explorer (Browse Page)
  * ═══════════════════════════════════════════════════════════════════════════
  * ✨ Author: nich | 🐦 x.com/nichxbt | 🐙 github.com/nirholas
- * 📦 github.com/nirholas/bnb-chain-toolkit | 🌐 https://bnbchaintoolkit.com
+ * 📦 github.com/nirholas/bnb-chain-toolkit | 🌐 https://bnb-chain-toolkit.vercel.app
  * Copyright (c) 2024-2026 nirholas (nich) - MIT License
  * @preserve
  * ═══════════════════════════════════════════════════════════════════════════
@@ -43,7 +43,7 @@ const GITHUB_BASE = 'https://github.com/nirholas/bnb-chain-toolkit/tree/main/';
 
 /* ── Stat items ──────────────────────────────────────────────────────── */
 const stats = [
-  { label: 'Total Tools', value: '900+', icon: Server },
+  { label: 'Total Tools', value: '1,100+', icon: Server },
   { label: 'Servers', value: '6', icon: Layers },
   { label: 'Networks', value: '60+', icon: Globe },
   { label: 'Languages', value: '2', icon: Code2 },
@@ -77,7 +77,7 @@ const cursorConfig = allServersConfig;
  */
 const chatgptText = `ChatGPT does not support the Model Context Protocol (MCP).
 
-To use these 900+ tools, use an MCP-compatible client:
+To use these 1,100+ tools, use an MCP-compatible client:
 • Claude Desktop — paste the config from the Claude tab
 • Cursor — paste into .cursor/mcp.json
 • Any MCP-compatible client (see modelcontextprotocol.io)
@@ -130,9 +130,9 @@ function getTabContent(tab: ConfigTab): string {
 
 export default function MCPServersPage() {
   useSEO({
-    title: 'MCP Servers — 6 Servers, 900+ Tools',
+    title: 'MCP Servers — 6 Servers, 1,100+ Tools',
     description:
-      'Explore 6 MCP Servers with 900+ tools for BNB Chain, Binance, and 60+ blockchain networks. Compare, copy config, and start building.',
+      'Explore 6 MCP Servers with 1,100+ tools for BNB Chain, Binance, and 60+ blockchain networks. Compare, copy config, and start building.',
     path: '/mcp',
   });
 
@@ -179,7 +179,7 @@ export default function MCPServersPage() {
             transition={{ duration: 0.5 }}
           >
             6 MCP Servers,{' '}
-            <span className="text-[#F0B90B]">900+ Tools</span>
+            <span className="text-[#F0B90B]">1,100+ Tools</span>
           </motion.h1>
 
           <div className="mx-auto mt-6 max-w-2xl">
@@ -547,10 +547,10 @@ export default function MCPServersPage() {
             <Link
               to="/tools"
               className="inline-flex items-center gap-2 rounded-lg border border-gray-200 dark:border-gray-800 px-5 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:border-[#F0B90B]/40 hover:text-[#F0B90B] dark:text-gray-300"
-              aria-label="Browse all 900+ tools"
+              aria-label="Browse all 1,100+ tools"
             >
               <Wrench className="h-4 w-4" aria-hidden="true" />
-              Browse All 900+ Tools
+              Browse All 1,100+ Tools
             </Link>
             <Link
               to="/explore"

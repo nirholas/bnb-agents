@@ -4,7 +4,7 @@
   "description": "BNB Chain AI Toolkit - 78 AI agents, 6 MCP servers, 900+ tools for BNB Chain and 60+ networks. Built by nich.",
   "author": {
     "name": "nich (nirholas)",
-    "email": "nich@bnbchaintoolkit.com",
+    "email": "nich@bnb-chain-toolkit.vercel.app",
     "url": "https://github.com/nirholas"
   },
   "contributors": [
@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/nirholas/bnb-chain-toolkit/issues"
   },
-  "homepage": "https://bnbchaintoolkit.com/",
+  "homepage": "https://bnb-chain-toolkit.vercel.app/",
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/nirholas"

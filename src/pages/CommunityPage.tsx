@@ -86,7 +86,7 @@ const contributeWays = [
     icon: Rocket,
     title: "Build with the Toolkit",
     description:
-      "Use the agents, MCP servers, and tools in your own projects. 900+ tools ready for production.",
+      "Use the agents, MCP servers, and tools in your own projects. 1,100+ tools ready for production.",
     link: "/explore",
     linkLabel: "Explore Components",
     external: false,
@@ -96,7 +96,7 @@ const contributeWays = [
 // Scrolling project stats feed
 const projectHighlights = [
   { quote: "78 portable JSON agent definitions covering BNB Chain, DeFi, and general crypto", name: "AI Agents", title: "36 BNB Chain + 42 DeFi", icon: <Bot className="w-5 h-5" /> },
-  { quote: "6 MCP servers providing 900+ tools — the largest open-source Web3 MCP collection", name: "MCP Servers", title: "TypeScript + Python", icon: <Server className="w-5 h-5" /> },
+  { quote: "6 MCP servers providing 1,100+ tools — the largest open-source Web3 MCP collection", name: "MCP Servers", title: "TypeScript + Python", icon: <Server className="w-5 h-5" /> },
   { quote: "binance-mcp alone has 478+ tools — spot, futures, options, algo orders, copy trading, NFTs", name: "Binance MCP", title: "478+ tools", icon: <Wrench className="w-5 h-5" /> },
   { quote: "Supports 60+ blockchain networks with multi-aggregator DEX, lending, bridges, and x402 payments", name: "Universal Crypto", title: "380+ tools, 60+ chains", icon: <Globe className="w-5 h-5" /> },
   { quote: "ucai — generate custom MCP tools from any ABI. Registered in Anthropic's MCP Registry", name: "ABI → MCP", title: "pip install abi-to-mcp", icon: <Terminal className="w-5 h-5" /> },
@@ -134,7 +134,7 @@ export default function CommunityPage() {
   useSEO({
     title: "Community",
     description:
-      "Join the BNB Chain AI Toolkit community — contribute to 78 agents, 6 MCP servers, and 900+ tools.",
+      "Join the BNB Chain AI Toolkit community — contribute to 78 agents, 6 MCP servers, and 1,100+ tools.",
     path: "/community",
   });
 

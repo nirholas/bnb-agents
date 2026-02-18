@@ -262,7 +262,7 @@ export default function ExplorePage() {
   useSEO({
     title: "Explore",
     description:
-      "Discover 78 AI agents, 6 MCP servers, and 900+ tools in the BNB Chain AI Toolkit.",
+      "Discover 78 AI agents, 6 MCP servers, and 1,100+ tools in the BNB Chain AI Toolkit.",
     path: "/explore",
   });
 
@@ -339,7 +339,7 @@ export default function ExplorePage() {
           </h1>
           <div className="mt-4 max-w-2xl mx-auto">
             <TextGenerateEffect
-              words="78 agents, 6 MCP servers, 900+ tools — browse everything in the ecosystem and find exactly what you need."
+              words="78 agents, 6 MCP servers, 1,100+ tools — browse everything in the ecosystem and find exactly what you need."
               className="text-lg !font-normal text-gray-600 dark:text-gray-400"
               filter={false}
               duration={0.4}
@@ -350,7 +350,7 @@ export default function ExplorePage() {
           <div className="flex items-center justify-center gap-10 md:gap-16 mt-10">
             <AnimatedStat value="78" label="AI Agents" />
             <AnimatedStat value="6" label="MCP Servers" />
-            <AnimatedStat value="900+" label="Tools" />
+            <AnimatedStat value="1,100+" label="Tools" />
           </div>
 
           {/* Search */}

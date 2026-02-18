@@ -3,7 +3,7 @@
  * 🌐 GitHub: github.com/nirholas
  * 💫 Clean code is happy code ✨
  *
- * ESLint Flat Config for Lyra Web3 Playground
+ * ESLint Flat Config for BNB Chain AI Toolkit
  */
 
 import js from '@eslint/js';

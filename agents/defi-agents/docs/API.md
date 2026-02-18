@@ -2,7 +2,7 @@
 
 ## Overview
 
-The DeFi Agents API is a RESTful JSON API providing access to 58 production-ready AI agent definitions for DeFi, portfolio management, trading, and Web3 workflows. All agents are available in 30+ languages.
+The DeFi Agents API is a RESTful JSON API providing access to 78 production-ready AI agent definitions for DeFi, portfolio management, trading, and Web3 workflows. All agents are available in 30+ languages.
 
 **Base URL**: `https://sperax.click`
 
@@ -12,7 +12,7 @@ The DeFi Agents API is a RESTful JSON API providing access to 58 production-read
 
 ### 1. **Get All Agents (English)**
 
-Retrieve the complete index of all 58 agents in English.
+Retrieve the complete index of all 78 agents in English.
 
 ```
 GET /index.json

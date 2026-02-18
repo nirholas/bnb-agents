@@ -33,7 +33,7 @@
 
 <img src="https://img.shields.io/badge/agents-78-F0B90B?style=for-the-badge&labelColor=000" alt="Agents" />
 <img src="https://img.shields.io/badge/MCP%20servers-6-7C3AED?style=for-the-badge&labelColor=000" alt="MCP Servers" />
-<img src="https://img.shields.io/badge/tools-900+-00B4D8?style=for-the-badge&labelColor=000" alt="Tools" />
+<img src="https://img.shields.io/badge/tools-1,100+-00B4D8?style=for-the-badge&labelColor=000" alt="Tools" />
 <img src="https://img.shields.io/badge/chains-60+-22C55E?style=for-the-badge&labelColor=000" alt="Chains" />
 <img src="https://img.shields.io/badge/languages-30+-FF6B6B?style=for-the-badge&labelColor=000" alt="Languages" />
 
@@ -168,7 +168,7 @@ Built for the **BNB Chain "Good Vibes Only: OpenClaw Edition"** hackathon — Tr
 | # | Feature | Details |
 |---|---------|---------|
 | 1 | **Comprehensive Coverage** | No other project covers the entire BNB Chain AI stack |
-| 2 | **Production-Ready MCP** | 6 servers, 900+ tools, ready for Claude and other LLMs |
+| 2 | **Production-Ready MCP** | 6 servers, 1,100+ tools, ready for Claude and other LLMs |
 | 3 | **Original Standards** | ERC-8004 (agent trust) and W3AG (accessibility) |
 | 4 | **Real DeFi Tooling** | Dust sweeper, market data, wallet toolkit |
 | 5 | **78 Specialized Agents** | Purpose-built for every major BNB protocol |
@@ -436,7 +436,7 @@ MIT © [nirholas](https://github.com/nirholas)
 
 <p align="center">
   <b>Built with 🔶 for BNB Chain</b><br>
-  <sub>78 agents · 6 MCP servers · 900+ tools · 60+ chains · 30+ languages</sub>
+  <sub>78 agents · 6 MCP servers · 1,100+ tools · 60+ chains · 30+ languages</sub>
 </p>
 
 <p align="center">

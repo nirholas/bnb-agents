@@ -2,7 +2,7 @@
  * Sperax MCP Server - DeFi Agents Tools
  *
  * Integration with SperaxOS DeFi Agents API
- * Provides access to 58+ production-ready AI agent definitions
+ * Provides access to 78+ production-ready AI agent definitions
  * for DeFi, portfolio management, trading, and Web3 workflows.
  *
  * API: https://sperax.click

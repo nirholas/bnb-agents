@@ -1,6 +1,6 @@
 # BNB Chain AI Toolkit — Good Vibes Only: OpenClaw Edition
 
-> 78 AI agents, 6 MCP servers, 900+ tools for BNB Chain, BSC, and opBNB.
+> 78 AI agents, 6 MCP servers, 1,100+ tools for BNB Chain, BSC, and opBNB.
 > The most comprehensive open-source AI toolkit for the BNB Chain ecosystem.
 
 ## Track: Agent (AI Agent × Onchain Actions)
@@ -44,7 +44,7 @@ BNB Chain AI Toolkit provides the **complete stack** for AI agents on BNB Chain:
 |-------|-----------|-------------|
 | **Identity** | ERC-8004 Contracts | On-chain agent registration (ERC-721 NFTs) with reputation & validation |
 | **Runtime** | Agent Runtime SDK | A2A protocol, x402 micropayments, discovery, task execution |
-| **Tools** | 6 MCP Servers | 900+ blockchain tools (swap, stake, deploy, bridge, market data, etc.) |
+| **Tools** | 6 MCP Servers | 1,100+ blockchain tools (swap, stake, deploy, bridge, market data, etc.) |
 | **Knowledge** | 78 AI Agents | Specialized system prompts for every major BNB Chain protocol |
 | **Creator** | ERC-8004 Agents App | Web app + CLI + SDKs to register agents on-chain in minutes |
 | **Market Data** | Price & News | Real-time crypto prices, 200+ news sources, Fear & Greed Index |

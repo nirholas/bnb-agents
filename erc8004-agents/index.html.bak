@@ -80,7 +80,7 @@ Licensed under Apache License 2.0
     "operatingSystem": "Web Browser",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "author": { "@type": "Person", "name": "nich", "url": "https://x.com/nichxbt" },
-    "publisher": { "@type": "Organization", "name": "BNB Chain AI Toolkit", "url": "https://bnbchaintoolkit.com" },
+    "publisher": { "@type": "Organization", "name": "BNB Chain AI Toolkit", "url": "https://bnb-chain-toolkit.vercel.app" },
     "keywords": ["ERC-8004", "trustless agents", "AI agents", "on-chain identity", "BNB Chain", "EVM", "ERC-721", "NFT", "MCP", "A2A", "agent economy", "Web3"],
     "featureList": [
       "Register AI agent identities as ERC-721 NFTs",
@@ -1482,10 +1482,10 @@ Licensed under Apache License 2.0
         <div class="footer-links">
           <a href="https://www.8004.org" target="_blank" rel="noopener">ERC-8004 Spec</a>
           <a href="https://github.com/erc-8004/erc-8004-contracts" target="_blank" rel="noopener">Contracts</a>
-          <a href="https://bnbchaintoolkit.com" target="_blank" rel="noopener">BNB Chain AI Toolkit</a>
+          <a href="https://bnb-chain-toolkit.vercel.app" target="_blank" rel="noopener">BNB Chain AI Toolkit</a>
           <a href="https://github.com/nirholas/erc8004-agent-creator" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <p>Built by <a href="https://x.com/nichxbt" target="_blank" rel="noopener">nich</a> · Powered by <a href="https://www.8004.org" target="_blank" rel="noopener">ERC-8004</a> · <a href="https://bnbchaintoolkit.com" target="_blank" rel="noopener">BNB Chain AI Toolkit</a></p>
+        <p>Built by <a href="https://x.com/nichxbt" target="_blank" rel="noopener">nich</a> · Powered by <a href="https://www.8004.org" target="_blank" rel="noopener">ERC-8004</a> · <a href="https://bnb-chain-toolkit.vercel.app" target="_blank" rel="noopener">BNB Chain AI Toolkit</a></p>
       </div>
     </footer>
   </div>

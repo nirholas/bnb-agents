@@ -241,7 +241,7 @@
   },
   "apiVersion": "1.0",
   "categories": ["trading", "defi", "portfolio", "security", "education"],
-  "description": "Production-ready AI agent definitions API - 57 specialized agents for DeFi, portfolio management, trading, and Web3 workflows",
+  "description": "Production-ready AI agent definitions API - 78 specialized agents for DeFi, portfolio management, trading, and Web3 workflows",
   "documentation": "https://sperax.click/docs/API.md",
   "endpoints": {
     "allAgentsEnglish": "https://sperax.click/index.json",

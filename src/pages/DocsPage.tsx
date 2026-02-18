@@ -70,7 +70,7 @@ const docCategories: DocCategory[] = [
     id: "mcp-servers",
     title: "MCP Servers",
     description:
-      "6 production servers with 900+ tools. bnbchain-mcp (150+), binance-mcp (478+), universal-crypto-mcp (380+), agenti, ucai, and more.",
+      "6 production servers with 1,100+ tools. bnbchain-mcp (384), binance-mcp (478+), universal-crypto-mcp (100+), agenti, ucai, and more.",
     icon: <Server className="w-6 h-6" />,
     articleCount: 8,
     highlight: "STDIO + SSE transport",

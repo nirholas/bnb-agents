@@ -1,11 +1,11 @@
-# Security Policy for Lyra Web3 Playground
+# Security Policy for BNB Chain AI Toolkit
 
 ## Reporting Security Issues
 
 If you discover a security vulnerability, please report it responsibly:
 
-1. **Email**: security@lyra.works (preferred)
-2. **GitHub**: Open a private security advisory at https://github.com/nirholas/lyra-playground/security/advisories
+1. **GitHub**: Open a private security advisory at https://github.com/nirholas/bnb-chain-toolkit/security/advisories
+2. **Twitter/X**: DM @nichxbt
 
 Please include:
 - Description of the vulnerability
@@ -22,10 +22,10 @@ Please include:
 ## Scope
 
 In scope:
-- lyra.works website
-- API endpoints at lyra.works/api
-- Smart contract templates (security issues in template code)
-- Authentication/authorization issues
+- bnbchaintoolkit.com website
+- MCP server packages
+- ERC-8004 smart contracts
+- Agent definitions and runtime
 
 Out of scope:
 - Third-party dependencies (report to upstream)

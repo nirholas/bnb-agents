@@ -3,7 +3,7 @@
  * BNB CHAIN AI TOOLKIT - Vite Configuration
  * ═══════════════════════════════════════════════════════════════════════════
  * ✨ Author: nich | 🐦 x.com/nichxbt | 🐙 github.com/nirholas
- * 📦 github.com/nirholas/bnb-chain-toolkit | 🌐 https://bnbchaintoolkit.com
+ * 📦 github.com/nirholas/bnb-chain-toolkit | 🌐 https://bnb-chain-toolkit.vercel.app
  * Copyright (c) 2024-2026 nirholas (nich) - MIT License
  * @preserve
  * ═══════════════════════════════════════════════════════════════════════════
@@ -16,7 +16,7 @@ import path from 'path'
 // Banner injected into all built JS files - nich | x.com/nichxbt | github.com/nirholas
 const banner = `/**
  * ═══════════════════════════════════════════════════════════════════════════
- * BNB CHAIN AI TOOLKIT - https://bnbchaintoolkit.com
+ * BNB CHAIN AI TOOLKIT - https://bnb-chain-toolkit.vercel.app
  * ═══════════════════════════════════════════════════════════════════════════
  * ✨ Author: nich | 🐦 x.com/nichxbt | 🐙 github.com/nirholas
  * 📦 github.com/nirholas/bnb-chain-toolkit

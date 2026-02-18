@@ -18,7 +18,7 @@ This project was built as a solo effort — from architecture design to implemen
 
 - **GitHub:** [@nirholas](https://github.com/nirholas)
 - **X/Twitter:** [@nichxbt](https://x.com/nichxbt)
-- **Email:** nich@bnbchaintoolkit.com
+- **Email:** nich@bnb-chain-toolkit.vercel.app
 
 ---
 

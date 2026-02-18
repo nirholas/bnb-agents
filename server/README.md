@@ -4,9 +4,9 @@
   💫 Passion fuels progress ⚡
 -->
 
-# Lyra Web3 Playground Server
+# BNB Chain AI Toolkit Server
 
-Backend API server for the Lyra Web3 Playground platform. Provides compilation, deployment, AI, faucet, and IPFS services.
+Backend API server for the BNB Chain AI Toolkit platform. Provides compilation, deployment, AI, faucet, and IPFS services.
 
 ## Features
 

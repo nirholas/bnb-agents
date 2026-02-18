@@ -243,7 +243,7 @@ public/
   ├── index.zh-CN.json         # Chinese index
   ├── my-defi-agent.json       # Your agent (en-US)
   ├── my-defi-agent.zh-CN.json # Your agent (Chinese)
-  └── ... (58 agents × 30+ languages = 1,044 files)
+  └── ... (78 agents × 30+ languages = 2,340+ files)
 ```
 
 ### Step 4: Test Locally (Optional)

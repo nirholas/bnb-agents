@@ -3,7 +3,7 @@
  * BNB CHAIN AI TOOLKIT - BNB Chain AI Chat Service
  * ═══════════════════════════════════════════════════════════════════════════
  * ✨ Author: nich | 🐦 x.com/nichxbt | 🐙 github.com/nirholas
- * 📦 github.com/nirholas/bnb-chain-toolkit | 🌐 https://bnbchaintoolkit.com
+ * 📦 github.com/nirholas/bnb-chain-toolkit | 🌐 https://bnb-chain-toolkit.vercel.app
  * Copyright (c) 2024-2026 nirholas (nich) - MIT License
  * @preserve
  * ═══════════════════════════════════════════════════════════════════════════

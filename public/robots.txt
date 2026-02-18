@@ -1,5 +1,5 @@
-# Lyra Web3 Playground - robots.txt
-# https://lyra.works
+# BNB Chain AI Toolkit - robots.txt
+# https://bnbchaintoolkit.com
 # Last Updated: 2026-01-19
 
 # Allow all crawlers
@@ -85,7 +85,7 @@ Allow: /
 # openapi.json - API specification for AI tools
 
 # Sitemap location
-Sitemap: https://lyra.works/sitemap.xml
+Sitemap: https://bnbchaintoolkit.com/sitemap.xml
 
 # Crawl-delay for politeness (optional)
 Crawl-delay: 1

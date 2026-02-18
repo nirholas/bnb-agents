@@ -112,7 +112,7 @@ async function main() {
   const tx3 = await identity.setMetadata(
     agentId,
     'a2a-endpoint',
-    'https://demo.bnbchaintoolkit.com/a2a',
+    'https://demo.bnb-chain-toolkit.vercel.app/a2a',
   );
   console.log(`  TX: https://testnet.bscscan.com/tx/${tx3.hash}`);
   await tx3.wait();

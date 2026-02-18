@@ -1,6 +1,6 @@
 # BNB Chain AI Toolkit — Development Guidelines
 
-> 78 AI agents, 6 MCP servers, 900+ tools for BNB Chain, BSC, opBNB, and 60+ networks.
+> 78 AI agents, 6 MCP servers, 1,100+ tools for BNB Chain, BSC, opBNB, and 60+ networks.
 
 ## Project Overview
 

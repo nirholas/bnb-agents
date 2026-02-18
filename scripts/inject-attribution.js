@@ -19,7 +19,7 @@ const AUTHOR = 'nich';
 const TWITTER = 'x.com/nichxbt';
 const GITHUB = 'github.com/nirholas';
 const REPO = 'github.com/nirholas/bnb-chain-toolkit';
-const WEBSITE = 'https://bnbchaintoolkit.com';
+const WEBSITE = 'https://bnb-chain-toolkit.vercel.app';
 const YEAR = new Date().getFullYear();
 
 // Header templates

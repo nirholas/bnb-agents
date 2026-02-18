@@ -8,7 +8,7 @@ interface SEOProps {
 
 const BASE_TITLE = 'BNB Chain AI Toolkit';
 const BASE_DESCRIPTION = 'Learn blockchain development with interactive examples. Compile and deploy Solidity smart contracts directly in your browser.';
-const BASE_URL = 'https://bnbchaintoolkit.com';
+const BASE_URL = 'https://bnb-chain-toolkit.vercel.app';
 
 /**
  * SEO component for dynamic page titles and meta tags

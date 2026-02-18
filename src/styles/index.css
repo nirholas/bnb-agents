@@ -7,7 +7,7 @@
  * 🐦 Twitter/X: x.com/nichxbt
  * 🐙 GitHub: github.com/nirholas
  * 📦 Repository: github.com/nirholas/bnb-chain-toolkit
- * 🌐 Website: https://bnbchaintoolkit.com
+ * 🌐 Website: https://bnb-chain-toolkit.vercel.app
  * 
  * Copyright (c) 2024-2026 nirholas (nich)
  * Licensed under MIT License

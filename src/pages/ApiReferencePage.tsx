@@ -307,13 +307,13 @@ export default function ApiReferencePage() {
             </h2>
             <div className="flex items-center space-x-3">
               <code className="flex-1 px-4 py-2 bg-gray-100 dark:bg-zinc-900 rounded-lg font-mono text-sm">
-                https://api.bnbchaintoolkit.com
+                https://api.bnb-chain-toolkit.vercel.app
               </code>
               <button
-                onClick={() => copyCode('https://api.bnbchaintoolkit.com')}
+                onClick={() => copyCode('https://api.bnb-chain-toolkit.vercel.app')}
                 className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
               >
-                {copiedCode === 'https://api.bnbchaintoolkit.com' ? (
+                {copiedCode === 'https://api.bnb-chain-toolkit.vercel.app' ? (
                   <CheckCircle className="w-5 h-5 text-green-500" />
                 ) : (
                   <Copy className="w-5 h-5" />

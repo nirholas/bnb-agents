@@ -1,13 +1,13 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Lyra Web3 Playground API",
-    "description": "API for compiling Solidity code, generating AI-assisted smart contracts, and accessing contract templates. Use this API to integrate Lyra's blockchain development tools.",
-    "version": "1.0.0",
+    "title": "BNB Chain AI Toolkit API",
+    "description": "API for the BNB Chain AI Toolkit — 78 AI agents, 6 MCP servers, 900+ tools for BNB Chain and 60+ networks.",
+    "version": "2.0.0",
     "contact": {
-      "name": "Lyra Support",
-      "url": "https://lyra.works",
-      "email": "contact@lyra.works"
+      "name": "BNB Chain AI Toolkit",
+      "url": "https://bnbchaintoolkit.com",
+      "email": "contact@bnbchaintoolkit.com"
     },
     "license": {
       "name": "MIT",

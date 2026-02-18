@@ -7,7 +7,7 @@
  * 🐦 Twitter/X: x.com/nichxbt
  * 🐙 GitHub: github.com/nirholas
  * 📦 Repository: github.com/nirholas/bnb-chain-toolkit
- * 🌐 Website: https://bnbchaintoolkit.com
+ * 🌐 Website: https://bnb-chain-toolkit.vercel.app
  * 
  * Copyright (c) 2024-2026 nirholas (nich)
  * Licensed under MIT License
@@ -53,7 +53,7 @@ if (typeof window !== 'undefined') {
       x: `x.com/${_bnb_handle}`,
       github: `github.com/${_bnb_github}`,
       repository: `github.com/${_bnb_github}/bnb-chain-toolkit`,
-      website: 'https://bnbchaintoolkit.com',
+      website: 'https://bnb-chain-toolkit.vercel.app',
       license: 'MIT',
       copyright: `© 2024-${new Date().getFullYear()} ${_bnb_github} (${_bnb_author})`,
       signature: _bnb_sig,
