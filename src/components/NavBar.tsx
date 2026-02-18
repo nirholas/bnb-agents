@@ -32,7 +32,6 @@ import {
   Users,
   HelpCircle,
   Info,
-  Wrench,
 } from 'lucide-react';
 import { useThemeStore } from '@/stores/themeStore';
 import useI18n from '@/stores/i18nStore';
@@ -372,14 +371,6 @@ export default function NavBar() {
     {
       label: t('nav.build'),
       items: [
-        {
-          label: 'MCP Playground',
-          href: '/tool-playground',
-          icon: Wrench,
-          description: 'Execute 1,100+ MCP tools live in your browser',
-          badge: 'New',
-          iconColor: 'text-[#F0B90B]',
-        },
         {
           label: t('nav.code_playground'),
           href: '/playground',

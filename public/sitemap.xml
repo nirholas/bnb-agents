@@ -44,13 +44,6 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://bnbchaintoolkit.com/tool-playground</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- Learning & Tutorials -->
   <url>
     <loc>https://bnbchaintoolkit.com/tutorials</loc>

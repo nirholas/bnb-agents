@@ -77,6 +77,7 @@ export default function ContractPlayground() {
   const [previewKey, setPreviewKey] = useState(0);
   
   const editorRef = useRef<unknown>(null);
+  const templatesSectionRef = useRef<HTMLDivElement | null>(null);
   
   // Initialize BNB Compiler with progress callback
   const compiler = useMemo(() => new BNBCompiler({
@@ -493,7 +494,7 @@ export default function ContractPlayground() {
             </div>
 
             {/* Templates Section */}
-            <div className="flex-1 overflow-auto p-4">
+            <div ref={templatesSectionRef} className="flex-1 overflow-auto p-4">
               <h2 className="text-sm font-semibold mb-3 flex items-center uppercase tracking-wider text-gray-500 dark:text-neutral-400">
                 <LayoutTemplate className="w-4 h-4 mr-2" />
                 Templates ({contractTemplates.length})
@@ -658,7 +659,12 @@ export default function ContractPlayground() {
                 </p>
                 <div className="flex items-center justify-center gap-3">
                   <button
-                    onClick={() => setShowSidebar(true)}
+                    onClick={() => {
+                      setShowSidebar(true);
+                      setTimeout(() => {
+                        templatesSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }, 100);
+                    }}
                     className="px-4 py-2.5 text-sm font-semibold rounded-lg bg-black text-white dark:bg-white dark:text-black hover:bg-[#0a0a0a] dark:hover:bg-gray-200 transition-all flex items-center gap-2"
                   >
                     <LayoutTemplate className="w-4 h-4" />

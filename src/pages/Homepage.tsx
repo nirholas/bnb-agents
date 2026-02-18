@@ -41,7 +41,7 @@ const mcpServers = [
     { name: 'BNB Chain MCP', tools: '100+', description: 'BSC, opBNB, Greenfield — swaps, transfers, contracts', icon: Blocks },
     { name: 'Binance MCP', tools: '478+', description: 'Spot, futures, margin trading on Binance.com', icon: BarChart3 },
     { name: 'Binance US MCP', tools: '—', description: 'US regulatory-compliant Binance access', icon: Shield },
-    { name: 'Universal Crypto MCP', tools: '100+', description: ' networks, cross-chain DeFi', icon: Globe },
+    { name: 'Universal Crypto MCP', tools: '380+', description: 'Multi-network cross-chain DeFi', icon: Globe },
     { name: 'Agenti', tools: '50+', description: 'EVM + Solana, AI-to-AI payments (x402)', icon: Bot },
     { name: 'UCAI', tools: 'Dynamic', description: 'Turn any smart contract ABI into an MCP server', icon: Wrench },
 ];
@@ -80,7 +80,6 @@ const featuredAgents = [
 const heroStats = [
     { label: 'Agents', value: '78', Icon: Bot },
     { label: 'Tools', value: '1,100+', Icon: Wrench },
-    { label: 'Chains', value: '', Icon: Network },
     { label: 'MCP Servers', value: '6', Icon: Server },
     { label: 'Languages', value: '30+', Icon: Globe },
 ];
@@ -244,7 +243,7 @@ export default function Homepage() {
     ], [t]);
     useSEO({
         title: 'BNB Chain AI Toolkit — 78 Agents, 6 MCP Servers, 1,100+ Tools',
-        description: 'The most comprehensive open-source AI toolkit for BNB Chain. 78 specialized agents, 6 MCP servers, 1,100+ tools,  chains.',
+        description: 'The most comprehensive open-source AI toolkit for BNB Chain. 78 specialized agents, 6 MCP servers, 1,100+ tools.',
     });
 
     return (

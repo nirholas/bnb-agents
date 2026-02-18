@@ -69,7 +69,6 @@ const MCPServersPage = lazy(() => import('./pages/MCPServersPage'));
 const MCPServerPage = lazy(() => import('./pages/MCPServerPage'));
 const _ToolCatalogPage = lazy(() => import('./pages/ToolCatalogPage'));
 const ToolReferencePage = lazy(() => import('./pages/ToolReferencePage'));
-const ToolPlaygroundPage = lazy(() => import('./pages/ToolPlaygroundPage'));
 const StandardsPage = lazy(() => import('./pages/StandardsPage'));
 const ERC8004Page = lazy(() => import('./pages/ERC8004Page'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
@@ -186,7 +185,6 @@ function AppContent() {
                   <Route path="/mcp" element={<MCPServersPage />} />
                   <Route path="/mcp/:serverId" element={<MCPServerPage />} />
                   <Route path="/tools" element={<ToolReferencePage />} />
-                  <Route path="/tool-playground" element={<ToolPlaygroundPage />} />
                   <Route path="/standards" element={<StandardsPage />} />
                   <Route path="/erc8004" element={<ERC8004Page />} />
                   <Route path="/shared/:token" element={<SharedProjectPage />} />
