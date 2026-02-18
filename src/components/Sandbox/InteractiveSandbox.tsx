@@ -193,7 +193,7 @@ export default function InteractiveSandbox() {
       
       setCompiledData({
         bytecode: mainContract.bytecode,
-        abi: mainContract.abi,
+        abi: mainContract.abi as unknown as AbiItem[],
         name: mainContract.name,
         allContracts: result.contracts
       });

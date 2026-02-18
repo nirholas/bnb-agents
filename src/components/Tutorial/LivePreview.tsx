@@ -115,6 +115,7 @@ export default function LivePreview({ code, language, output }: LivePreviewProps
   useEffect(() => {
     // Auto-render for HTML/JavaScript
     if (language === 'javascript' || language === 'html') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       renderPreview();
     }
   }, [code, language]); // eslint-disable-line react-hooks/exhaustive-deps

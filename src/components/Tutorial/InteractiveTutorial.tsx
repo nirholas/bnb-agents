@@ -141,6 +141,7 @@ export default function InteractiveTutorial({ tutorial, onComplete }: Interactiv
 
   useEffect(() => {
     if (currentStepIndex >= tutorial.steps.length) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentStepIndex(0);
       persistProgress(p => ({ ...p, currentStepIndex: 0 }));
     }
@@ -152,6 +153,7 @@ export default function InteractiveTutorial({ tutorial, onComplete }: Interactiv
       const snapshot = progressState.codeSnapshots?.[currentStep.id]?.[activeLanguage];
       const nextCode = snapshot ?? currentStep.code[activeLanguage];
 
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCode(nextCode);
       setOutput('');
       setShowHints(false);

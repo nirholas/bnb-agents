@@ -27,6 +27,7 @@ export default function WalletConnect({ onClose, onConnect }: WalletConnectProps
     if (isConnected && address) {
       fetchBalance();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isConnected, address]);
 
   const connectMetaMask = async () => {

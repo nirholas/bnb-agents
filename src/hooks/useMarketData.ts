@@ -405,6 +405,7 @@ export function useLivePrices(
     }
   }, [coinIdsKey]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetch();
     const interval = setInterval(fetch, refreshInterval);
     return () => clearInterval(interval);

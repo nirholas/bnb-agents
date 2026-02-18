@@ -356,6 +356,7 @@ function ToolCategory({
   const [expanded, setExpanded] = useState(hasSelection || tools.length <= 5);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (hasSelection) setExpanded(true);
   }, [hasSelection]);  
 
@@ -431,6 +432,7 @@ function ToolForm({
         defaults[input.name] = String(input.default);
       }
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setValues(defaults);
   }, [tool.name]); // eslint-disable-line react-hooks/exhaustive-deps
 

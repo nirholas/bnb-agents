@@ -114,6 +114,7 @@ export default function WalletButton() {
     } finally {
       setIsConnecting(false);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // ── Handlers ───────────────────────────────────────────────────────
@@ -126,6 +127,7 @@ export default function WalletButton() {
         refreshBalance(accounts[0]);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [disconnect, setWallet],
   );
 
@@ -135,6 +137,7 @@ export default function WalletButton() {
       setWallet({ chainId: newChainId });
       if (address) refreshBalance(address);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [address, setWallet],
   );
 

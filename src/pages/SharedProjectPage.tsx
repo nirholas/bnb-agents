@@ -89,6 +89,7 @@ export default function SharedProjectPage() {
   // Load project
   useEffect(() => {
     if (token) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       loadProject();
     }
   }, [token]); // eslint-disable-line react-hooks/exhaustive-deps

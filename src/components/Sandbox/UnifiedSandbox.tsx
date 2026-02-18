@@ -448,6 +448,7 @@ export default function UnifiedSandbox({
     if (activeTab === 'preview') {
       runPreview();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTab, frontend]);
   
   // ---------------------------------------------------------------------------

@@ -71,5 +71,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "overrides": {
+    "elliptic": ">=6.6.2"
   }
 }
