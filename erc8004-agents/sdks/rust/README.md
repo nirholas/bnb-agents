@@ -42,11 +42,38 @@ async fn main() -> erc8004::Result<()> {
 | `ChainName::Ethereum` | Ethereum | 1 |
 | `ChainName::Sepolia` | Sepolia | 11155111 |
 
+## Keystore Support
+
+Enable the `keystore` feature to load wallets from encrypted Ethereum V3 keystore files:
+
+```toml
+[dependencies]
+erc8004 = { version = "0.1", features = ["keystore"] }
+```
+
+```rust
+use erc8004::{ERC8004Client, ChainName};
+
+let client = ERC8004Client::from_keystore(
+    ChainName::BscTestnet,
+    "path/to/keystore.json",
+    "my-password",
+)?;
+println!("Address: {:?}", client.address());
+
+// Export to a new keystore JSON string
+let json = client.export_keystore("new-password")?;
+std::fs::write("backup.json", json)?;
+```
+
 ## API
 
 ### `ERC8004Client`
 
 - `new(chain, private_key)` — Create client
+- `from_keystore(chain, path, password)` — Create client from V3 keystore *(requires `keystore` feature)*
+- `export_keystore(password)` — Export private key as V3 keystore JSON *(requires `keystore` feature)*
+- `address()` — Wallet address (if keystore/key loaded)
 - `build_agent_uri(metadata)` — Encode metadata as data URI
 - `parse_agent_uri(uri)` — Decode metadata URI
 - `caip10_address(chain_id, address)` — Build CAIP-10 ID

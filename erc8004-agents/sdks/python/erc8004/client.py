@@ -8,6 +8,7 @@ from typing import Any
 
 from eth_account import Account
 from web3 import AsyncWeb3
+from web3.middleware import SignAndSendRawMiddlewareBuilder
 from web3.providers import AsyncHTTPProvider
 
 from erc8004.chains import get_chain
@@ -84,8 +85,8 @@ class ERC8004Client:
         account = self._w3.eth.account.from_key(private_key)
         self._account = account
         self._w3.eth.default_account = account.address
-        self._w3.middleware_onion.add(
-            self._w3.middleware.construct_sign_and_send_raw_middleware(account)
+        self._w3.middleware_onion.inject(
+            SignAndSendRawMiddlewareBuilder.build(account), layer=0
         )
 
     # ── Alternative Constructors ────────────────────────────────────────

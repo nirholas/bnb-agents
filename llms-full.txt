@@ -12,10 +12,10 @@ bnb-chain-toolkit/
 │   ├── bnb-chain-agents/       # 36 BNB Chain-specific agents
 │   └── defi-agents/            # 42 general DeFi agents (30+ languages)
 ├── mcp-servers/                # 6 Model Context Protocol servers
-│   ├── bnbchain-mcp/           # BNB Chain + EVM (100+ tools)
-│   ├── binance-mcp/            # Binance.com (478+ tools)
+│   ├── bnbchain-mcp/           # BNB Chain + EVM (466+ tools)
+│   ├── binance-mcp/            # Binance.com (554+ tools)
 │   ├── binance-us-mcp/         # Binance.US (US compliance)
-│   ├── universal-crypto-mcp/   # 60+ networks (100+ tools)
+│   ├── universal-crypto-mcp/   # 60+ networks (59+ tools)
 │   ├── agenti/                 # Universal EVM + Solana
 │   └── ucai/                   # ABI-to-MCP generator (Python)
 ├── market-data/                # Market data & news
@@ -75,7 +75,7 @@ Cross-chain agents with 18-language support (30 locales for BNB Chain agents):
 ## MCP Servers (6)
 
 ### 1. BNB Chain MCP (bnbchain-mcp)
-100+ tools for BNB Chain, BSC, opBNB, and EVM blockchains:
+466+ tools for BNB Chain, BSC, opBNB, and EVM blockchains:
 - Token transfers, swaps, approvals
 - PancakeSwap DEX integration
 - Smart contract deployment and interaction
@@ -88,7 +88,7 @@ Environment variables:
 - OPBNB_RPC_URL (optional) — opBNB endpoint
 
 ### 2. Binance Exchange MCP (binance-mcp)
-478+ tools for Binance.com:
+554+ tools for Binance.com:
 - Spot, margin, futures trading
 - Portfolio management and P&L
 - Market data and order books
@@ -107,7 +107,7 @@ US regulatory-compliant Binance access:
 - Sub-account management
 
 ### 4. Universal Crypto MCP (universal-crypto-mcp)
-60+ networks, 100+ tools:
+60+ networks, 59+ tools:
 - Multi-chain DEX aggregation
 - Cross-chain bridging
 - DeFi protocol interactions

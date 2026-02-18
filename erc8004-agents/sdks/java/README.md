@@ -65,11 +65,32 @@ client.close()
 | Ethereum | 1 | `ethereum` |
 | Sepolia | 11155111 | `sepolia` |
 
+## Keystore Support
+
+Load a wallet from an encrypted Ethereum V3 keystore file using Web3j's built-in keystore support:
+
+```java
+var client = ERC8004Client.fromKeystore(
+    "/path/to/keystore.json",
+    "my-password",
+    "bsc-testnet"
+);
+System.out.println("Address: " + client.address());
+
+// Access Web3j Credentials for signing
+var creds = client.credentials();
+client.close();
+```
+
 ## API
 
 ### `ERC8004Client`
 
 - `ERC8004Client(chainName)` — Create client
+- `fromKeystore(path, password, chainName)` — Create client from V3 keystore
+- `fromKeystore(path, password, chain)` — Create client from V3 keystore with custom chain
+- `address()` — Wallet address (if keystore loaded)
+- `credentials()` — Web3j `Credentials` (if keystore loaded)
 - `buildAgentUri(metadata)` — Encode as data URI
 - `parseAgentUri(uri)` — Decode metadata URI
 - `isConnected()` — Check RPC connection

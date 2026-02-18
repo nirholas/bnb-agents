@@ -42,11 +42,34 @@ print("URI: \(uri.prefix(80))...")
 | `Chains.ethereum` | Ethereum | 1 |
 | `Chains.sepolia` | Sepolia | 11155111 |
 
+## Keystore Support
+
+Load a wallet from an encrypted Ethereum V3 keystore file:
+
+```swift
+let client = try ERC8004Client(
+    keystorePath: URL(fileURLWithPath: "/path/to/keystore.json"),
+    password: "my-password",
+    chain: Chains.bscTestnet
+)
+print("Address: \(client.address!)")
+
+// Export to a new keystore
+let json = try client.exportKeystore(password: "new-password")
+try json.write(to: URL(fileURLWithPath: "backup.json"))
+```
+
+Supports `scrypt` and `pbkdf2` KDFs with `aes-128-ctr` cipher using native `CommonCrypto`. No external dependencies required.
+
 ## API
 
 ### `ERC8004Client`
 
 - `init(chain:)` / `init(chainName:)` — Create client
+- `init(keystorePath:password:chain:)` — Create client from V3 keystore
+- `init(keystorePath:password:chainName:)` — Create client from V3 keystore by chain name
+- `exportKeystore(password:)` — Export private key as V3 keystore JSON
+- `address` — Wallet address (if keystore loaded)
 - `buildAgentUri(_:)` — Encode metadata as data URI
 - `parseAgentUri(_:)` — Decode metadata URI
 - `caip10Address(chainId:contractAddress:)` — Build CAIP-10 ID
@@ -56,6 +79,7 @@ print("URI: \(uri.prefix(80))...")
 - `AgentMetadata` — Agent registration metadata
 - `AgentService` — Service endpoint
 - `ChainConfig` — Chain configuration
+- `KeystoreWallet` — Decrypted wallet (private key + address)
 - `RegisteredAgent` — On-chain agent record
 
 ## Testing

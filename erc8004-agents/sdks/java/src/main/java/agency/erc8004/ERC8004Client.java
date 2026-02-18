@@ -30,6 +30,7 @@ public class ERC8004Client implements AutoCloseable {
 
     private final ChainConfig chain;
     private final Web3j web3j;
+    private final Credentials credentials;
 
     /**
      * Create a client for a named chain.
@@ -40,6 +41,7 @@ public class ERC8004Client implements AutoCloseable {
         this.chain = Chains.getChain(chainName)
             .orElseThrow(() -> new IllegalArgumentException("Unknown chain: " + chainName));
         this.web3j = Web3j.build(new HttpService(chain.rpcUrl()));
+        this.credentials = null;
     }
 
     /**
@@ -48,6 +50,77 @@ public class ERC8004Client implements AutoCloseable {
     public ERC8004Client(ChainConfig chain) {
         this.chain = Objects.requireNonNull(chain);
         this.web3j = Web3j.build(new HttpService(chain.rpcUrl()));
+        this.credentials = null;
+    }
+
+    /**
+     * Internal constructor with credentials.
+     */
+    private ERC8004Client(ChainConfig chain, Credentials credentials) {
+        this.chain = Objects.requireNonNull(chain);
+        this.web3j = Web3j.build(new HttpService(chain.rpcUrl()));
+        this.credentials = credentials;
+    }
+
+    /**
+     * Create a client by decrypting an Ethereum V3 keystore file.
+     *
+     * Uses Web3j's {@link WalletUtils#loadCredentials(String, String)} for
+     * keystore decryption, supporting both scrypt and pbkdf2 KDFs.
+     *
+     * <pre>{@code
+     * var client = ERC8004Client.fromKeystore(
+     *     "/path/to/keystore.json",
+     *     "my-password",
+     *     "bsc-testnet"
+     * );
+     * System.out.println("Address: " + client.address());
+     * }</pre>
+     *
+     * @param path     Path to the keystore JSON file.
+     * @param password Password to decrypt the keystore.
+     * @param chainName Target chain name.
+     * @return A new client with the wallet loaded.
+     */
+    public static ERC8004Client fromKeystore(String path, String password, String chainName) {
+        ChainConfig chain = Chains.getChain(chainName)
+            .orElseThrow(() -> new IllegalArgumentException("Unknown chain: " + chainName));
+        return fromKeystore(path, password, chain);
+    }
+
+    /**
+     * Create a client by decrypting an Ethereum V3 keystore file with a custom chain config.
+     *
+     * @param path     Path to the keystore JSON file.
+     * @param password Password to decrypt the keystore.
+     * @param chain    Chain configuration.
+     * @return A new client with the wallet loaded.
+     */
+    public static ERC8004Client fromKeystore(String path, String password, ChainConfig chain) {
+        try {
+            Credentials creds = WalletUtils.loadCredentials(password, new File(path));
+            return new ERC8004Client(chain, creds);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to load keystore: " + e.getMessage(), e);
+        }
+    }
+
+    /**
+     * Get the wallet address (if loaded from a keystore).
+     *
+     * @return The Ethereum address, or {@code null} if no credentials are loaded.
+     */
+    public String address() {
+        return credentials != null ? credentials.getAddress() : null;
+    }
+
+    /**
+     * Get the loaded credentials (if any).
+     *
+     * @return The Web3j credentials, or {@code null}.
+     */
+    public Credentials credentials() {
+        return credentials;
     }
 
     /**

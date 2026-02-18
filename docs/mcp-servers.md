@@ -102,7 +102,7 @@ npm run build
 ### 2. Binance Exchange MCP
 
 **Location:** `mcp-servers/binance-mcp/`
-**Tools:** 478+
+**Tools:** 554+
 **Best for:** Trading on Binance.com, portfolio management, market data
 
 #### What It Can Do
@@ -169,7 +169,7 @@ bun install
 ### 4. Universal Crypto MCP
 
 **Location:** `mcp-servers/universal-crypto-mcp/`
-**Tools:** 100+
+**Tools:** 59+
 **Networks:** 60+
 **Best for:** Multi-chain DeFi, cross-chain operations
 
