@@ -37,6 +37,8 @@ export default function TemplateSelector({
     { id: 'defi', label: 'DeFi' },
     { id: 'dao', label: 'DAO' },
     { id: 'security', label: 'Security' },
+    { id: 'game', label: 'Gaming' },
+    { id: 'bridge', label: 'Bridge' },
     { id: 'other', label: 'Utilities' },
   ];
 

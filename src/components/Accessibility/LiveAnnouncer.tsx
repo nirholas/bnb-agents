@@ -6,7 +6,7 @@
 
 import { useState, createContext, useContext, type ReactNode, useCallback } from 'react';
 
-interface Announcement {
+interface _Announcement {
   message: string;
   priority: 'polite' | 'assertive';
   id: number;
@@ -23,6 +23,7 @@ const LiveAnnouncerContext = createContext<LiveAnnouncerContextType | null>(null
  * Use 'polite' for non-urgent updates (default)
  * Use 'assertive' for important/urgent announcements
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function useAnnounce() {
   const context = useContext(LiveAnnouncerContext);
   if (!context) {

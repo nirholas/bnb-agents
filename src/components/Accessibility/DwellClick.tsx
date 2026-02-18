@@ -79,6 +79,7 @@ export default function DwellClick() {
 
   useEffect(() => {
     if (!settings.dwellClick) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       cancelDwell();
       return;
     }

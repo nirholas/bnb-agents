@@ -33,6 +33,7 @@ const ReducedMotionContext = createContext<ReducedMotionContextType>({
  *   );
  * }
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function useReducedMotion() {
   return useContext(ReducedMotionContext);
 }
@@ -114,7 +115,6 @@ export function Motion({
     prefersReducedMotion ? reduced : animate,
   ].filter(Boolean).join(' ');
 
-  // @ts-ignore - dynamic component
   return <Component className={classes}>{children}</Component>;
 }
 

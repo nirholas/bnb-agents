@@ -27,6 +27,7 @@ const VisualFeedbackContext = createContext<VisualFeedbackContextType | null>(nu
  * Hook to show visual toast notifications
  * Essential for deaf users who cannot hear audio cues
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function useVisualFeedback() {
   const context = useContext(VisualFeedbackContext);
   if (!context) {

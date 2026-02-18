@@ -43,6 +43,9 @@ export default defineConfig({
     port: 3000,
     host: true,
     open: true,
+    headers: {
+      'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://unpkg.com https://cdn.tailwindcss.com https://esm.sh https://binaries.soliditylang.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; connect-src 'self' https: ws: wss:; worker-src 'self' blob:; frame-src 'self' blob:; frame-ancestors 'self'; manifest-src 'self'",
+    },
   },
   build: {
     outDir: 'dist',

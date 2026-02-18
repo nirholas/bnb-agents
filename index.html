@@ -306,36 +306,9 @@ Licensed under MIT License
   <link rel="dns-prefetch" href="https://api.binance.com" />
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
-  <!-- Pyodide for Python execution in browser -->
-  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+  <!-- Pyodide loaded dynamically by UniversalLivePreview when needed -->
 
-  <!-- GitHub Pages SPA redirect handler -->
-  <script>
-    (function () {
-      const redirect = new URLSearchParams(window.location.search).get('redirect');
-      if (redirect) {
-        window.history.replaceState(null, '', '/' + redirect);
-      }
-    })();
-  </script>
-
-  <!-- Speculation Rules for instant navigation (Chrome 121+) -->
-  <script type="speculationrules">
-    {
-      "prerender": [
-        {
-          "where": { "href_matches": "/*" },
-          "eagerness": "moderate"
-        }
-      ],
-      "prefetch": [
-        {
-          "where": { "href_matches": "/*" },
-          "eagerness": "moderate"
-        }
-      ]
-    }
-  </script>
+  <!-- Speculation Rules injected dynamically by src/lib/speculationRules.ts for CSP compliance -->
 </head>
 
 <body>

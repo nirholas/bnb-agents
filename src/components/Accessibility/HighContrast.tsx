@@ -46,6 +46,7 @@ const HighContrastContext = createContext<HighContrastContextType>({
  *   );
  * }
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function useHighContrast() {
   return useContext(HighContrastContext);
 }
@@ -155,7 +156,6 @@ export function ContrastText({
     isHighContrast ? high : normal,
   ].filter(Boolean).join(' ');
 
-  // @ts-ignore - dynamic component
   return <Component className={classes}>{children}</Component>;
 }
 

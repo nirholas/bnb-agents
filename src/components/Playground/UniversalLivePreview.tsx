@@ -139,12 +139,22 @@ export default function UniversalLivePreview({
     }
   }, [htmlTab?.code, cssTab?.code, jsTab?.code, previewType]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Load Pyodide for Python execution
+  // Load Pyodide for Python execution (dynamically injects script for CSP compliance)
   const loadPyodide = async () => {
     if (pyodideRef.current) return pyodideRef.current;
     
     setIsPyodideLoading(true);
     try {
+      // Dynamically load Pyodide script if not already available
+      if (!(window as any).loadPyodide) {
+        await new Promise<void>((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js';
+          script.onload = () => resolve();
+          script.onerror = () => reject(new Error('Failed to load Pyodide script'));
+          document.head.appendChild(script);
+        });
+      }
       // @ts-ignore - Pyodide is loaded via CDN
       const pyodide = await (window as any).loadPyodide({
         indexURL: "https://cdn.jsdelivr.net/pyodide/v0.24.1/full/"

@@ -76,12 +76,16 @@ CORS_ORIGINS="https://app.example.com,https://admin.example.com"
 
 ### Content Security Policy (CSP)
 
-The nginx configuration enforces a strict CSP:
-- `default-src 'self'` — Only same-origin resources
-- `script-src 'self'` — No inline scripts or `eval()`
-- `style-src 'self' 'unsafe-inline'` — Inline styles only for framework compatibility
+The deployment configurations (nginx, Vercel, Netlify) enforce a strict CSP:
+- `default-src 'self'` — Only same-origin resources by default
+- `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://unpkg.com https://cdn.tailwindcss.com https://esm.sh https://binaries.soliditylang.org` — Allows inline scripts (for SPA), eval (for Solidity compiler), and trusted CDNs (Monaco, Pyodide, React sandbox, ERC-8004)
+- `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net` — Inline styles for framework compatibility, Google Fonts, and CDN stylesheets
+- `font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net` — Google Fonts and OpenDyslexic accessibility font
 - `img-src 'self' data: https:` — Images from same-origin, data URIs, and HTTPS
-- `connect-src 'self' https:` — API calls to same-origin and HTTPS endpoints
+- `connect-src 'self' https: wss:` — API calls to HTTPS endpoints and WebSocket wallet connections
+- `worker-src 'self' blob:` — Web workers from same-origin and blob URLs
+- `frame-src 'self' blob:` — Iframes for sandbox/playground previews
+- `manifest-src 'self'` — Web app manifest from same-origin
 - `Permissions-Policy` restricts camera, microphone, and geolocation
 - `Referrer-Policy: strict-origin-when-cross-origin`
 

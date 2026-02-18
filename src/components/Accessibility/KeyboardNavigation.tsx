@@ -223,9 +223,11 @@ export function useArrowNavigation<T extends HTMLElement>(
     return () => container.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
+  // eslint-disable-next-line react-hooks/refs
   return {
     containerRef,
     currentIndex: currentIndexRef.current,
+    // eslint-disable-next-line react-hooks/refs
     focusItem,
   };
 }
@@ -250,9 +252,11 @@ export function useRovingTabIndex(itemCount: number, initialIndex: number = 0) {
     currentIndexRef.current = index;
   }, []);
 
+  // eslint-disable-next-line react-hooks/refs
   return {
     getTabIndex,
     currentIndex: currentIndexRef.current,
+    // eslint-disable-next-line react-hooks/refs
     setCurrentIndex,
   };
 }

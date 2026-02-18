@@ -26,6 +26,8 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import PrivyProvider from './providers/PrivyProvider';
 import { initWatermarks, validateAttribution, __bnb_sig__ } from './utils/watermark';
+import { injectSpeculationRules } from './lib/speculationRules';
+import './lib/monaco'; // Configure Monaco to use bundled assets (no CDN)
 import './styles/index.css';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -36,9 +38,18 @@ const _bnb_handle = 'nichxbt';
 const _bnb_github = 'nirholas';
 const _bnb_sig = `${_bnb_author}@${_bnb_github}`;
 
+// GitHub Pages SPA redirect handler (moved from inline script for CSP compliance)
+if (typeof window !== 'undefined') {
+  const redirect = new URLSearchParams(window.location.search).get('redirect');
+  if (redirect) {
+    window.history.replaceState(null, '', '/' + redirect);
+  }
+}
+
 // Initialize watermarks and attribution
 if (typeof window !== 'undefined') {
   initWatermarks();
+  injectSpeculationRules();
   
   // Validate attribution integrity
   const sig = validateAttribution();

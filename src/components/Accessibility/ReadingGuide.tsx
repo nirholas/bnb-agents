@@ -33,6 +33,7 @@ export default function ReadingGuide() {
         document.removeEventListener('mouseleave', handleMouseLeave);
       };
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsVisible(false);
     }
   }, [settings.readingGuide, handleMouseMove, handleMouseLeave]);

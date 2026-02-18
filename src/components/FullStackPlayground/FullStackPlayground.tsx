@@ -89,6 +89,9 @@ export default function FullStackPlayground({
     f.language === 'typescript' || f.language === 'javascript'
   );
 
+  // Find CSS file for live style injection
+  const cssFile = files.find(f => f.language === 'css');
+
   // Transform TypeScript/TSX to JavaScript for react-live
   const transformedCode = useMemo(() => {
     if (!reactFile) return '';
@@ -102,14 +105,14 @@ export default function FullStackPlayground({
       // Remove export statements but keep the content
       .replace(/^export\s+default\s+/gm, '')
       .replace(/^export\s+/gm, '')
-      // Remove TypeScript type annotations
-      .replace(/:\s*\w+(\[\])?(\s*\|?\s*\w+)*(?=\s*[=,)}])/g, '')
+      // Remove TypeScript type annotations (only uppercase-starting types like : string, : number[])
+      .replace(/(?<=\w)\s*:\s*[A-Z]\w*(\[\])?(\s*\|\s*[A-Z]\w*)*(?=\s*[=,)}])/g, '')
       // Remove interface declarations
       .replace(/^interface\s+\w+\s*\{[\s\S]*?\}\s*$/gm, '')
       // Remove type declarations
       .replace(/^type\s+\w+\s*=[\s\S]*?;\s*$/gm, '')
-      // Remove React.FC types
-      .replace(/<\w+>/g, '')
+      // Remove React.FC<Type> generics (only after identifiers, not JSX tags)
+      .replace(/(?<=\w)<[A-Z]\w*>/g, '')
       // Clean up empty lines
       .replace(/\n\s*\n\s*\n/g, '\n\n');
     
@@ -337,7 +340,7 @@ export default function FullStackPlayground({
               </div>
 
               {/* Injected Styles */}
-              <style>{previewStyles}</style>
+              <style>{previewStyles}{cssFile?.code || ''}</style>
               
               {/* Live Preview Container */}
               <div className="flex-1 overflow-auto p-4">
