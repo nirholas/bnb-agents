@@ -206,12 +206,11 @@ export function EditorSkeleton({ className }: { className?: string }) {
     <div className={cn('bg-black rounded-lg p-4 font-mono text-sm', className)}>
       {/* Line numbers and code lines */}
       <div className="space-y-2">
-        {Array.from({ length: 12 }).map((_, i) => (
+        {[65, 48, 72, 55, 38, 60, 45, 70, 52, 35, 58, 42].map((w, i) => (
           <div key={i} className="flex gap-4">
             <Skeleton width={24} height={16} className="bg-[#0a0a0a]" />
-            {/* eslint-disable-next-line react-hooks/purity */}
             <Skeleton 
-              width={`${Math.random() * 40 + 30}%`} 
+              width={`${w}%`} 
               height={16} 
               className="bg-[#0a0a0a]" 
             />

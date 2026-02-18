@@ -1749,8 +1749,8 @@ export default function WebSandbox({
                       onClick={() => {
                         setSettings(prev => ({
                           ...prev,
-                          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                           [key]: getValue 
+                            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                             ? setValue!(!getValue(prev[key as keyof EditorSettings] as string))
                             : !prev[key as keyof EditorSettings]
                         }));
