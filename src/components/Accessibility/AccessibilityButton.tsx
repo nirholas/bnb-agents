@@ -1,12 +1,12 @@
 /**
  * ✨ built by nich
  * 🌐 GitHub: github.com/nirholas
- * ♿ Floating Accessibility Button - Always accessible, never intrusive
+ * 💛 Floating Accessibility Button - Always accessible, never intrusive
  * 💫 One-click access to inclusive features
  */
 
 import { useState, useEffect, useCallback } from 'react';
-import { Accessibility, X, Settings, Volume2, VolumeX, Moon, Sun, Minus, Plus, Eye } from 'lucide-react';
+import { HandHeart, X, Settings, Volume2, VolumeX, Moon, Sun, Minus, Plus, Eye } from 'lucide-react';
 import { useAccessibilityStore } from '@/stores/accessibilityStore';
 import AccessibilityPanel from './AccessibilityPanel';
 
@@ -123,7 +123,7 @@ export default function AccessibilityButton() {
         aria-haspopup="true"
         title="Accessibility options (Alt + A for full panel)"
       >
-        <Accessibility className="w-7 h-7 group-hover:scale-110 transition-transform" aria-hidden="true" />
+        <HandHeart className="w-7 h-7 group-hover:scale-110 transition-transform" aria-hidden="true" />
       </button>
 
       {/* Quick Menu Popup */}
@@ -139,7 +139,7 @@ export default function AccessibilityButton() {
         >
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold text-lg flex items-center gap-2">
-              <Accessibility className="w-5 h-5 text-primary-600" />
+              <HandHeart className="w-5 h-5 text-primary-600" />
               Quick Access
             </h3>
             <button

@@ -16,7 +16,7 @@
 import { motion } from 'framer-motion';
 import {
   Shield,
-  Accessibility,
+  HandHeart,
   ExternalLink,
   BookOpen,
   CheckCircle,
@@ -482,7 +482,7 @@ export default function StandardsPage() {
       <section className="max-w-5xl mx-auto px-4 py-16 md:py-24">
         <SectionHeading
           id="w3ag-section"
-          icon={<Accessibility className="w-6 h-6 text-[#F0B90B]" />}
+          icon={<HandHeart className="w-6 h-6 text-[#F0B90B]" />}
           title="W3AG: Web3 Accessibility Guidelines"
           description="The first open standard for making Web3 applications accessible to people with disabilities. 50+ success criteria across 4 principles and 3 conformance levels — modeled after WCAG but purpose-built for blockchain UX patterns like wallet connect, transaction signing, and gas estimation."
         />

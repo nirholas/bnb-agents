@@ -15,7 +15,12 @@ import {
   Wallet,
   FileCode,
   Rocket,
-  Home
+  Home,
+  Bot,
+  Server,
+  BarChart3,
+  Layers,
+  HelpCircle
 } from 'lucide-react';
 
 interface DocArticle {
@@ -39,73 +44,126 @@ const docCategories: DocCategory[] = [
     id: 'getting-started',
     title: 'Getting Started',
     icon: <Rocket className="w-6 h-6" />,
-    description: 'New to the platform? Start here',
+    description: 'Install dependencies, configure your first MCP server, and deploy an AI agent on BNB Chain in under 5 minutes.',
     articles: [
       { id: 'intro', title: 'Introduction to BNB Chain AI Toolkit', description: 'Learn what this platform can do for you', readTime: '5 min', difficulty: 'beginner' },
-      { id: 'first-contract', title: 'Your First Smart Contract', description: 'Write, compile, and deploy in 10 minutes', readTime: '10 min', difficulty: 'beginner' },
+      { id: 'installation', title: 'Installation & Setup', description: 'Install dependencies and build the project', readTime: '5 min', difficulty: 'beginner' },
+      { id: 'first-agent', title: 'Your First AI Agent', description: 'Load and use an agent in 10 minutes', readTime: '10 min', difficulty: 'beginner' },
       { id: 'sandbox-basics', title: 'Understanding the Sandbox', description: 'Navigate the interactive development environment', readTime: '7 min', difficulty: 'beginner' },
       { id: 'innovation-mode', title: 'Activating Innovation Mode', description: 'Unlock AI-powered features', readTime: '5 min', difficulty: 'beginner' }
     ]
   },
   {
-    id: 'solidity',
-    title: 'Solidity Fundamentals',
-    icon: <Code2 className="w-6 h-6" />,
-    description: 'Master the language of smart contracts',
+    id: 'agents',
+    title: 'AI Agents',
+    icon: <Bot className="w-6 h-6" />,
+    description: '78 agent definitions — 36 for BNB Chain protocols + 42 general DeFi agents. Portable JSON format.',
     articles: [
-      { id: 'solidity-basics', title: 'Solidity Syntax Basics', description: 'Variables, types, and functions', readTime: '15 min', difficulty: 'beginner' },
-      { id: 'data-structures', title: 'Data Structures', description: 'Arrays, mappings, and structs', readTime: '12 min', difficulty: 'intermediate' },
-      { id: 'inheritance', title: 'Contract Inheritance', description: 'Building on existing contracts', readTime: '10 min', difficulty: 'intermediate' },
-      { id: 'modifiers', title: 'Function Modifiers', description: 'Access control and reusability', readTime: '8 min', difficulty: 'intermediate' },
-      { id: 'events', title: 'Events and Logging', description: 'Communicate with the frontend', readTime: '10 min', difficulty: 'intermediate' }
+      { id: 'overview', title: 'AI Agents Overview', description: 'What are AI agents and how they work', readTime: '5 min', difficulty: 'beginner' },
+      { id: 'bnb-chain-agents', title: 'BNB Chain Agents', description: '36 agents for PancakeSwap, Venus, Lista DAO, Thena, Alpaca, and more', readTime: '15 min', difficulty: 'beginner' },
+      { id: 'defi-agents', title: 'DeFi Agents', description: '42 general DeFi agents for trading, yield, and portfolio management', readTime: '15 min', difficulty: 'beginner' },
+      { id: 'using-agents', title: 'Using Agents with Claude & ChatGPT', description: 'Load agents into your AI assistant step by step', readTime: '8 min', difficulty: 'beginner' },
+      { id: 'agent-format', title: 'Agent JSON Format', description: 'Understand the agent definition schema', readTime: '10 min', difficulty: 'intermediate' },
+      { id: 'creating-agents', title: 'Creating Custom Agents', description: 'Build your own agent definitions', readTime: '12 min', difficulty: 'intermediate' },
+      { id: 'agent-mcp-integration', title: 'Connecting Agents to MCP Servers', description: 'Give agents real-time data and tools', readTime: '10 min', difficulty: 'intermediate' },
+      { id: 'agent-templates', title: 'Agent Templates', description: 'Use templates to scaffold new agents quickly', readTime: '6 min', difficulty: 'beginner' },
+      { id: 'agent-best-practices', title: 'Agent Best Practices', description: 'Tips for writing effective system prompts', readTime: '8 min', difficulty: 'intermediate' },
+      { id: 'agent-security', title: 'Agent Security Considerations', description: 'Safety guidelines and limitations', readTime: '7 min', difficulty: 'intermediate' },
+      { id: 'erc8004-agents', title: 'ERC-8004 On-Chain Agents', description: 'Register agents on-chain for trust and discovery', readTime: '12 min', difficulty: 'advanced' },
+      { id: 'agent-faq', title: 'Agent FAQ', description: 'Frequently asked questions about agents', readTime: '5 min', difficulty: 'beginner' }
     ]
   },
   {
-    id: 'security',
-    title: 'Smart Contract Security',
-    icon: <Shield className="w-6 h-6" />,
-    description: 'Build secure, auditable contracts',
+    id: 'mcp-servers',
+    title: 'MCP Servers',
+    icon: <Server className="w-6 h-6" />,
+    description: '6 production servers with 1,100+ tools. STDIO + SSE transport.',
     articles: [
-      { id: 'common-vulnerabilities', title: 'Common Vulnerabilities', description: 'Top 10 smart contract security issues', readTime: '20 min', difficulty: 'intermediate' },
-      { id: 'reentrancy', title: 'Reentrancy Attacks Explained', description: 'How they work and how to prevent them', readTime: '15 min', difficulty: 'advanced' },
-      { id: 'access-control', title: 'Access Control Patterns', description: 'Secure your contract functions', readTime: '12 min', difficulty: 'intermediate' },
-      { id: 'audit-checklist', title: 'Security Audit Checklist', description: 'Pre-deployment security review', readTime: '10 min', difficulty: 'advanced' }
+      { id: 'overview', title: 'MCP Servers Overview', description: 'What are MCP servers and how they work', readTime: '5 min', difficulty: 'beginner' },
+      { id: 'bnbchain-mcp', title: 'bnbchain-mcp', description: 'BNB Chain + EVM server with 384 tools', readTime: '15 min', difficulty: 'intermediate' },
+      { id: 'binance-mcp', title: 'binance-mcp', description: 'Binance.com exchange server with 478+ tools', readTime: '15 min', difficulty: 'intermediate' },
+      { id: 'binance-us-mcp', title: 'binance-us-mcp', description: 'Binance.US exchange server', readTime: '10 min', difficulty: 'intermediate' },
+      { id: 'universal-crypto-mcp', title: 'universal-crypto-mcp', description: 'Multi-network crypto server with 100+ tools', readTime: '12 min', difficulty: 'intermediate' },
+      { id: 'agenti', title: 'agenti', description: 'Universal EVM + Solana server', readTime: '10 min', difficulty: 'intermediate' },
+      { id: 'ucai', title: 'ucai — ABI-to-MCP Generator', description: 'Generate MCP tools from any smart contract ABI', readTime: '12 min', difficulty: 'advanced' },
+      { id: 'claude-desktop', title: 'Connect to Claude Desktop', description: 'Add MCP servers to your Claude config', readTime: '5 min', difficulty: 'beginner' }
     ]
   },
   {
-    id: 'gas-optimization',
-    title: 'Gas Optimization',
+    id: 'market-data',
+    title: 'Market Data',
+    icon: <BarChart3 className="w-6 h-6" />,
+    description: 'Edge Runtime price feeds and crypto news from 200+ sources. Free API, no auth required.',
+    articles: [
+      { id: 'overview', title: 'Market Data Overview', description: 'Available data feeds and APIs', readTime: '5 min', difficulty: 'beginner' },
+      { id: 'price-feeds', title: 'Price Feeds', description: 'CoinGecko and DeFiLlama price data', readTime: '10 min', difficulty: 'beginner' },
+      { id: 'news-api', title: 'Crypto News API', description: '662K+ articles from 200+ sources', readTime: '8 min', difficulty: 'beginner' },
+      { id: 'edge-runtime', title: 'Edge Runtime Deployment', description: 'Deploy price feeds at the edge', readTime: '10 min', difficulty: 'intermediate' },
+      { id: 'data-sources', title: 'Data Sources', description: 'Where the data comes from and how it is aggregated', readTime: '7 min', difficulty: 'beginner' },
+      { id: 'examples', title: 'Usage Examples', description: 'curl, fetch, and SDK examples', readTime: '6 min', difficulty: 'beginner' }
+    ]
+  },
+  {
+    id: 'defi-tools',
+    title: 'DeFi Tools',
     icon: <Zap className="w-6 h-6" />,
-    description: 'Write efficient, cost-effective code',
+    description: 'Gasless dust sweeper via ERC-4337 across 8 chains with MEV protection.',
     articles: [
-      { id: 'gas-basics', title: 'Understanding Gas', description: 'How Ethereum pricing works', readTime: '10 min', difficulty: 'beginner' },
-      { id: 'storage-optimization', title: 'Storage Optimization', description: 'Reduce costly storage operations', readTime: '15 min', difficulty: 'intermediate' },
-      { id: 'loop-optimization', title: 'Optimizing Loops', description: 'Avoid expensive iterations', readTime: '12 min', difficulty: 'intermediate' },
-      { id: 'packed-storage', title: 'Packed Storage', description: 'Advanced variable packing', readTime: '10 min', difficulty: 'advanced' }
+      { id: 'overview', title: 'DeFi Tools Overview', description: 'Available DeFi utilities and features', readTime: '5 min', difficulty: 'beginner' },
+      { id: 'dust-sweeper', title: 'Dust Sweeper', description: 'Consolidate small balances with gasless transactions', readTime: '12 min', difficulty: 'intermediate' },
+      { id: 'mev-protection', title: 'MEV Protection', description: 'CoW Protocol integration for swap protection', readTime: '10 min', difficulty: 'advanced' },
+      { id: 'yield-routing', title: 'Yield Routing', description: 'Route into Aave, Yearn, Beefy, Lido yields', readTime: '10 min', difficulty: 'advanced' }
     ]
   },
   {
-    id: 'defi',
-    title: 'DeFi Development',
+    id: 'wallets',
+    title: 'Wallet Toolkit',
     icon: <Wallet className="w-6 h-6" />,
-    description: 'Build decentralized finance applications',
+    description: '57 tools across 5 MCP servers — HD wallets, BIP-39, vanity addresses, signing, transactions. Fully offline.',
     articles: [
-      { id: 'defi-intro', title: 'Introduction to DeFi', description: 'Understand the DeFi ecosystem', readTime: '15 min', difficulty: 'beginner' },
-      { id: 'token-creation', title: 'Creating ERC-20 Tokens', description: 'Build your own fungible token', readTime: '20 min', difficulty: 'intermediate' },
-      { id: 'liquidity-pools', title: 'Liquidity Pools', description: 'How AMMs work', readTime: '18 min', difficulty: 'advanced' },
-      { id: 'yield-farming', title: 'Yield Farming Mechanics', description: 'Staking and rewards', readTime: '15 min', difficulty: 'advanced' }
+      { id: 'overview', title: 'Wallet Toolkit Overview', description: 'All wallet tools and capabilities', readTime: '5 min', difficulty: 'beginner' },
+      { id: 'hd-wallets', title: 'HD Wallets & BIP-39', description: 'Hierarchical deterministic wallets and mnemonics', readTime: '12 min', difficulty: 'intermediate' },
+      { id: 'vanity-addresses', title: 'Vanity Address Generation', description: 'Generate custom wallet addresses', readTime: '8 min', difficulty: 'intermediate' },
+      { id: 'signing', title: 'EIP-191/712 Signing', description: 'Message and typed data signing', readTime: '10 min', difficulty: 'intermediate' },
+      { id: 'transactions', title: 'EIP-1559 Transactions', description: 'Build and send transactions offline', readTime: '10 min', difficulty: 'advanced' }
     ]
   },
   {
-    id: 'templates',
-    title: 'Templates & Playground',
-    icon: <FileCode className="w-6 h-6" />,
-    description: 'How to use contract templates and the interactive playground',
+    id: 'standards',
+    title: 'Open Standards',
+    icon: <Shield className="w-6 h-6" />,
+    description: 'ERC-8004 for AI agent trust verification. W3AG for Web3 accessibility.',
     articles: [
-      { id: 'using-templates', title: 'Using Contract Templates', description: 'Browse, customize, and deploy templates', readTime: '8 min', difficulty: 'beginner' },
-      { id: 'deploy-testnets', title: 'Deploying to Testnets', description: 'Guide to deploying contracts to Sepolia, Mumbai, and other testnets', readTime: '10 min', difficulty: 'intermediate' },
-      { id: 'tutorials-guide', title: 'Following Tutorials', description: 'How tutorial progress and checkpoints work', readTime: '6 min', difficulty: 'beginner' },
-      { id: 'contributing-docs', title: 'Contributing to Docs & Templates', description: 'How to submit improvements and new templates', readTime: '6 min', difficulty: 'beginner' }
+      { id: 'erc-8004', title: 'ERC-8004 Standard', description: 'On-chain identity, reputation, and validation registries for AI agents', readTime: '15 min', difficulty: 'advanced' },
+      { id: 'w3ag', title: 'W3AG Accessibility Standard', description: '50+ success criteria for Web3 accessibility', readTime: '12 min', difficulty: 'intermediate' },
+      { id: 'contributing', title: 'Contributing to Standards', description: 'How to propose and contribute to open standards', readTime: '8 min', difficulty: 'intermediate' }
+    ]
+  },
+  {
+    id: 'architecture',
+    title: 'Architecture',
+    icon: <Layers className="w-6 h-6" />,
+    description: 'Monorepo structure, design decisions, component independence, and how all pieces compose together.',
+    articles: [
+      { id: 'overview', title: 'Architecture Overview', description: 'High-level system design and component map', readTime: '10 min', difficulty: 'intermediate' },
+      { id: 'monorepo', title: 'Monorepo Structure', description: 'How the project is organized', readTime: '8 min', difficulty: 'beginner' },
+      { id: 'design-decisions', title: 'Design Decisions', description: 'Why JSON agents, independent MCP servers, and chain-agnostic architecture', readTime: '10 min', difficulty: 'intermediate' },
+      { id: 'composability', title: 'Composability', description: 'How components work together and independently', readTime: '8 min', difficulty: 'intermediate' }
+    ]
+  },
+  {
+    id: 'troubleshooting',
+    title: 'Troubleshooting',
+    icon: <HelpCircle className="w-6 h-6" />,
+    description: 'Common issues, error solutions, debugging tips for MCP connections, agent loading, and chain interactions.',
+    articles: [
+      { id: 'common-issues', title: 'Common Issues', description: 'Most frequently encountered problems and solutions', readTime: '10 min', difficulty: 'beginner' },
+      { id: 'mcp-connections', title: 'MCP Connection Issues', description: 'Debugging MCP server connections', readTime: '8 min', difficulty: 'intermediate' },
+      { id: 'agent-loading', title: 'Agent Loading Problems', description: 'Troubleshoot agent import and activation', readTime: '7 min', difficulty: 'beginner' },
+      { id: 'chain-interactions', title: 'Chain Interaction Errors', description: 'RPC, gas, and transaction debugging', readTime: '10 min', difficulty: 'intermediate' },
+      { id: 'build-errors', title: 'Build & Install Errors', description: 'Fix dependency and build issues', readTime: '8 min', difficulty: 'beginner' },
+      { id: 'performance', title: 'Performance Optimization', description: 'Speed up agent responses and tool execution', readTime: '7 min', difficulty: 'intermediate' },
+      { id: 'faq', title: 'FAQ', description: 'Frequently asked questions', readTime: '5 min', difficulty: 'beginner' }
     ]
   }
 ];

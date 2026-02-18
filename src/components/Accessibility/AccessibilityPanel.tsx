@@ -7,7 +7,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { 
-  Accessibility,
+  HandHeart,
   Eye,
   EyeOff,
   Volume2,
@@ -121,7 +121,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
           <div className="flex items-center gap-3">
-            <Accessibility className="w-8 h-8" aria-hidden="true" />
+            <HandHeart className="w-8 h-8" aria-hidden="true" />
             <div>
               <h2 id="a11y-panel-title" className="text-2xl font-bold">
                 Accessibility Settings
