@@ -77,7 +77,6 @@ try {
       agents: 78,
       mcpServers: 6,
       tools: 900,
-      supportedChains: 60,
       languages: 30,
       standard: "ERC-8004",
       deployedOn: 22,

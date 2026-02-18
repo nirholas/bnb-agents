@@ -73,7 +73,7 @@ It's a single repository with **everything** you need to build AI-powered applic
 | Fragmented BNB Chain tooling | **Single repo** with everything integrated |
 | AI can't interact with blockchains | **6 MCP servers** give AI direct chain access |
 | Complex DeFi interactions | **78 specialized agents** for every protocol |
-| Multi-chain complexity | ** chain support** with unified interfaces |
+| Multi-chain complexity | **Multi-chain support** with unified interfaces |
 | No accessibility standards | **W3AG + ERC-8004** for inclusive Web3 |
 
 ---
@@ -172,7 +172,7 @@ bnb-chain-toolkit/
 │   ├── bnbchain-mcp/           #    BNB Chain + EVM (466+ tools)
 │   ├── binance-mcp/            #    Binance.com (554+ tools)
 │   ├── binance-us-mcp/         #    Binance.US (US compliance)
-│   ├── universal-crypto-mcp/   #     networks (59+ tools)
+│   ├── universal-crypto-mcp/   #    Multi-network (59+ tools)
 │   ├── agenti/                 #    Universal EVM + Solana (58+ tools)
 │   └── ucai/                   #    ABI-to-MCP generator (Python)
 │
@@ -250,7 +250,7 @@ Model Context Protocol servers that give AI assistants direct blockchain access.
 | **BNB Chain MCP** | 466+ | BSC, opBNB, Greenfield — swaps, transfers, contracts |
 | **Binance MCP** | 554+ | Spot, futures, margin trading on Binance.com |
 | **Binance US MCP** | — | US regulatory-compliant Binance access |
-| **Universal Crypto MCP** | 59+ |  networks, cross-chain DeFi |
+| **Universal Crypto MCP** | 59+ | Multi-network, cross-chain DeFi |
 | **Agenti** | — | EVM + Solana, AI-to-AI payments (x402) |
 | **UCAI** | Dynamic | Turn any smart contract ABI into an MCP server |
 
@@ -410,7 +410,7 @@ MIT © [nirholas](https://github.com/nirholas)
 
 <p align="center">
   <b>Built with 🔶 for BNB Chain</b><br>
-  <sub>78 agents · 6 MCP servers · 1,100+ tools ·  chains · 30+ languages</sub>
+  <sub>78 agents · 6 MCP servers · 1,100+ tools · 30+ languages</sub>
 </p>
 
 <p align="center">

@@ -32,6 +32,7 @@ export function BackgroundBeams({ className }: BackgroundBeamsProps) {
   const uid = useId();
   const prefersReducedMotion = usePrefersReducedMotion();
   const beamDurations = useMemo(
+    // eslint-disable-next-line react-hooks/purity
     () => BEAM_PATHS.map(() => 4 + Math.random() * 4),
     []
   );

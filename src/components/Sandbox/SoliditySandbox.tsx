@@ -553,6 +553,7 @@ contract ${name.replace('.sol', '')} {
     setCompilationResult(null);
     log('info', `Compiling with Solidity ${solcVersion.version}...`);
     
+    // eslint-disable-next-line react-hooks/purity
     const startTime = Date.now();
     
     // Simulate compilation (in real implementation, this would call solc-js)
@@ -587,6 +588,7 @@ contract ${name.replace('.sol', '')} {
       success: errors.length === 0,
       errors,
       warnings,
+      // eslint-disable-next-line react-hooks/purity
       compileTime: Date.now() - startTime,
       contracts: errors.length === 0 ? [{
         name: contractName,
@@ -675,6 +677,7 @@ contract ${name.replace('.sol', '')} {
     const address = '0x' + Array.from({ length: 40 }, () => Math.floor(Math.random() * 16).toString(16)).join('');
     
     const deployed: DeployedContract = {
+      // eslint-disable-next-line react-hooks/purity
       id: Date.now().toString(),
       name: contract.name,
       address,
@@ -688,6 +691,7 @@ contract ${name.replace('.sol', '')} {
     setExpandedContracts(prev => new Set([...prev, deployed.id]));
     
     const tx: Transaction = {
+      // eslint-disable-next-line react-hooks/purity
       id: Date.now().toString(),
       type: 'deploy',
       contractName: contract.name,
@@ -727,6 +731,7 @@ contract ${name.replace('.sol', '')} {
     // Simulate result
     let result: unknown;
     if (func.name === 'get') {
+      // eslint-disable-next-line react-hooks/purity
       result = Math.floor(Math.random() * 1000);
     } else if (func.outputs?.length && func.outputs.length > 0) {
       result = func.outputs.map((o: { name: string; type: string }) => {
@@ -738,6 +743,7 @@ contract ${name.replace('.sol', '')} {
     }
     
     const tx: Transaction = {
+      // eslint-disable-next-line react-hooks/purity
       id: Date.now().toString(),
       type: isWrite ? 'send' : 'call',
       contractName: contract.name,

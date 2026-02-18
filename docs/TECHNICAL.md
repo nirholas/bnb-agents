@@ -333,7 +333,7 @@ journey
 
 | Problem | Solution |
 |---------|----------|
-| `bun: command not found` | Install bun: `curl -fsSL https://bun.sh/install \| bash` then restart your terminal |
+| `bun: command not found` | Install bun: `curl -fsSL https://bun.sh/install` &#124; `bash` then restart your terminal |
 | Port 5173 already in use | Kill existing process or use `bun run dev -- --port 5174` |
 | MetaMask on wrong network | Switch to BSC Mainnet (Chain ID `56`) or BSC Testnet (Chain ID `97`) |
 | Need testnet BNB | Use faucet: [testnet.bnbchain.org/faucet-smart](https://testnet.bnbchain.org/faucet-smart) |
