@@ -12,8 +12,10 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
-  { ignores: [
+// Global ignores — must be a standalone top-level config object
+// (outside tseslint.config wrapper to guarantee they act as global ignores)
+const globalIgnores = {
+  ignores: [
     'dist',
     'node_modules',
     'coverage',
@@ -31,7 +33,12 @@ export default tseslint.config(
     'packages/**',
     'scripts/**',
     'locales/**',
-  ] },
+  ],
+};
+
+export default [
+  globalIgnores,
+  ...tseslint.config(
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
