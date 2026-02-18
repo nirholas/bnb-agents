@@ -711,7 +711,7 @@ export default function Homepage() {
                                 <div className="ml-4 space-y-1.5">
                                     <div><span className="text-blue-400">├── agents/</span><span className="text-neutral-600 ml-4"># 78 AI Agent definitions</span></div>
                                     <div className="ml-4 text-neutral-500">
-                                        <div>├── bnb-chain-agents/ <span className="text-neutral-600"># 30 BNB-specific agents</span></div>
+                                        <div>├── bnb-chain-agents/ <span className="text-neutral-600"># 36 BNB-specific agents</span></div>
                                         <div>└── defi-agents/ <span className="text-neutral-600"># 42 general DeFi agents</span></div>
                                     </div>
                                     <div><span className="text-blue-400">├── mcp-servers/</span><span className="text-neutral-600 ml-4"># 6 MCP servers</span></div>

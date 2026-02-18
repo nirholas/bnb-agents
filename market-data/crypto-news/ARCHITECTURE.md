@@ -93,7 +93,7 @@ This document describes the architecture of Free Crypto News, a Next.js applicat
 
 ### Data Sources
 
-We aggregate news from **200+ sources** across **130+ English sources** and **75 international sources** in **18 languages**.
+We aggregate news from **200+ sources** across **130+ English sources** and **75 international sources** in **30+ languages**.
 
 #### English Sources (130+)
 

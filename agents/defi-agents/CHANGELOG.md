@@ -63,7 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Infrastructure
 
-- Automated i18n translation pipeline (18 languages)
+- Automated i18n translation pipeline (30+ languages)
 - Schema validation for all agents
 - GitHub Pages CDN deployment
 - Custom domain support (sperax.click)
@@ -128,7 +128,7 @@ The API follows semantic versioning for backwards compatibility:
 
 ## Supported Languages
 
-As of v1.0.0, all agents are available in 18 languages:
+As of v1.0.0, all agents are available in 30+ languages:
 
 1. English (en-US)
 2. Arabic (ar)

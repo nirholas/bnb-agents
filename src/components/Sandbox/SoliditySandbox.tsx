@@ -4,7 +4,7 @@
  * 💫 Making the digital world a better place 🌐
  */
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import Editor, { type OnMount } from '@monaco-editor/react';
 import { useThemeStore } from '@/stores/themeStore';
@@ -17,44 +17,25 @@ import {
   Play,
   Rocket,
   FileCode,
-  Settings,
   Maximize2,
   Minimize2,
   Plus,
   X,
   Copy,
-  Check,
   Code2,
   Terminal,
-  Layers,
-  Zap,
   Trash2,
   ChevronDown,
   ChevronRight,
-  Download,
-  Upload,
   RefreshCw,
   AlertTriangle,
   CheckCircle,
   XCircle,
-  Info,
-  Wallet,
-  Coins,
   Send,
   Eye,
-  Edit3,
   Clock,
-  Hash,
   Box,
   Activity,
-  Database,
-  GitBranch,
-  ExternalLink,
-  Wrench,
-  PanelLeftClose,
-  PanelLeftOpen,
-  GripVertical,
-  Search,
   Share2,
   Home,
   BookOpen,
@@ -92,9 +73,17 @@ interface CompilerError {
   };
 }
 
+interface ABIItem {
+  type: string;
+  name?: string;
+  inputs?: Array<{ name: string; type: string; indexed?: boolean }>;
+  outputs?: Array<{ name: string; type: string }>;
+  stateMutability?: string;
+}
+
 interface CompiledContract {
   name: string;
-  abi: any[];
+  abi: ABIItem[];
   bytecode: string;
   deployedBytecode: string;
   gasEstimates: {
@@ -107,7 +96,7 @@ interface DeployedContract {
   id: string;
   name: string;
   address: string;
-  abi: any[];
+  abi: ABIItem[];
   deployedAt: Date;
   network: string;
   txHash: string;
@@ -125,7 +114,7 @@ interface Transaction {
   status: 'pending' | 'success' | 'failed';
   timestamp: Date;
   txHash: string;
-  result?: any;
+  result?: unknown;
   error?: string;
 }
 
@@ -439,7 +428,7 @@ export default function SoliditySandbox() {
   
   const [selectedNetwork, setSelectedNetwork] = useState(NETWORKS[0]);
   const [selectedAccount, setSelectedAccount] = useState(SIMULATED_ACCOUNTS[0]);
-  const [accounts, setAccounts] = useState(SIMULATED_ACCOUNTS);
+  const [accounts, _setAccounts] = useState(SIMULATED_ACCOUNTS);
   const [gasLimit, setGasLimit] = useState('3000000');
   const [value, setValue] = useState('0');
   const [valueUnit, setValueUnit] = useState<'wei' | 'gwei' | 'ether'>('wei');
@@ -449,7 +438,7 @@ export default function SoliditySandbox() {
   
   const [activePanel, setActivePanel] = useState<'compile' | 'deploy' | 'contracts' | 'transactions'>('compile');
   const [showConsole, setShowConsole] = useState(true);
-  const [showSidebar, setShowSidebar] = useState(true);
+  const [showSidebar, _setShowSidebar] = useState(true);
   const [consoleMessages, setConsoleMessages] = useState<Array<{
     id: string;
     type: 'log' | 'error' | 'warn' | 'info';
@@ -458,7 +447,7 @@ export default function SoliditySandbox() {
   }>>([]);
   
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [splitPosition, setSplitPosition] = useState(60);
+  const [splitPosition, _setSplitPosition] = useState(60);
   const [expandedContracts, setExpandedContracts] = useState<Set<string>>(new Set());
   const [functionInputs, setFunctionInputs] = useState<Record<string, Record<string, Record<string, string>>>>({});
   const [showShareModal, setShowShareModal] = useState(false);
@@ -466,7 +455,7 @@ export default function SoliditySandbox() {
   const [showTemplateSelector, setShowTemplateSelector] = useState(false);
   
   const { address, isConnected } = useWalletStore();
-  const editorRef = useRef<any>(null);
+  const editorRef = useRef<unknown>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   
   // ---------------------------------------------------------------------------
@@ -625,9 +614,9 @@ contract ${name.replace('.sol', '')} {
     warnings.forEach(w => log('warn', `  Warning: ${w.message}`));
   };
   
-  const parseABI = (code: string): any[] => {
+  const parseABI = (code: string): ABIItem[] => {
     // Simple ABI parser (in real implementation, this comes from solc)
-    const abi: any[] = [];
+    const abi: ABIItem[] = [];
     
     // Find functions
     const funcRegex = /function\s+(\w+)\s*\(([^)]*)\)\s*(public|external|internal|private)?\s*(view|pure|payable)?\s*(returns\s*\(([^)]*)\))?/g;
@@ -723,11 +712,11 @@ contract ${name.replace('.sol', '')} {
   
   const callContractFunction = async (
     contract: DeployedContract,
-    func: any,
+    func: ABIItem,
     isWrite: boolean
   ) => {
-    const funcInputs = functionInputs[contract.id]?.[func.name] || {};
-    const args = func.inputs.map((input: any) => funcInputs[input.name as string] || '');
+    const funcInputs = functionInputs[contract.id]?.[func.name || ''] || {};
+    const args = (func.inputs || []).map((input: { name: string; type: string }) => funcInputs[input.name] || '');
     
     log('info', `Calling ${contract.name}.${func.name}(${args.join(', ')})...`);
     
@@ -736,11 +725,11 @@ contract ${name.replace('.sol', '')} {
     const txHash = '0x' + Array.from({ length: 64 }, () => Math.floor(Math.random() * 16).toString(16)).join('');
     
     // Simulate result
-    let result: any;
+    let result: unknown;
     if (func.name === 'get') {
       result = Math.floor(Math.random() * 1000);
-    } else if (func.outputs?.length > 0) {
-      result = func.outputs.map((o: any) => {
+    } else if (func.outputs?.length && func.outputs.length > 0) {
+      result = func.outputs.map((o: { name: string; type: string }) => {
         if (o.type.startsWith('uint')) return Math.floor(Math.random() * 1000);
         if (o.type === 'bool') return Math.random() > 0.5;
         if (o.type === 'address') return '0x' + Array.from({ length: 40 }, () => Math.floor(Math.random() * 16).toString(16)).join('');
@@ -980,7 +969,7 @@ contract ${name.replace('.sol', '')} {
           />
           <select
             value={valueUnit}
-            onChange={(e) => setValueUnit(e.target.value as any)}
+            onChange={(e) => setValueUnit(e.target.value as 'wei' | 'gwei' | 'ether')}
             className="bg-zinc-800 border border-gray-600 rounded-lg px-3 py-2 text-sm"
           >
             <option value="wei">Wei</option>
@@ -1071,7 +1060,7 @@ contract ${name.replace('.sol', '')} {
                         {/* Function inputs */}
                         {func.inputs.length > 0 && (
                           <div className="space-y-1">
-                            {func.inputs.map((input: any, j: number) => (
+                            {func.inputs.map((input: { name: string; type: string }, j: number) => (
                               <input
                                 key={j}
                                 type="text"
@@ -1360,7 +1349,7 @@ contract ${name.replace('.sol', '')} {
             ].map(tab => (
               <button
                 key={tab.id}
-                onClick={() => setActivePanel(tab.id as any)}
+                onClick={() => setActivePanel(tab.id as 'compile' | 'deploy' | 'contracts' | 'transactions')}
                 className={cn(
                   "flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-medium transition-colors",
                   activePanel === tab.id

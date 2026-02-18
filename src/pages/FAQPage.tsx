@@ -83,7 +83,7 @@ const faqs: FAQItem[] = [
   {
     question: "What AI agents are included?",
     answer:
-      "The toolkit includes 78 agent definitions in two categories: 30 BNB Chain-specific agents (PancakeSwap, Venus Protocol, Lista DAO, Thena, Alpaca Finance, BNB Staking, opBNB, Greenfield, BSC Whale Tracker, MEV Gas Expert, and more) plus 42 general DeFi agents (Airdrop Hunter, MEV Protection Advisor, IL Calculator, DEX Route Optimizer, Yield Analyst, Risk Scoring Engine, Token Unlock Tracker, and more). Each agent is a portable JSON definition that works in any compatible AI framework.",
+      "The toolkit includes 78 agent definitions in two categories: 36 BNB Chain-specific agents (PancakeSwap, Venus Protocol, Lista DAO, Thena, Alpaca Finance, BNB Staking, opBNB, Greenfield, BSC Whale Tracker, MEV Gas Expert, and more) plus 42 general DeFi agents (Airdrop Hunter, MEV Protection Advisor, IL Calculator, DEX Route Optimizer, Yield Analyst, Risk Scoring Engine, Token Unlock Tracker, and more). Each agent is a portable JSON definition that works in any compatible AI framework.",
     category: "agents",
   },
   {

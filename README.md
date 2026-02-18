@@ -196,7 +196,7 @@ bnb-chain-toolkit/
 │   └── defi-agents/            #    42 general DeFi agents (30+ languages)
 │
 ├── mcp-servers/                # 🔌 6 Model Context Protocol servers
-│   ├── bnbchain-mcp/           #    BNB Chain + EVM (100+ tools)
+│   ├── bnbchain-mcp/           #    BNB Chain + EVM (384 tools)
 │   ├── binance-mcp/            #    Binance.com (478+ tools)
 │   ├── binance-us-mcp/         #    Binance.US (US compliance)
 │   ├── universal-crypto-mcp/   #    60+ networks (100+ tools)

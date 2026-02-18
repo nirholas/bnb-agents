@@ -34,7 +34,7 @@ export const FREE_ENDPOINTS: EndpointInfo[] = [
   {
     path: '/api/news/international',
     method: 'GET',
-    description: 'International news from 75 sources in 18 languages',
+    description: 'International news from 75 sources in 30+ languages',
     rateLimit: '50/hour',
     parameters: ['language', 'region', 'translate', 'limit'],
   },

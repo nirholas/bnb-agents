@@ -174,7 +174,7 @@ Comprehensive step-by-step guides for building with the Universal Crypto MCP Ser
 
 ## 🛠 Tool Categories Reference
 
-The Universal Crypto MCP Server provides 100+ tools across multiple categories:
+The Universal Crypto MCP Server provides 384 tools across multiple categories:
 
 ### Core EVM Tools
 

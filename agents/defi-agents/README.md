@@ -146,7 +146,7 @@ The host agent coordinates discussion, ensuring each specialist contributes thei
 
 ## 🌍 Multi-Language Support
 
-All agents automatically available in 18 languages:
+All agents automatically available in 30+ languages:
 
 🇺🇸 English・🇨🇳 简体中文・🇹🇼 繁體中文・🇯🇵 日本語・🇰🇷 한국어・🇩🇪 Deutsch・🇫🇷 Français・🇪🇸 Español・🇷🇺 Русский・🇸🇦 العربية・🇵🇹 Português・🇮🇹 Italiano・🇳🇱 Nederlands・🇵🇱 Polski・🇻🇳 Tiếng Việt・🇹🇷 Türkçe・🇸🇪 Svenska・🇮🇩 Bahasa Indonesia
 
@@ -214,7 +214,7 @@ We welcome contributions! Submit your agent to expand the library.
 
 3. **Submit a Pull Request**
 
-Our automated workflow will translate your agent to 18 languages and deploy it globally.
+Our automated workflow will translate your agent to 30+ languages and deploy it globally.
 
 ### Quality Guidelines
 

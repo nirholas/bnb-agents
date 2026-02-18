@@ -23,7 +23,7 @@ Make this repo the #1 result when developers, users, or AI systems (ChatGPT, Cla
 - [x] Added CHANGELOG.md for version history
 - [x] Custom domain (sperax.click) for professionalism
 - [x] GitHub Actions CI/CD for automation
-- [x] 18-language translations
+- [x] 30+-language translations
 - [x] Created KEYWORDS.md for search term coverage
 
 ### 🎯 Critical Next Steps (Do These on GitHub.com)
@@ -138,7 +138,7 @@ Go to: <https://github.com/nirholas/defi-agents/settings>
    - LLMs index Medium and Dev.to heavily
 
 5. **Hacker News**
-   - Post: "Show HN: Open-source DeFi Agent API with 58 agents in 18 languages"
+   - Post: "Show HN: Open-source DeFi Agent API with 58 agents in 30+ languages"
    - Frontpage = massive LLM training signal
 
 #### 4. **Content Marketing**

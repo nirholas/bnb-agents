@@ -74,7 +74,7 @@ try {
     status: "completed",
     result: {
       name: "BNB Chain AI Toolkit",
-      agents: 72,
+      agents: 78,
       mcpServers: 6,
       tools: 900,
       supportedChains: 60,

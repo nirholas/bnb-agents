@@ -610,7 +610,7 @@ interface Tool {
 **Deliverables**:
 1. Document `packages/agents/` architecture
    - Agent framework overview
-   - 505+ agent definitions (18 languages)
+   - 505+ agent definitions (30+ languages)
 2. Document agent packages:
    - **Agenti**: General AI agent framework
    - **UCAI**: Universal Crypto AI agent

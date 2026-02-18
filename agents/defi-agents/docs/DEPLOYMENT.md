@@ -28,7 +28,7 @@
    - Click Save
 
 **That's it!** Every push to `main` will:
-- Translate agents to 18 languages
+- Translate agents to 30+ languages
 - Build the index
 - Deploy to GitHub Pages
 
@@ -97,5 +97,5 @@ A: Yes, but they'll serve the same content. Pick one.
 A: Just import to Vercel. Optionally remove the secret from GitHub to stop those builds.
 
 **Q: What's the OPENAI_API_KEY for?**
-A: Translating your agents to 18 languages automatically.
+A: Translating your agents to 30+ languages automatically.
 

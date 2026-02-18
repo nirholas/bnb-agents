@@ -39,7 +39,7 @@ src/
   your-agent-name.zh-CN.json    # Optional: Chinese translation
 ```
 
-If you only provide English, our automated i18n workflow will translate to 18 languages.
+If you only provide English, our automated i18n workflow will translate to 30+ languages.
 
 ### Agent Template
 
@@ -204,7 +204,7 @@ You may receive feedback requesting changes. Please address comments promptly.
 
 Once merged:
 
-1. Your agent is automatically translated to 18 languages
+1. Your agent is automatically translated to 30+ languages
 2. It appears in the marketplace within 24 hours
 3. Users can immediately add it to their workspace
 

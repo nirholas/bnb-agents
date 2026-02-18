@@ -74,7 +74,7 @@ Test it 5-10 times with real scenarios. If you consistently get quality results 
 
 ### Do I need to translate my agent?
 
-No. Submit in English. Our automated i18n workflow translates to 18 languages automatically.
+No. Submit in English. Our automated i18n workflow translates to 30+ languages automatically.
 
 ### Can I update an agent after submission?
 

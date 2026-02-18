@@ -1,6 +1,6 @@
 # News Sources
 
-Free Crypto News aggregates content from **200+ professional crypto and financial news sources** across 25 categories, in **18 languages**.
+Free Crypto News aggregates content from **200+ professional crypto and financial news sources** across 25 categories, in **30+ languages**.
 
 ## Source Statistics
 

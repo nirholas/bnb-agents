@@ -22,7 +22,7 @@
 
 This repository uses an automated workflow that takes agent definitions and:
 
-1. ✅ Translates them to 18 languages
+1. ✅ Translates them to 30+ languages
 2. ✅ Builds a CDN-ready index
 3. ✅ Deploys to GitHub Pages
 4. ✅ Preserves custom domains automatically
@@ -82,7 +82,7 @@ defi-agents/
 │   ├── agent-2.json
 │   └── sperax-dashboard.json
 │
-├── locales/                       # 🌍 18-language translations (auto-generated)
+├── locales/                       # 🌍 30+-language translations (auto-generated)
 │   ├── agent-1/
 │   │   ├── index.json             # en-US (default)
 │   │   ├── index.zh-CN.json       # Chinese
@@ -125,7 +125,7 @@ defi-agents/
    ├─ Validate JSON schema
    ├─ Generate missing fields (category, examples)
    ├─ Call OpenAI API (GPT-4)
-   ├─ Translate to 18 languages
+   ├─ Translate to 30+ languages
    └─ Create locales/agent-name/*.json (18 files)
 
 3. BUILD (bun run build)
@@ -144,7 +144,7 @@ defi-agents/
 │                      LIVE WEBSITE                            │
 └─────────────────────────────────────────────────────────────┘
    https://yourdomain.com/index.json
-   └─ Agents available in 18 languages
+   └─ Agents available in 30+ languages
 ```
 
 ---
@@ -243,7 +243,7 @@ public/
   ├── index.zh-CN.json         # Chinese index
   ├── my-defi-agent.json       # Your agent (en-US)
   ├── my-defi-agent.zh-CN.json # Your agent (Chinese)
-  └── ... (58 agents × 18 languages = 1,044 files)
+  └── ... (58 agents × 30+ languages = 1,044 files)
 ```
 
 ### Step 4: Test Locally (Optional)
@@ -389,13 +389,13 @@ The build step (`bun run build`) calls `agent-builder.ts` which:
    - Generates JSON schema from Zod definitions
    - Writes to `schema/` and `public/schema/`
 
-2. **Builds Agents** (for each of 18 languages)
+2. **Builds Agents** (for each of 30+ languages)
    - Reads `src/*.json` (English source)
    - Reads `locales/agent-name/index.[locale].json`
    - Merges source + translation
    - Writes to `public/agent-name.[locale].json`
 
-3. **Generates Indexes** (for each of 18 languages)
+3. **Generates Indexes** (for each of 30+ languages)
    - Collects all agents
    - Extracts metadata
    - Calculates tag frequencies
@@ -503,7 +503,7 @@ copyCNAME = () => {
 
 **CI will automatically:**
 
-- ✅ Translate to 18 languages
+- ✅ Translate to 30+ languages
 - ✅ Build and deploy
 - ✅ Update the marketplace
 
@@ -588,7 +588,7 @@ Developer → Create agent.json → Push to GitHub
                 ↓
          GitHub Actions CI/CD
                 ↓
-    format (translate to 18 languages)
+    format (translate to 30+ languages)
                 ↓
     build (generate public index + copy CNAME)
                 ↓
@@ -596,13 +596,13 @@ Developer → Create agent.json → Push to GitHub
                 ↓
          GitHub Pages CDN
                 ↓
-    Live at your domain in 18 languages
+    Live at your domain in 30+ languages
 ```
 
 **Key Files:**
 
 - `src/*.json` - Source agents (English)
-- `locales/*/index.*.json` - Translations (18 languages)
+- `locales/*/index.*.json` - Translations (30+ languages)
 - `public/` - Build output (gitignored, generated)
 - `CNAME` - Custom domain (optional)
 - `.github/workflows/release.yml` - CI/CD automation

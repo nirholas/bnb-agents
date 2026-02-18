@@ -22,9 +22,9 @@
 
 <h1>BNB Chain MCP Server</h1>
 
-<p><strong>The most comprehensive Model Context Protocol server for BNB Chain & EVM blockchains</strong></p>
+<p><strong>The most comprehensive Model Context Protocol server for BNB Chain & EVM blockchains — 384 tools</strong></p>
 
-<p>Enable AI agents to interact with BNB Chain, opBNB, and other EVM networks through natural language</p>
+<p>Enable AI agents to interact with BNB Chain, opBNB, Greenfield, Sperax, and 10+ EVM networks through natural language</p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![MCP](https://img.shields.io/badge/MCP-Compatible-purple?style=flat-square)](https://modelcontextprotocol.io)
@@ -273,6 +273,11 @@ npx @nirholas/bnb-chain-mcp@latest --sse
 | **DeFi Analytics** | DefiLlama TVL, yields, fees, protocols | ✅ |
 | **Social Sentiment** | LunarCrush metrics, influencers, trending | ✅ |
 | **DEX Analytics** | GeckoTerminal pools, trades, OHLCV | ✅ |
+| **Greenfield** | BNB Greenfield decentralized storage | ✅ |
+| **Sperax Protocol** | USDs, SPA, veSPA, xSPA, Demeter vaults | ✅ |
+| **News** | Crypto news aggregation from multiple sources | ✅ |
+
+> **384 tools** registered across all modules.
 
 ### Tool Categories
 
@@ -349,6 +354,36 @@ npx @nirholas/bnb-chain-mcp@latest --sse
 | `get_dex_pools` | Get DEX pool data |
 | `get_social_metrics` | Get LunarCrush sentiment |
 | ... | [See full list →](https://bnb-chain-mcp.vercel.app/tools/market-data) |
+
+</details>
+
+<details>
+<summary><strong>💾 BNB Greenfield Storage (18 tools)</strong></summary>
+
+| Tool | Description |
+|------|-------------|
+| `gnfd_create_bucket` | Create a Greenfield storage bucket |
+| `gnfd_upload_object` | Upload object to Greenfield |
+| `gnfd_download_object` | Download object from Greenfield |
+| `gnfd_list_buckets` | List buckets for an address |
+| `gnfd_list_objects` | List objects in a bucket |
+| `gnfd_create_group` | Create access control group |
+| ... | And 12 more Greenfield tools |
+
+</details>
+
+<details>
+<summary><strong>🔷 Sperax Protocol (72 tools)</strong></summary>
+
+| Tool | Description |
+|------|-------------|
+| `usds_*` | USDs stablecoin operations (mint, redeem, yield) |
+| `spa_*` | SPA token staking and management |
+| `vespa_*` | veSPA lock, boost, and governance |
+| `xspa_*` | xSPA convert and redeem |
+| `vault_*` | Vault deposits, withdrawals, and strategies |
+| `demeter_*` | Demeter protocol farms and rewards |
+| ... | Including oracle, dripper, buyback tools |
 
 </details>
 
@@ -482,6 +517,8 @@ docker run -p 3001:3001 bnb-chain-mcp --http
         "PRIVATE_KEY": "0x...",
         "COINGECKO_API_KEY": "CG-xxx",
         "LUNARCRUSH_API_KEY": "xxx",
+        "CRYPTOCOMPARE_API_KEY": "xxx",
+        "UNIVERSAL_CRYPTO_API_KEY": "xxx",
         "CUSTOM_RPC_56": "https://bsc-rpc.publicnode.com",
         "CUSTOM_RPC_1": "https://eth-rpc.publicnode.com",
         "LOG_LEVEL": "debug"

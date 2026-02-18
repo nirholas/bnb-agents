@@ -35,7 +35,7 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { value: "78", label: "AI Agents", icon: Bot, description: "30 BNB Chain + 42 DeFi agents" },
+  { value: "78", label: "AI Agents", icon: Bot, description: "36 BNB Chain + 42 DeFi agents" },
   { value: "6", label: "MCP Servers", icon: Server, description: "900+ tools across all servers" },
   { value: "478+", label: "Binance Tools", icon: BarChart3, description: "Most comprehensive exchange MCP" },
   { value: "60+", label: "Chains", icon: Globe, description: "BNB Chain, Ethereum, Solana, and more" },
@@ -48,7 +48,7 @@ const stats = [
 const capabilities = [
   {
     quote: "PancakeSwap Expert, Venus Protocol, Lista DAO, Thena, Alpaca Finance — DeFi protocol coverage that runs deep, not wide.",
-    name: "30 BNB Chain Agents",
+    name: "36 BNB Chain Agents",
     title: "DeFi, staking, NFTs, governance, bridges",
     icon: <Bot className="w-5 h-5" />,
   },

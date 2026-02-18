@@ -45,7 +45,7 @@ const phases: Phase[] = [
     description:
       "The foundational layer — 78 AI agent definitions covering every major BNB Chain protocol, plus 6 specialized MCP servers providing 900+ composable tools for Claude, GPT, and other AI assistants.",
     deliverables: [
-      { text: "30 BNB Chain agents", detail: "PancakeSwap, Venus, Lista DAO, Thena, Alpaca, opBNB, Greenfield" },
+      { text: "36 BNB Chain agents", detail: "PancakeSwap, Venus, Lista DAO, Thena, Alpaca, opBNB, Greenfield" },
       { text: "42 DeFi agents", detail: "Airdrop Hunter, MEV Protection, IL Calculator, Yield Analyst, Risk Scoring" },
       { text: "bnbchain-mcp — 150+ tools", detail: "Balances, transfers, contract calls, GoPlus security, gas tracking" },
       { text: "binance-mcp — 478+ tools", detail: "Spot, Futures, Options, Algo (TWAP/VP), Copy Trading, NFTs, Binance Pay" },

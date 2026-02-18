@@ -213,7 +213,7 @@ curl "https://cryptocurrency.cv/api/news?limit=5&source=coindesk"
 
 Fetch news from international crypto news sources with optional translation to English.
 
-**Supported Sources (75 total across 18 languages):**
+**Supported Sources (75 total across 30+ languages):**
 
 | Language | Code | Sources | Examples |
 |----------|------|---------|----------|
@@ -4847,7 +4847,7 @@ Use the category parameter in `/api/news?category=defi` to filter by category.
 
 ### Language Support
 
-The `lang` parameter supports 18 languages:
+The `lang` parameter supports 30+ languages:
 
 | Code | Language |
 |------|----------|

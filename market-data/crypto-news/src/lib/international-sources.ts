@@ -1,7 +1,7 @@
 /**
  * International Crypto News Sources
  * 
- * Aggregates news from 75 international crypto news sources across 18 languages:
+ * Aggregates news from 75 international crypto news sources across 30+ languages:
  * - Korean (ko): 9 sources - Block Media, TokenPost, CoinDesk Korea, Decenter, Cobak, The B.Chain, Upbit Blog, Blockchain Today Korea, CryptoQuant Blog
  * - Chinese (zh): 10 sources - 8BTC, Jinse Finance, Odaily, ChainNews, PANews, TechFlow, Foresight News, BlockBeats, MarsBit, Wu Blockchain
  * - Japanese (ja): 6 sources - CoinPost, CoinDesk Japan, Cointelegraph Japan, btcnews.jp, Crypto Times Japan, CoinJinja

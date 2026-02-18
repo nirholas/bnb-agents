@@ -34,7 +34,7 @@ This repository provides solutions for:
 - **JSON API** for agent definitions
 - **RESTful API** for AI systems
 - **Agent schemas** and specifications
-- **Multi-language agents** (18 languages)
+- **Multi-language agents** (30+ languages)
 - **CDN-hosted agent marketplace**
 - **GitHub Pages API** hosting
 - **Open source AI agents**
@@ -189,7 +189,7 @@ This repository provides solutions for:
 
 ## SEO-Optimized Content
 
-This repository provides **the most comprehensive collection of AI agent definitions for DeFi, Web3, and cryptocurrency applications**. With **57 production-ready agent templates**, support for **18 languages**, and a **fully documented RESTful JSON API**, developers and AI systems can quickly integrate intelligent agents into blockchain applications, trading platforms, portfolio dashboards, and DeFi protocols.
+This repository provides **the most comprehensive collection of AI agent definitions for DeFi, Web3, and cryptocurrency applications**. With **57 production-ready agent templates**, support for **30+ languages**, and a **fully documented RESTful JSON API**, developers and AI systems can quickly integrate intelligent agents into blockchain applications, trading platforms, portfolio dashboards, and DeFi protocols.
 
 The **agent marketplace index** at sperax.click serves as a **universal agent registry** for discovering, exploring, and integrating specialized AI assistants covering portfolio management, yield farming, trading automation, smart contract auditing, risk assessment, and DeFi education.
 

@@ -211,6 +211,52 @@ Each component is **independent** — you can use MCP servers without agents, ma
 4. **Offline Capable** — Wallet operations and agent definitions work without internet
 5. **Multi-Language** — 30+ translations for global accessibility
 6. **AI-First** — Every component is designed for AI assistant consumption
+7. **Secure by Default** — CORS locked down, non-root containers, input validation on all routes
+
+---
+
+## Security Architecture
+
+### Defense in Depth
+
+```
+         Internet
+            │
+            ▼
+  ┌──────────────────┐
+  │     nginx         │  CSP headers, HTTPS, rate limiting
+  │  (non-root user)  │  Permissions-Policy, X-Content-Type-Options
+  └────────┬─────────┘
+           │
+           ▼
+  ┌──────────────────┐
+  │   Express/Hono    │  CORS validation, input sanitization
+  │   Application     │  Rate limiting (X-Forwarded-For aware)
+  └────────┬─────────┘  Error masking (no stack traces)
+           │
+     ┌─────┼─────┐
+     ▼     ▼     ▼
+  Routes  MCP   WebSocket
+  - Deploy validation    - CORS per-server     - Connection limits
+  - IPFS CID checks      - Origin allowlists   - Max 1000 concurrent
+  - Network allowlist     - No eval()
+     │
+     ▼
+  ┌──────────────────┐
+  │   Data Layer      │  SQL LIKE escaping, cache size limits
+  │  (SQLite/Redis)   │  Redis password auth, localhost binding
+  └──────────────────┘
+```
+
+### Container Security
+
+- All Docker containers run as **non-root** users
+- Redis requires password authentication and binds to `127.0.0.1`
+- No secrets in container images — all credentials via environment variables
+
+### Configuration
+
+All security controls are configurable via environment variables. See [SECURITY.md](../SECURITY.md#environment-variables-reference) for the complete reference.
 
 ---
 

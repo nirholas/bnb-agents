@@ -68,7 +68,7 @@ Free Crypto News provides comprehensive AI-powered features for deeper news anal
 | **Fact Checking** | Verify claims in articles (verified/likely/unverified/disputed) |
 | **Question Generation** | Generate follow-up questions readers might have |
 | **Categorization** | Auto-categorize articles by topic |
-| **Translation** | Translate content to 18 languages |
+| **Translation** | Translate content to 30+ languages |
 
 ### AI Products
 
@@ -2103,7 +2103,7 @@ Academic citation tracking and bibliometric analysis.
 
 ## Translation Service
 
-Translate news content to 18 languages.
+Translate news content to 30+ languages.
 
 **Endpoint:** `GET /api/i18n/translate` or `/api/news?lang=xx`
 

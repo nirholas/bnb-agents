@@ -41,8 +41,8 @@ describe('Project Metadata', () => {
       expect(components).toContain('mcp-servers');
     });
 
-    it('has agentCount >= 72', () => {
-      expect(data.agentCount).toBeGreaterThanOrEqual(72);
+    it('has agentCount >= 78', () => {
+      expect(data.agentCount).toBeGreaterThanOrEqual(78);
     });
 
     it('has mcpServerCount >= 6', () => {

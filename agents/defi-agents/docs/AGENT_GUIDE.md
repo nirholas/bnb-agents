@@ -176,7 +176,7 @@ Try these with your DeFi agent:
 
 ## Localization
 
-Agents are automatically translated to 18 languages. Tips for translation-friendly prompts:
+Agents are automatically translated to 30+ languages. Tips for translation-friendly prompts:
 
 - Use clear, standard English
 - Avoid idioms and colloquialisms

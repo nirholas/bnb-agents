@@ -163,7 +163,7 @@ The following files serve as direct evidence of continuous AI tool usage through
 
 | Date | Version | Milestone | AI Role |
 | --- | --- | --- | --- |
-| Dec 21, 2025 | v1.0.0 | Initial release — 57 agents, build pipeline, 18 languages | AI generated agent definitions and translations |
+| Dec 21, 2025 | v1.0.0 | Initial release — 57 agents, build pipeline, 30+ languages | AI generated agent definitions and translations |
 | Dec 21, 2025 | v1.1.0 | Added master agent (58 total) | AI helped design the unified agent combining 16 plugin features |
 | Feb 11, 2026 | v2.0.0 | Monorepo transformation — 78 agents, 6 MCP servers, 900+ tools | AI-intensive consolidation of 14 repos; scaffolded all MCP servers |
 | Feb 2026 | — | Hackathon submission | All submission docs AI-drafted from structured prompts || Feb 18, 2026 | v2.1.0 — opBNB + hackathon polish | opBNB chain support (24 chains), CLI expanded to 26 chains, agent runtime showcase, enhanced judges guide |

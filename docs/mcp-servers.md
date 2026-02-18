@@ -39,8 +39,8 @@ Then add it to your AI assistant's config.
 ### 1. BNB Chain MCP
 
 **Location:** `mcp-servers/bnbchain-mcp/`
-**Tools:** 100+
-**Best for:** BNB Smart Chain (BSC), opBNB, BNB Greenfield, and EVM chains
+**Tools:** 384
+**Best for:** BNB Smart Chain (BSC), opBNB, BNB Greenfield, Sperax Protocol, and 10+ EVM chains
 
 #### What It Can Do
 
@@ -52,12 +52,18 @@ Then add it to your AI assistant's config.
 | **Chain Data** | Block info, transaction history, gas prices |
 | **BNB Greenfield** | Upload/download files, manage buckets |
 | **Staking** | Delegate BNB, check rewards, validator info |
+| **Market Data** | CoinGecko prices, OHLCV, trending tokens |
+| **DeFi Analytics** | DefiLlama TVL, yields, fees, protocols |
+| **Social Sentiment** | LunarCrush metrics, influencers, trending |
+| **DEX Analytics** | GeckoTerminal pools, trades, OHLCV |
+| **Sperax Protocol** | USDs, SPA, veSPA, Demeter vaults (72 tools) |
 
 #### Setup
 
 ```bash
 cd mcp-servers/bnbchain-mcp
-bun install
+npm install
+npm run build
 ```
 
 **Claude Desktop config:**
@@ -68,7 +74,6 @@ bun install
       "command": "npx",
       "args": ["-y", "@nirholas/bnbchain-mcp"],
       "env": {
-        "BSC_RPC_URL": "https://bsc-dataseed.binance.org",
         "PRIVATE_KEY": "your-private-key-here"
       }
     }
@@ -80,10 +85,15 @@ bun install
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `BSC_RPC_URL` | Yes | BSC RPC endpoint |
 | `PRIVATE_KEY` | For writes | Wallet private key (for transactions) |
-| `OPBNB_RPC_URL` | No | opBNB RPC endpoint |
-| `GREENFIELD_RPC_URL` | No | BNB Greenfield RPC |
+| `COINGECKO_API_KEY` | No | CoinGecko Pro API key |
+| `LUNARCRUSH_API_KEY` | No | LunarCrush social sentiment API key |
+| `CRYPTOCOMPARE_API_KEY` | No | CryptoCompare social data API key |
+| `COINSTATS_API_KEY` | No | CoinStats API key |
+| `UNIVERSAL_CRYPTO_API_KEY` | No | Tatum / Universal Crypto API key |
+| `ARBITRUM_RPC_URL` | No | Arbitrum RPC for Sperax module |
+| `PORT` | No | HTTP/SSE server port (default: 3001) |
+| `LOG_LEVEL` | No | Logging level (DEBUG, INFO, WARN, ERROR) |
 
 > **Security Note:** Never commit private keys. Use environment variables or a secrets manager.
 

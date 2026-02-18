@@ -84,7 +84,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Consolidated 14 independent repositories into one comprehensive AI toolkit for BNB Chain:
 
 **AI Agents (78)**
-- 30 BNB Chain-specific agents (PancakeSwap, Venus, staking, bridging, etc.)
+- 36 BNB Chain-specific agents (PancakeSwap, Venus, staking, bridging, etc.)
 - 42 general DeFi agents with 18-language support
 
 **MCP Servers (6)**

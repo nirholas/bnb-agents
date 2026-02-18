@@ -1,6 +1,6 @@
 # 🌍 18 Languages - Automated i18n Translation Workflow
 
-> Comprehensive guide to the automated internationalization (i18n) workflow that translates your AI agents into 18 languages using OpenAI GPT models.
+> Comprehensive guide to the automated internationalization (i18n) workflow that translates your AI agents into 30+ languages using OpenAI GPT models.
 
 ---
 
@@ -29,18 +29,18 @@ This project includes an **automated translation workflow** that takes your AI a
 
 1. ✅ Formats and validates the agent JSON files
 2. ✅ Generates missing content (categories, examples, opening messages)
-3. ✅ Translates all text fields to 18 languages using OpenAI GPT
+3. ✅ Translates all text fields to 30+ languages using OpenAI GPT
 4. ✅ Creates organized translation files in `/locales`
 5. ✅ Validates translation quality and language accuracy
 6. ✅ Builds a CDN-ready public distribution
 
-**Key Benefit**: Submit your agent in English once, and it becomes available in 18 languages automatically.
+**Key Benefit**: Submit your agent in English once, and it becomes available in 30+ languages automatically.
 
 ---
 
 ## Supported Languages
 
-The workflow supports **18 languages** based on BCP 47 standards:
+The workflow supports **30+ languages** based on BCP 47 standards:
 
 | Code    | Language              | Region        |
 | ------- | --------------------- | ------------- |
@@ -185,7 +185,7 @@ This command will:
 - ✅ Validate your JSON structure
 - ✅ Generate missing fields (category, examples, opening messages)
 - ✅ Extract all translatable content
-- ✅ Call OpenAI to translate to 18 languages
+- ✅ Call OpenAI to translate to 30+ languages
 - ✅ Create organized folders in `/locales`
 
 **Expected Output:**
@@ -303,7 +303,7 @@ After running `bun run build`:
   └── agents/
       ├── airdrop-hunter.json
       ├── airdrop-hunter.ar.json
-      └── ... (all agents × 18 languages)
+      └── ... (all agents × 30+ languages)
 ```
 
 > \[!IMPORTANT]: Don't commit `/public` to Git. It's automatically generated during deployment.
@@ -397,7 +397,7 @@ The following fields are automatically extracted and translated:
 
 ```bash
 # Main workflow commands
-bun run format # Format agents + translate to 18 languages
+bun run format # Format agents + translate to 30+ languages
 bun run build  # Build public distribution
 bun run test   # Validate agent JSON structure
 
@@ -503,7 +503,7 @@ Example:
   "meta.title": "DeFi Farmer",
   "meta.description": "Optimize yields"
 }
-// → Translates both fields to 18 languages
+// → Translates both fields to 30+ languages
 
 // You add a new field
 {
@@ -511,7 +511,7 @@ Example:
   "meta.description": "Optimize yields",
   "config.openingMessage": "Hello!" // NEW
 }
-// → Only translates openingMessage to 18 languages
+// → Only translates openingMessage to 30+ languages
 // → Keeps existing translations for title and description
 ```
 
@@ -539,7 +539,7 @@ If your agent is missing content, the workflow auto-generates:
 
 - **Concurrency**: 18 parallel translation jobs
 - **Efficiency**: Translates all languages simultaneously
-- **Speed**: Completes 18 languages in \~30-60 seconds per agent
+- **Speed**: Completes 30+ languages in \~30-60 seconds per agent
 
 ### 4. **Language Detection**
 
@@ -906,7 +906,7 @@ git commit -m "feat: update my-agent + translations"
 
 The 18 Languages i18n workflow provides:
 
-- 🌍 **Automatic translation** to 18 languages
+- 🌍 **Automatic translation** to 30+ languages
 - 🚀 **Fast processing** with concurrent API calls
 - 💰 **Cost-effective** with incremental updates
 - ✅ **Quality assurance** with language validation

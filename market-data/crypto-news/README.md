@@ -123,7 +123,7 @@ npm install && npm run dev
 
 ## 🌍 International News Sources
 
-Get crypto news from **75 international sources** across 18 languages — with automatic English translation!
+Get crypto news from **75 international sources** across 30+ languages — with automatic English translation!
 
 ### Supported Sources by Language
 
@@ -638,7 +638,7 @@ curl "https://cryptocurrency.cv/api/bitcoin?lang=zh-CN"
 | `/api/ai/source-quality` | AI-powered source scoring & clickbait detection                                                                                                | Groq     |
 | `/api/ai/research`       | Deep-dive research reports on any crypto topic                                                                                                 | Groq     |
 | `/api/detect/ai-content` | AI-generated content detection (offline, no API needed)                                                                                        | None     |
-| `/api/i18n/translate`    | Article translation (18 languages)                                                                                                             | Groq     |
+| `/api/i18n/translate`    | Article translation (30+ languages)                                                                                                             | Groq     |
 
 **Supported AI Providers (priority order):**
 
@@ -2735,7 +2735,7 @@ Open http://localhost:3000/api/news
 
 | Variable               | Default           | Description                                                                                                                 |
 | ---------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `GROQ_API_KEY`         | -                 | Enables i18n auto-translation (18 languages). **FREE!** Get yours at [console.groq.com/keys](https://console.groq.com/keys) |
+| `GROQ_API_KEY`         | -                 | Enables i18n auto-translation (30+ languages). **FREE!** Get yours at [console.groq.com/keys](https://console.groq.com/keys) |
 | `FEATURE_TRANSLATION`  | `false`           | Set to `true` to enable real-time translation                                                                               |
 | `REDDIT_CLIENT_ID`     | -                 | Enables Reddit social signals                                                                                               |
 | `REDDIT_CLIENT_SECRET` | -                 | Reddit OAuth secret                                                                                                         |
@@ -3252,7 +3252,7 @@ Building the definitive open crypto intelligence platform.
 
 ### Multi-Lingual
 
-- [x] i18n workflow with 18 languages (auto-translation via Groq - FREE!)
+- [x] i18n workflow with 30+ languages (auto-translation via Groq - FREE!)
 - [x] Translated README and docs
 - [x] Korean sources ✅
 - [x] Chinese sources ✅
