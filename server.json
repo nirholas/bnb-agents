@@ -17,12 +17,11 @@
   "version": "0.1.0",
   "links": {
     "homepage": "https://bnb-chain-toolkit.vercel.app/",
-    "bugs": "https://github.com/nirholas/bnb-chain-toolkit/issues",
-    "npm": "https://www.npmjs.com/package/@nirholas/ai-agents-library"
+    "bugs": "https://github.com/nirholas/bnb-chain-toolkit/issues"
   },
   "icons": [
     {
-      "url": "https://raw.githubusercontent.com/nirholas/g1t/d9a0ee206b8136472c04384905999369f198b3c9/milady.svg",
+      "src": "https://raw.githubusercontent.com/nirholas/g1t/d9a0ee206b8136472c04384905999369f198b3c9/milady.svg",
       "type": "svg"
     }
   ],
@@ -30,7 +29,7 @@
     {
       "registryType": "npm",
       "identifier": "@nirholas/ai-agents-library",
-      "version": "0.1.0",
+      "version": "1.42.0",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"
@@ -51,7 +50,9 @@
         "blockchain",
         "crypto",
         "mcp",
-        "ai"
+        "ai",
+        "bnb-chain",
+        "bsc"
       ],
       "category": "DeFi"
     }

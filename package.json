@@ -1,6 +1,7 @@
 {
   "name": "bnb-chain-toolkit",
   "version": "2.0.0",
+  "mcpName": "io.github.nirholas/bnb-chain-toolkit",
   "description": "BNB Chain AI Toolkit - 78 AI agents, 6 MCP servers, 1,100+ tools for BNB Chain. Built by nich.",
   "author": {
     "name": "nich (nirholas)",
